@@ -32,7 +32,7 @@ export default {
     <v-app id="inspire">
       <v-card class="overflow-hidden">
         <v-app-bar
-          :v-for="item in menuItems"
+          :v-for-key="item in menuItems"
           :collapse="!collapseOnScroll"
           :collapse-on-scroll="collapseOnScroll"
           absolute
@@ -42,7 +42,7 @@ export default {
         >
           <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-          <v-toolbar-title>{{ item[0] }}</v-toolbar-title>
+          <v-toolbar-title>{{ item }}</v-toolbar-title>
 
           <v-spacer></v-spacer>
 
