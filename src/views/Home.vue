@@ -1,9 +1,5 @@
 <template>
-  <div class="home">
-    <nav>
-      <NavBar />
-    </nav>
-  </div>
+ <h1>Hello Welcome to Home</h1>
 </template>
 
 <script>
