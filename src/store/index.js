@@ -5,6 +5,9 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    products : [
+      {name : 'Apple', price:50}
+    ]
   },
   mutations: {
   },
