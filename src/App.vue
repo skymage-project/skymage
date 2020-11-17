@@ -1,22 +1,23 @@
 <template>
   <div id="app">
-    <nav>
-      <HomeLink />
-      <a href="/about">À propos</a>
-      <a href="/contact">Contact</a>
-    </nav>
-    <p>Bienvenue sur notre page d'<HomeLink /></p>
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+      <router-link to="/test"> Test</router-link>
+    </div>
+    <router-view />
   </div>
 </template>
 
 <script>
-import HomeLink from "./components/HomeLink.vue";
+import HomeLink from './components/HomeLink.vue';
+import NavBar from './components/NavBar.vue';
 
 export default {
-  name: "App",
+  name: 'App',
 
   components: {
-    HomeLink,
+    NavBar,
   },
 
   data: () => ({
