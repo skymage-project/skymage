@@ -14,6 +14,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(express.static('../dist'))
+  
+
+app.use("/catalog",require("./routes/catalog"));
 
 app.listen(3000, () => {
     console.log(`Server is running on port http://localhost:3000`);
