@@ -1,25 +1,27 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user.js');
+const User = require('../database/models/user');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require("../config/auth.config.js")
-const verifyToken = require('../middleware/verifyToken');
+const verifySignUp = require('../middleware/verifySignUp.js');
 
 router.post('/signup', async (req, res) => {
     try {
-        const salt = await bcrypt.genSalt(10);
-        const hashPass = await bcrypt.hash(req.body.password, salt);
-        await User.create({
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            password: hashPass,
-            email: req.body.email,
-            dateOfBirth: req.body.yearOfBirth,
-            country: req.body.country,
-            phoneNumber: req.body.phoneNumber,
-            status: "client"
-        }).then((user) => res.json(user))
+        verifySignUp(req, res, async() => {
+            const salt = await bcrypt.genSalt(10);
+            const hashPass = await bcrypt.hash(req.body.password, salt);
+            await User.create({
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                password: hashPass,
+                email: req.body.email,
+                dateOfBirth: req.body.dateOfBirth,
+                country: req.body.country,
+                phoneNumber: req.body.phoneNumber,
+                status: "client"
+            }).then((user) => res.json(user))
+        });
     } catch (err) {
         res.status(500).send({
             message: err.message
@@ -47,11 +49,23 @@ router.post('/signin', async (req, res) => {
                 message: "Invalid Password!"
             });
         }
-        const token = jwt.sign({ id: user.id },config.secret);
-        res.header('accessToken', token).send({"accessToken" : token , "id" : user.id})
+        const token = jwt.sign({
+            id: user.id
+        }, config.secret, {
+            expiresIn: 86400 // 24 hours
+        });
+        res.header('accessToken', token).send({
+            "accessToken": token,
+            "id": user.id,
+            username: user.username,
+            email: user.email,
+        })
     } catch (err) {
         res.status(500).send({
             message: err.message
         })
     }
 })
+
+
+module.exports = router;
