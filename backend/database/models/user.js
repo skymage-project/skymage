@@ -1,5 +1,7 @@
-module.exports = (sequelize, Sequelize) => {
-const User = sequelize.define("users", {
+const { Model, Sequelize } = require('sequelize');
+const sequelize = require('../index')
+class User extends Model {}
+User.init({
         firstName: Sequelize.STRING,
         lastName: Sequelize.STRING,
         email: Sequelize.STRING,
@@ -8,7 +10,6 @@ const User = sequelize.define("users", {
         country: Sequelize.STRING,
         phoneNumber: Sequelize.INTEGER,
         status: Sequelize.STRING,
-    });
+    }, { sequelize, modelName: 'user' });
   
-    return User;
-  };
+    module.exports = User;
