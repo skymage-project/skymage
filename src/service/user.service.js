@@ -26,9 +26,13 @@ export default {
 
    register (user) {
     return axios.post('http://localhost:3000/user/signup', {
-      username: user.username,
-      email: user.email,
-      password: user.password
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        password: user.password,
+        dateOfBirth: user.dateOfBirth,
+        country: user.country,
+        phoneNumber: user.phone,
     });
   }
 }

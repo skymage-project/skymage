@@ -83,6 +83,33 @@
                       required
                     ></v-text-field>
                   </v-col>
+                  <v-col cols="12" sm="6" md="6">
+                    <v-text-field
+                      type="date"
+                      v-model="dateOfBirth"
+                      :rules="[rules.required]"
+                      label="Date Of Birth"
+                      required
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="6">
+                    <v-text-field
+                      v-model="phoneNumber"
+                      :rules="[rules.required]"
+                      label="Phone Number"
+                      maxlength="12"
+                      required
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12">
+                    <v-text-field
+                      v-model="country"
+                      :rules="[rules.required]"
+                      label="Country"
+                      maxlength="60"
+                      required
+                    ></v-text-field>
+                  </v-col>
                   <v-col cols="12">
                     <v-text-field
                       v-model="email"
@@ -163,6 +190,18 @@ export default {
           password: this.loginPassword,
         });
       }
+
+      if (this.$refs.registerForm.validate()) {
+        this.$store.dispatch("register", {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          email: this.email,
+          password: this.password,
+          dateOfBirth: this.dateOfBirth,
+          phoneNumber: this.phoneNumber,
+          country: this.country,
+        });
+      }
     },
     cancel() {
       this.$router.push("/");
@@ -188,6 +227,9 @@ export default {
     email: "",
     password: "",
     verify: "",
+    dateOfBirth: "",
+    phoneNumber: "",
+    country: "",
     loginPassword: "",
     loginEmail: "",
     loginEmailRules: [
