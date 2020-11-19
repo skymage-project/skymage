@@ -8,13 +8,13 @@ export default new Vuex.Store({
     drawer: false
   },
   mutations: {
-    SET_DRAWER: (state, v)=>{
-      state.drawer = v;
+    SET_DRAWER: (state)=>{
+      state.drawer = !state.drawer;
     }
   },
   actions: {
     OPEN_DRAWER: (context)=>{
-      context.commit('SET_DRAWER', true);
+      context.commit('SET_DRAWER');
     }
   },
   modules: {

@@ -1,5 +1,12 @@
 <template>
-
-    <h1>This is an about page</h1>
-  
+ <v-card class="overflow-hidden">
+    <v-app-bar
+      absolute
+      color="#6A76AB"
+      dark
+      prominent
+      src="https://j.gifs.com/L73vD4.gif"
+    >
+    </v-app-bar>
+ </v-card>
 </template>
