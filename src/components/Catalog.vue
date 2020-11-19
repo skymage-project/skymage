@@ -1,25 +1,38 @@
 <template>
   <div>
-  <h2>products</h2>
-  <ul>
-  <li v-for="(product,index) in products" :key='index'>
-  <span>{{product.name}}</span>
-  <span>{{product.price}}</span>
-  </li>
-  </ul>
-  </div>
+    <h2>product to buy</h2>
+    <v-container fluid>
+      <v-row align="center">
+        <v-col class="d-flex" cols="12" sm="6">
+          <v-select :items="items" label="Order By"></v-select>
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-container fluid>
+      <v-row align="center">
+        <v-col class="d-flex" cols="12" sm="6">
+          <v-select
+            :items="itemDifficulty"
+            label="Difficulty"
+          ></v-select>
+        </v-col>
+      </v-row>
+    </v-container>
+    </div>
 </template>
-
+ 
 <script>
+
 export default {
-    computed : {
-        products(){
-            return this.$store.state.products
-        }
-    }
-}
-
+  data: () => ({
+    items: [
+      "price: decreasing order",
+      "price: increasing order",
+      "bestsellers"
+    ],
+    itemDifficulty: ["Beginner", "Intermediate", "Advanced"]
+  }),
+    
+  }
 </script>
-<style>
-
-</style>
+<style></style>

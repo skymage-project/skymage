@@ -38,7 +38,7 @@
     </v-app-bar>
 
     <v-main>
-      <HelloWorld/>
+      <Catalog/>
     </v-main>
   </v-app>
 </template>
