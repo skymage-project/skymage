@@ -26,7 +26,7 @@
       </div>
 
       <v-spacer></v-spacer>
-
+      <router-link to="/signin"> <span id="log">Login</span></router-link>
       <v-btn
         href="https://github.com/vuetifyjs/vuetify/releases/latest"
         target="_blank"
@@ -38,7 +38,9 @@
     </v-app-bar>
 
     <v-main>
-      <Catalog/>
+
+      <router-view></router-view>
+
     </v-main>
   </v-app>
 </template>
@@ -55,3 +57,9 @@ export default {
   }),
 };
 </script>
+
+<style scoped>
+#log{
+  color: red;
+}
+</style>
