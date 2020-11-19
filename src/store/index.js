@@ -8,7 +8,9 @@ const initialState = user
   : { status: { loggedIn: false }, user: null };
 export default new Vuex.Store({
   state: {
+
     initialState,
+
   },
   mutations: {
     loginSuccess(state, user) {
