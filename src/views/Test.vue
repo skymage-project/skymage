@@ -1,13 +1,27 @@
 <template>
-
+<v-container
+    
+      class="grey lighten-5 mb-6"
+    >
+<v-row
+        :align="align"
+        no-gutters
+        style="height: 150px;
+        row-gap: 2em;"
+        :key="key"
+      >
+<v-col  offset-md="4" v-for="(n, index) in 6"
+          :key="n"
+          @mouseover="hover = true"
+          @mouseleave="hover = false"
+    >
   <v-card :dark="goDark"
     class="mx-auto"
     max-width="344"
   >
-  <v-switch :label="`Dark Theme`" v-model="goDark"></v-switch>
     <v-img
       src="https://j.gifs.com/oVxynX.gif"
-      height="250px"
+      height="150px"
     ></v-img>
 
     <v-card-title>
@@ -29,19 +43,19 @@
       >
         Read More
       </v-btn>
-
+<v-btn color="orange lighten-2" v-if="hover">Add To Cart</v-btn>
       <v-spacer></v-spacer>
 
       <v-btn
         icon
-        @click="show = !show"
+        @click="showByIndex"
       >
-        <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+        <v-icon :id="index"> {{ show[index] ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
       </v-btn>
     </v-card-actions>
 
     <v-expand-transition>
-      <div v-show="show">
+      <div v-if="show[index]">
         <v-divider></v-divider>
 
         <v-card-text>
@@ -61,6 +75,9 @@ It also puts 'cigarette-style' magic tricks into the hands of people who don't s
       </div>
     </v-expand-transition>
   </v-card>
+</v-col >
+</v-row>
+</v-container>
 </template>
 
 
@@ -68,11 +85,39 @@ It also puts 'cigarette-style' magic tricks into the hands of people who don't s
 export default {
   name: "Test",
   data: () => ({
-      show: false,
-      goDark: false
+      tricks: [
+                    {
+                        label: "Bicycle",
+                        cost: 3,
+                        url: "https://ellusionist.com/products/blue-cohorts"
+                    },
+                    {
+                        label: "DvD",
+                        cost: 120,
+                        url: "https://ellusionist.com/products/wolf-dvd?_pos=1&_sid=9b961e798&_ss=r"
+                    },
+                    {
+                        label: "Book",
+                        cost: 69,
+                        url: "https://www.magicdream.fr/la-magie-de-mickael-stutzinger-tome-2-livre.html"
+                    }
+      ],
+      show: {},
+      goDark: true,
+      key: 0,
+      hover: false
     }),
+    methods: {
+      showByIndex(e) {
+        this.show[e.target.id] = !this.show[e.target.id]
+        this.key++;
+      }
+    }
 };
 </script>
 
 <style>
+body{
+  background-color: #272727;
+}
 </style>
