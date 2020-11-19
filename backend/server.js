@@ -13,12 +13,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+app.use(express.static('../dist'));
+
 app.use("/user",user)
-app.get("/", (req, res) => {
-    res.json({
-        message: "Welcome to bezkoder application."
-    });
-});
+app.use("/items",require('./routes/items'))
+
 
 app.listen(3000, () => {
     console.log(`Server is running on port http://localhost:3000`);
