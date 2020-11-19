@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import axios from 'axios';
+import userAuth from '../service/user.service';
 Vue.use(Vuex);
 const user = JSON.parse(localStorage.getItem('user'));
 const initialState = user
@@ -12,28 +12,18 @@ export default new Vuex.Store({
   },
   mutations: {
     loginSuccess(state, user) {
-      state.status.loggedIn = true;
-      state.user = user;
+      state.initialState.status.loggedIn = true;
+      state.initialState.user = user;
     },
     loginFailure(state) {
-      state.status.loggedIn = false;
-      state.user = null;
+      state.initialState.status.loggedIn = false;
+      state.initialState.user = null;
     },
   },
   actions: {
+    
     login({ commit }, user) {
-      console.log('user',user);
-      return axios
-      .post('http://localhost:3000/user/signin', {
-        email: user.email,
-        password: user.password
-      })
-      .then(response => {
-        if (response.data.accessToken) {
-          console.log( 'token',response.data.accessToken);
-          localStorage.setItem('user', JSON.stringify(response.data));
-        }
-      }).then(
+      return userAuth.login(user).then(
         user => {
           commit('loginSuccess', user);
           return Promise.resolve(user);

@@ -43,13 +43,9 @@
                   <v-col class="d-flex" cols="12" sm="6" xsm="12"> </v-col>
                   <v-spacer></v-spacer>
                   <v-col class="d-flex ml-auto" cols="12" sm="6" xsm="12">
-                    <span
-                      v-show="loading"
-                      class="spinner-border spinner-border-sm"
-                    ></span>
                     <v-btn
                       x-large
-                      :disabled="!valid || loading"
+                      :disabled="!valid"
                       color="#737373"
                       @click="validate"
                     >
@@ -155,14 +151,13 @@ export default {
       return () => this.password === this.verify || "Password must match";
     },
     loggedIn() {
-      return this.$store.state.status.loggedIn;
+      return this.$store.state.initialState.status.loggedIn;
     },
   },
   components: { Password },
   methods: {
     validate() {
       if (this.$refs.loginForm.validate()) {
-        this.loading = true;
         this.$store.dispatch("login", {
           email: this.loginEmail,
           password: this.loginPassword,
@@ -181,7 +176,6 @@ export default {
   },
   data: () => ({
     dialog: true,
-    loading: false,
     tab: 0,
     tabs: [
       { name: "Login", icon: "mdi-account" },
