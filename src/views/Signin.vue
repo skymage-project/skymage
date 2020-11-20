@@ -1,5 +1,4 @@
 <template>
-<v-app>
   <v-dialog v-model="dialog" persistent max-width="600px" min-width="360px">
     <div>
       <v-tabs
@@ -167,11 +166,13 @@
       </v-tabs>
     </div>
   </v-dialog>
-  </v-app>
 </template>
 
 <script>
+import Swal from "sweetalert2";
 import Password from "vue-password-strength-meter";
+
+
 export default {
   name: "Signin",
 
@@ -202,6 +203,15 @@ export default {
           dateOfBirth: this.dateOfBirth,
           phoneNumber: this.phoneNumber,
           country: this.country,
+        });
+      }
+      if(this.loggedIn){
+        cosole.log('login here',loggedIn)
+       Swal.fire({
+          icon: "success",
+          title: "Your work has been saved",
+          showConfirmButton: false,
+          timer: 2000,
         });
       }
     },
