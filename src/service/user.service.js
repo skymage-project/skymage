@@ -32,7 +32,7 @@ export default {
         password: user.password,
         dateOfBirth: user.dateOfBirth,
         country: user.country,
-        phoneNumber: user.phone,
+        phoneNumber: user.phoneNumber,
     });
   }
 }
