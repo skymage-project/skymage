@@ -1,3 +1,4 @@
 module.exports = {
-    postgres: "postgres://txrqahan:LBElwuLIo1vz5vQxQgA2JSPO8b5Oq1EF@ruby.db.elephantsql.com:5432/txrqahan"
-  };
+	postgres:
+		'postgres://wzglhnnw:wthbMb2Kx2NCwsccwUhRrFO10dh-K4JD@hattie.db.elephantsql.com:5432/wzglhnnw',
+};

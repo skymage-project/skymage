@@ -8,7 +8,20 @@ const initialState = user
   : { status: { loggedIn: false }, user: null };
 export default new Vuex.Store({
   state: {
+  //   drawer: false
+  // },
+  // mutations: {
+  //   SET_DRAWER: (state)=>{
+  //     state.drawer = !state.drawer;
+  //   }
+  // },
+  // actions: {
+  //   OPEN_DRAWER: (context)=>{
+  //     context.commit('SET_DRAWER');
+
+
     initialState,
+
   },
   mutations: {
     loginSuccess(state, user) {
@@ -50,6 +63,7 @@ export default new Vuex.Store({
     },
 
     register({ commit }, user) {
+      console.log('user', user);
       return userAuth.register(user).then(
         response => {
           commit('registerSuccess');
