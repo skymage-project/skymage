@@ -4,6 +4,6 @@ class UrlVideos extends Model { }
 UrlVideos.init({
     urlVideos: Sequelize.STRING
 
-}, { sequelize, modelName: 'urlVideos',timestamps: false})
+}, { sequelize, modelName: 'urlVideos',timestamps: true})
 
 module.exports = UrlVideos;
