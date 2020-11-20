@@ -63,6 +63,7 @@ export default new Vuex.Store({
     },
 
     register({ commit }, user) {
+      console.log('user', user);
       return userAuth.register(user).then(
         response => {
           commit('registerSuccess');

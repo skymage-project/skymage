@@ -8,7 +8,7 @@ User.init({
     password: Sequelize.STRING,
     dateOfBirth: Sequelize.STRING,
     country: Sequelize.STRING,
-    phoneNumber: Sequelize.INTEGER,
+    phoneNumber: Sequelize.STRING,
     status: Sequelize.STRING,
 }, { sequelize, modelName: 'user' });
 
