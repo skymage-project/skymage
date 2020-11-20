@@ -1,5 +1,4 @@
 <template>
-<v-app>
 <v-jumbotron>
     <v-container fill-height>
       <v-layout align-center>
@@ -35,8 +34,6 @@
 </div>
     </v-container>
   </v-jumbotron>
-</v-app>
-
   
 </template>
 
