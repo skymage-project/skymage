@@ -9,6 +9,7 @@
       <v-btn text @click ="goTest">  <span class="span">Tricks</span></v-btn>
     </v-toolbar-items>
     <v-spacer></v-spacer>
+    <v-btn text @click ="goSignin">  <span class="span">Signin</span></v-btn>
   </v-app-bar>
   
     <v-navigation-drawer
@@ -54,6 +55,9 @@ export default {
     },
     goAbout(){
       this.$router.push('/about')
+    },
+    goSignin() {
+      this.$router.push("/signin")
     }
   },
    watch: {

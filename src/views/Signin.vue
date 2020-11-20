@@ -1,4 +1,5 @@
 <template>
+<v-app>
   <v-dialog v-model="dialog" persistent max-width="600px" min-width="360px">
     <div>
       <v-tabs
@@ -166,6 +167,7 @@
       </v-tabs>
     </div>
   </v-dialog>
+  </v-app>
 </template>
 
 <script>
