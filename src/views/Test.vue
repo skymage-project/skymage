@@ -12,9 +12,9 @@
       >
 <v-col  offset-md="4" v-for="(n, index) in 6"
           :key="n"
-          @mouseover="hover = true"
-          @mouseleave="hover = false"
     >
+        <!-- @mouseover="hover = true"
+          @mouseleave="hover = false" -->
   <v-card :dark="goDark"
     class="mx-auto"
     max-width="344"
@@ -43,7 +43,7 @@
       >
         Read More
       </v-btn>
-<v-btn color="orange lighten-2" v-if="hover">Add To Cart</v-btn>
+<!-- <v-btn color="orange lighten-2" v-if="hover">Add To Cart</v-btn> -->
       <v-spacer></v-spacer>
 
       <v-btn
@@ -105,7 +105,7 @@ export default {
       show: {},
       goDark: true,
       key: 0,
-      hover: false
+      // hover: false
     }),
     methods: {
       showByIndex(e) {
