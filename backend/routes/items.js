@@ -26,7 +26,7 @@ router.post('/add', async (req, res) => {
         title: req.body.title,
         instruction: req.body.instruction
     })
-    item.setDescription(description)
+    await item.setDescription(description)
 
     const feedback = await Feedback.create({
         userName: req.body.userName,
@@ -34,18 +34,18 @@ router.post('/add', async (req, res) => {
         comment: req.body.comment,
         date: req.body.date
     })
-    item.setFeedback(feedback)
+    await item.setFeedbacks(feedback)
 
     const urlPictures = await UrlPictures.create({
         urlPictures : req.body.urlPictures
     })
-    item.setUrlPictures(urlPictures)
+    await item.setUrlPictures(urlPictures)
 
     const urlVideos = await UrlVideos.create({
         urlVideos : req.body.urlVideos
     })
-    item.setUrlVideos(urlVideos)
-    res.json('added');
+    await item.setUrlVideos(urlVideos)
+    return res.json('added');
 
 })
 
