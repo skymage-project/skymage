@@ -9,7 +9,7 @@ Item.init({
     quantity: Sequelize.STRING,
     color: Sequelize.STRING,
     size: Sequelize.STRING
-}, { sequelize, modelName: 'item',timestamps: false});
+}, { sequelize, modelName: 'item',timestamps: true});
 
 module.exports = Item;
 

@@ -10,7 +10,7 @@
         row-gap: 2em;"
         :key="key"
       >
-<v-col  offset-md="4" v-for="(n, index) in 6"
+<v-col   v-for="(n, index) in 6"
           :key="n"
     >
         <!-- @mouseover="hover = true"
@@ -85,23 +85,6 @@ It also puts 'cigarette-style' magic tricks into the hands of people who don't s
 export default {
   name: "Test",
   data: () => ({
-      tricks: [
-                    {
-                        label: "Bicycle",
-                        cost: 3,
-                        url: "https://ellusionist.com/products/blue-cohorts"
-                    },
-                    {
-                        label: "DvD",
-                        cost: 120,
-                        url: "https://ellusionist.com/products/wolf-dvd?_pos=1&_sid=9b961e798&_ss=r"
-                    },
-                    {
-                        label: "Book",
-                        cost: 69,
-                        url: "https://www.magicdream.fr/la-magie-de-mickael-stutzinger-tome-2-livre.html"
-                    }
-      ],
       show: {},
       goDark: true,
       key: 0,
