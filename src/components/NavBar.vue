@@ -1,6 +1,6 @@
 <template>
 <div>
-    <v-app-bar id="nav" :dark="goDark">
+            <v-app-bar id="nav" :dark="goDark">
     <v-app-bar-nav-icon  @click.stop="drawer = !drawer" class="hidden-md-and-up"></v-app-bar-nav-icon>
     <span @click ="goHome"><v-toolbar-title > Welcome To SkyMage</v-toolbar-title></span>
     
@@ -11,7 +11,6 @@
     <v-spacer></v-spacer>
     <v-btn text @click ="goSignin">  <span class="span">Signin</span></v-btn>
   </v-app-bar>
-  
     <v-navigation-drawer
       v-model="drawer"
       temporary
@@ -31,7 +30,6 @@
     <v-btn text>Accessories |</v-btn>
     <v-btn text>Promotion |</v-btn>
     </v-navigation-drawer>
-    
   </div>
 </template>
 <script>

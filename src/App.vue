@@ -9,12 +9,10 @@
 <script>
 
 import NavBar from './components/NavBar';
-import NavigationDrawer from './components/NavigationDrawer';
 export default {
   name: 'App',
   components: {
-     NavBar,
-     NavigationDrawer
+     NavBar
   },
   data: () => ({
   }),
