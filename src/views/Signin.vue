@@ -171,7 +171,6 @@
 <script>
 import Password from "vue-password-strength-meter";
 
-
 export default {
   name: "Signin",
 
@@ -185,29 +184,44 @@ export default {
   },
   components: { Password },
   methods: {
-     validate() {
-     if ( this.$refs.loginForm.validate()) {
-         this.$store.dispatch("login", {
-          email: this.loginEmail,
-          password: this.loginPassword,
-        }).then(() => {
-          if (this.loggedIn){
-           this.$router.push("/")
-        }})
+    validate() {
+      if (this.$refs.loginForm.validate()) {
+        this.$store
+          .dispatch("login", {
+            email: this.loginEmail,
+            password: this.loginPassword,
+          })
+          .then(() => {
+            if (this.loggedIn) {
+              this.$router.push("/");
+            }
+          });
       }
 
       if (this.$refs.registerForm.validate()) {
-        this.$store.dispatch("register", {
-          firstName: this.firstName,
-          lastName: this.lastName,
-          email: this.email,
-          password: this.password,
-          dateOfBirth: this.dateOfBirth,
-          phoneNumber: this.phoneNumber,
-          country: this.country,
-        });
+        this.$store
+          .dispatch("register", {
+            firstName: this.firstName,
+            lastName: this.lastName,
+            email: this.email,
+            password: this.password,
+            dateOfBirth: this.dateOfBirth,
+            phoneNumber: this.phoneNumber,
+            country: this.country,
+          })
+          .then(() => {
+            this.$store
+              .dispatch("login", {
+                email: this.email,
+                password: this.password,
+              })
+              .then(() => {
+                if (this.loggedIn) {
+                  this.$router.push("/");
+                }
+              });
+          });
       }
-
     },
     cancel() {
       this.$router.push("/");
@@ -253,7 +267,6 @@ export default {
       min: (v) => (v && v.length >= 8) || "Min 8 characters",
     },
   }),
-  
 };
 </script>
 
