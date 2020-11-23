@@ -17,4 +17,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+/* .divBody{
+	background-color: #1e1e1e;
+} */
+</style>

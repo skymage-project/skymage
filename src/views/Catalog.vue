@@ -1,6 +1,6 @@
 <template>
 	<v-container class="grey lighten-5 mb-6">
-		<v-row no-gutters style="height: 150px; row-gap: 2em" align>
+		<v-row no-gutters style="height: 150px; row-gap: 2em">
 			<Item v-for="trick in tricks" :key="trick.id" :trick="trick" />
 		</v-row>
 	</v-container>
@@ -33,7 +33,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 body {
 	background-color: #272727;
 }
