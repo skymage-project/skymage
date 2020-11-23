@@ -5,7 +5,7 @@ import axios from 'axios';
 export default {
     
     login (user) {
-        console.log('user service',user)
+      
     return axios
       .post('http://localhost:3000/user/signin', {
         email: user.email,

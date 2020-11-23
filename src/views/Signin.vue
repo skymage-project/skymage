@@ -169,7 +169,6 @@
 </template>
 
 <script>
-import Swal from "sweetalert2";
 import Password from "vue-password-strength-meter";
 
 
@@ -186,12 +185,15 @@ export default {
   },
   components: { Password },
   methods: {
-    validate() {
-      if (this.$refs.loginForm.validate()) {
-        this.$store.dispatch("login", {
+     validate() {
+     if ( this.$refs.loginForm.validate()) {
+         this.$store.dispatch("login", {
           email: this.loginEmail,
           password: this.loginPassword,
-        });
+        }).then(() => {
+          if (this.loggedIn){
+           this.$router.push("/")
+        }})
       }
 
       if (this.$refs.registerForm.validate()) {
@@ -205,15 +207,7 @@ export default {
           country: this.country,
         });
       }
-      if(this.loggedIn){
-        cosole.log('login here',loggedIn)
-       Swal.fire({
-          icon: "success",
-          title: "Your work has been saved",
-          showConfirmButton: false,
-          timer: 2000,
-        });
-      }
+
     },
     cancel() {
       this.$router.push("/");
@@ -259,6 +253,7 @@ export default {
       min: (v) => (v && v.length >= 8) || "Min 8 characters",
     },
   }),
+  
 };
 </script>
 

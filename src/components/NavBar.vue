@@ -11,7 +11,8 @@
 				<v-btn text @click="goCatalog"> <span class="span">Tricks</span></v-btn>
 			</v-toolbar-items>
 			<v-spacer></v-spacer>
-			<v-btn text @click="goSignin"> <span class="span">Signin</span></v-btn>
+			<v-btn text @click="logOut" v-if="loggedIn"> <span class="span">Logout</span></v-btn>
+			<v-btn text @click="goSignin" v-else> <span class="span">Signin</span></v-btn>
 		</v-app-bar>
 		<v-navigation-drawer
 			v-model="drawer"
@@ -43,7 +44,15 @@ export default {
 			goDark: true,
 		};
 	},
+	computed: {
+    loggedIn() {
+      return this.$store.state.initialState.status.loggedIn;
+    },
+  },
 	methods: {
+		logOut(){
+			this.$store.dispatch("logout")
+		},
 		goHome() {
 			this.$router.push('/');
 		},
