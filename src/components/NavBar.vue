@@ -44,6 +44,7 @@ export default {
   name: "NavBar",
   data() {
     return {
+      route:'/',
       drawer: null,
       goDark: true,
     };
@@ -56,33 +57,40 @@ export default {
   methods: {
     logOut() {
       this.$store.dispatch("logout").then(() => {
-        this.$router.push("/");
+        if (this.route === "/") {
+        this.$router.go();
+      }else{
+         this.$router.push("/");
+      }
       });
     },
     goHome() {
-      if (this.$router.options.routes[0].path === "/") {
+      if (this.route === "/") {
         this.$router.go();
       } else {
         this.$router.push("/");
+        this.route="/"
       }
     },
     goCatalog() {
-      if (this.$router.options.routes[2].path === "/catalog") {
+      if (this.route === "/catalog") {
         this.$router.go();
       } else {
         this.$router.push("/catalog");
+        this.route="/catalog"
       }
     },
     goAbout() {
-		if (this.$router.options.routes[1].path === "/about") {
+		if (this.route === "/about") {
         this.$router.go();
       } else {
         this.$router.push("/about");
+        this.route="/about"
       }
     },
     goSignin() {
       this.$router.push("/signin");
-    },
+    }
   },
   watch: {
     group() {

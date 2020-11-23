@@ -47,7 +47,7 @@
                       x-large
                       :disabled="!valid"
                       color="#737373"
-                      @click="validate"
+                      @click="validateLog"
                     >
                       Login
                     </v-btn>
@@ -184,7 +184,7 @@ export default {
   },
   components: { Password },
   methods: {
-    validate() {
+    validateLog(){
       if (this.$refs.loginForm.validate()) {
         this.$store
           .dispatch("login", {
@@ -197,6 +197,8 @@ export default {
             }
           });
       }
+    },
+    validate() {
 
       if (this.$refs.registerForm.validate()) {
         this.$store
@@ -225,12 +227,6 @@ export default {
     },
     cancel() {
       this.$router.push("/");
-    },
-    reset() {
-      this.$refs.form.reset();
-    },
-    resetValidation() {
-      this.$refs.form.resetValidation();
     },
   },
   data: () => ({
