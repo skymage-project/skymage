@@ -34,7 +34,5 @@ export default {
 </script>
 
 <style scoped>
-body {
-	background-color: #272727;
-}
+
 </style>
