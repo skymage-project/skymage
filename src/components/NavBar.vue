@@ -1,22 +1,18 @@
 <template>
 	<div>
 		<v-app-bar id="nav" :dark="goDark">
-			<v-app-bar-nav-icon
-				@click.stop="drawer = !drawer"
-				class="hidden-md-and-up"
-			></v-app-bar-nav-icon>
+			<v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 			<span @click="goHome"
 				><v-toolbar-title> Welcome To SkyMage</v-toolbar-title></span
 			>
 
-			<v-toolbar-items class="hidden-sm-and-down">
+			<v-toolbar-items>
 				<v-btn text @click="goAbout"> <span class="span">About</span></v-btn>
-				<v-btn text @click="goTest"> <span class="span">Tricks</span></v-btn>
+				<v-btn text @click="goCatalog"> <span class="span">Tricks</span></v-btn>
 			</v-toolbar-items>
 			<v-spacer></v-spacer>
 			<v-btn text @click="goSignin"> <span class="span">Signin</span></v-btn>
 		</v-app-bar>
-
 		<v-navigation-drawer
 			v-model="drawer"
 			temporary
@@ -48,14 +44,11 @@ export default {
 		};
 	},
 	methods: {
-		open() {
-			this.$store.dispatch('OPEN_DRAWER');
-		},
 		goHome() {
 			this.$router.push('/');
 		},
-		goTest() {
-			this.$router.push('/test');
+		goCatalog() {
+			this.$router.push('/catalog');
 		},
 		goAbout() {
 			this.$router.push('/about');
