@@ -11,7 +11,11 @@
     <v-container fluid>
       <v-row align="center">
         <v-col class="d-flex" cols="12" sm="6">
-          <v-select :items="itemDifficulty" label="Difficulty" @change="search"></v-select>
+          <v-select
+            :items="itemDifficulty"
+            label="Difficulty"
+            @change="search"
+          ></v-select>
         </v-col>
       </v-row>
     </v-container>
@@ -62,26 +66,18 @@ export default {
     });
   },
   data: () => ({
-    items: ["price: decreasing order", "price: increasing order", "bestsellers"],
+    items: [
+      "price: decreasing order",
+      "price: increasing order",
+      "bestsellers",
+    ],
     itemDifficulty: ["Easy", "Intermediate", "Hard"],
     filtred: [],
   }),
   computed: {
     ...mapState(["tricks"]),
   },
-  methods: {
-    search(e) {
-      if (e === "price: decreasing order") {
-        this.filtred = this.filtred.sort((a, b) => b.price - a.price);
-      } else if (e === "price: increasing order") {
-        this.filtred = this.filtred.sort((a, b) => a.price - b.price);
-      } else {
-        this.filtred = this.tricks.filter((item) => {
-          return item.difficulty === e;
-        });
-      }
-    },
-  },
+  methods: {},
 };
 </script>
 <style></style>

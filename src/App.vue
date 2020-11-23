@@ -2,19 +2,17 @@
 	<v-app>
 		<div>
 			<NavBar />
-			<Catalog/>
 			
 		</div>
+		<router-view />
 	</v-app>
 </template>
 <script>
 import NavBar from './components/NavBar';
-import Catalog from './components/Catalog';
 export default {
 	name: 'App',
 	components: {
-		NavBar,
-		Catalog
+		NavBar
 	},
 	data: () => ({}),
 };
