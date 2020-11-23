@@ -1,25 +1,20 @@
 <template>
-
-<div>
-  <NavBar />
-  <router-view />
-</div>
-
+	<v-app>
+		<div>
+			<NavBar />
+			<router-view />
+		</div>
+	</v-app>
 </template>
 <script>
-
 import NavBar from './components/NavBar';
-import NavigationDrawer from './components/NavigationDrawer';
 export default {
-  name: 'App',
-  components: {
-     NavBar,
-     NavigationDrawer
-  },
-  data: () => ({
-  }),
+	name: 'App',
+	components: {
+		NavBar,
+	},
+	data: () => ({}),
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

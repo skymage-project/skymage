@@ -2,7 +2,7 @@ const db = require('../index')
 
 db.items = require('./item');
 db.descriptions = require('./description');
-db.Feedback = require('./feedback');
+db.Feedback = require('./Feedback');
 db.UrlVideos = require('./urlVideos');
 db.UrlPictures = require('./urlPictures');
 
