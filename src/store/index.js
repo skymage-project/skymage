@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import userAuth from '../service/user.service';
+import Swal from "sweetalert2";
 Vue.use(Vuex);
 const user = JSON.parse(localStorage.getItem('user'));
 const initialState = user
@@ -24,13 +25,31 @@ export default new Vuex.Store({
 		loginFailure(state) {
 			state.initialState.status.loggedIn = false;
 			state.initialState.user = null;
+			Swal.fire({
+				icon: "error",
+				title: "Failed! Email or Password is not valid!" ,
+				showConfirmButton: false,
+				timer: 2500,
+			  });
 		},
 
 		registerSuccess(state) {
+			Swal.fire({
+				icon: "success",
+				title: "You are registered",
+				showConfirmButton: false,
+				timer: 2000,
+			  })
 			state.initialState.status.loggedIn = false;
 		},
 
 		registerFailure(state) {
+			Swal.fire({
+				icon: "error",
+				title: "Failed! Email is already in use!" ,
+				showConfirmButton: false,
+				timer: 2500,
+			  });
 			state.initialState.status.loggedIn = false;
 		},
 
@@ -92,11 +111,10 @@ export default new Vuex.Store({
 					commit('loginFailure');
 					return Promise.reject(error);
 				}
-			);
+			)
 		},
 
 		register({ commit }, user) {
-			console.log('user', user);
 			return userAuth.register(user).then(
 				(response) => {
 					commit('registerSuccess');

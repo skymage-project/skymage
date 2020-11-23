@@ -1,5 +1,4 @@
 <template>
-<v-app>
   <v-dialog v-model="dialog" persistent max-width="600px" min-width="360px">
     <div>
       <v-tabs
@@ -167,11 +166,12 @@
       </v-tabs>
     </div>
   </v-dialog>
-  </v-app>
 </template>
 
 <script>
 import Password from "vue-password-strength-meter";
+
+
 export default {
   name: "Signin",
 
@@ -185,12 +185,15 @@ export default {
   },
   components: { Password },
   methods: {
-    validate() {
-      if (this.$refs.loginForm.validate()) {
-        this.$store.dispatch("login", {
+     validate() {
+     if ( this.$refs.loginForm.validate()) {
+         this.$store.dispatch("login", {
           email: this.loginEmail,
           password: this.loginPassword,
-        });
+        }).then(() => {
+          if (this.loggedIn){
+           this.$router.push("/")
+        }})
       }
 
       if (this.$refs.registerForm.validate()) {
@@ -204,6 +207,7 @@ export default {
           country: this.country,
         });
       }
+
     },
     cancel() {
       this.$router.push("/");
@@ -249,6 +253,7 @@ export default {
       min: (v) => (v && v.length >= 8) || "Min 8 characters",
     },
   }),
+  
 };
 </script>
 
