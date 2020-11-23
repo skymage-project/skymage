@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
  <v-card>
+=======
+ <v-card >
+>>>>>>> 7550329321002ddff4d9aed6ebe80318b688fa9b
     <v-app-bar
       absolute
       color="#6A76AB"

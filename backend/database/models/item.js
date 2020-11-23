@@ -1,6 +1,6 @@
 const { Model, Sequelize } = require('sequelize');
 const sequelize = require('../index')
-class Item extends Model { }
+class Item extends Model {}
 Item.init({
     name: Sequelize.STRING,
     price: Sequelize.INTEGER,
@@ -9,7 +9,7 @@ Item.init({
     quantity: Sequelize.STRING,
     color: Sequelize.STRING,
     size: Sequelize.STRING
-}, { sequelize, modelName: 'item',timestamps: true});
+}, { sequelize, modelName: 'item', timestamps: true });
 
 module.exports = Item;
 
