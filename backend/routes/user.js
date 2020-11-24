@@ -11,7 +11,7 @@ router.post('/signup', async (req, res) => {
         verifySignUp(req, res, async() => {
             const salt = await bcrypt.genSalt(10);
             const hashPass = await bcrypt.hash(req.body.password, salt);
-            await User.create({
+            const user = await User.create({
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 password: hashPass,
@@ -20,7 +20,8 @@ router.post('/signup', async (req, res) => {
                 country: req.body.country,
                 phoneNumber: req.body.phoneNumber,
                 status: "client"
-            }).then((user) => res.json(user))
+            });
+             res.json(user);
         });
     } catch (err) {
         res.status(500).send({
@@ -31,7 +32,6 @@ router.post('/signup', async (req, res) => {
 
 
 router.post('/signin', async (req, res) => {
-    
     try {
         const user = await User.findOne({
             where: {
