@@ -2,8 +2,8 @@
 	<v-app>
 		<div>
 			<NavBar />
-			<Catalog/>
-			
+			<!-- <Catalog/> -->
+			<router-view/>
 		</div>
 	</v-app>
 </template>
