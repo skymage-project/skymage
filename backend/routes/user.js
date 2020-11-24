@@ -9,16 +9,16 @@ const nodemailer = require('nodemailer');
 const email = require('../config/email.config')
 
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: email.email,
-    pass: email.pass
-  }
+    service: 'gmail',
+    auth: {
+        user: email.email,
+        pass: email.pass
+    }
 });
 
 router.post('/signup', async (req, res) => {
     try {
-        verifySignUp(req, res, async() => {
+        verifySignUp(req, res, async () => {
             const salt = await bcrypt.genSalt(10);
             const hashPass = await bcrypt.hash(req.body.password, salt);
             const user = await User.create({
@@ -32,21 +32,21 @@ router.post('/signup', async (req, res) => {
                 status: "client",
                 access: false
             })
-            const mailOptions = await{
+            const mailOptions = await {
                 from: `${email.email}`,
                 to: `${req.body.email}`,
                 subject: 'Thanks',
                 text: 'thank you for choosing our site!',
-                html: '<a href="http://localhost:8080/signin">Visit us </a>',
-              };
+                html: '<button ><a href="http://localhost:8080/signin"></a>verify</button>',
+            };
 
-              transporter.sendMail(mailOptions, function(error, info){
+            transporter.sendMail(mailOptions, function (error, info) {
                 if (error) {
-                  console.log(error);
+                    console.log(error);
                 } else {
-                  console.log('Email sent: ' + info.response);
+                    console.log('Email sent: ' + info.response);
                 }
-              });
+            });
         });
     } catch (err) {
         res.status(500).send({
@@ -75,7 +75,7 @@ router.post('/signin', async (req, res) => {
                 message: "Invalid Password!"
             });
         }
-        if(!user.access){
+        if (!user.access) {
             return res.status(401).send({
                 message: "verify your acount"
             })

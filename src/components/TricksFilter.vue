@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>product to buy</h2>
-     <v-container fluid>
+    <v-container fluid>
       <v-row align="center">
         <v-col class="d-flex" cols="12" sm="6">
           <v-select :items="items" label="Order By" @change="search"></v-select>
@@ -18,12 +18,13 @@
           ></v-select>
         </v-col>
       </v-row>
-    </v-container> 
+    </v-container>
   </div>
 </template>
 
 <script>
 export default {
+  name: "TricksFilter",
   data: () => ({
     items: [
       "price: decreasing order",
