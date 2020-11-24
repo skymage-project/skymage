@@ -34,7 +34,6 @@ export default {
   }),
   methods: {
     search(event) {
-      console.log(event);
       this.$store.dispatch("filterBy", event);
     },
   },
