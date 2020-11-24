@@ -2,7 +2,7 @@
 	<v-app>
 		<div>
 			<NavBar />
-			<Cart />
+
 			<router-view />
 		</div>
 	</v-app>

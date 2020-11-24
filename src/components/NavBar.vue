@@ -18,7 +18,7 @@
 			<v-btn text @click="goSignin" v-else>
 				<span class="span">Signin</span></v-btn
 			>
-			<v-btn>
+			<v-btn @click="toggleCart">
 				<v-badge left color="red">
 					<span slot="badge">{{ cart.itemToCart.length }}</span>
 					<v-icon>fas fa-shopping-cart</v-icon>
@@ -29,6 +29,7 @@
 			v-model="drawer"
 			temporary
 			absolute
+			left
 			width="200"
 			id="drawer"
 		>
@@ -44,17 +45,21 @@
 			<v-btn text>Accessories |</v-btn>
 			<v-btn text>Promotion |</v-btn>
 		</v-navigation-drawer>
+		<Cart />
 	</div>
 </template>
 <script>
 import { mapState } from 'vuex';
+import Cart from './Cart';
 export default {
 	name: 'NavBar',
+	components: { Cart },
 	data() {
 		return {
 			route: '/',
 			drawer: null,
 			goDark: true,
+			showCart: false,
 		};
 	},
 	computed: {
@@ -99,6 +104,9 @@ export default {
 		},
 		goSignin() {
 			this.$router.push('/signin');
+		},
+		toggleCart() {
+			this.$store.dispatch('toggleCart');
 		},
 	},
 	watch: {

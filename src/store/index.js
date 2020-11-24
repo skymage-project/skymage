@@ -12,26 +12,28 @@ export default new Vuex.Store({
 	state: {
 		initialState,
 		tricks: [],
+		displayedTricks: [],
 	},
 	mutations: {
 		FETCH_TRICKS: (state, payload) => {
 			state.tricks = payload;
+			state.displayedTricks = payload;
 		},
 		FILTER_DECREASE: (state) => {
-			state.tricks.sort((a, b) => b.price - a.price);
+			state.displayedTricks.sort((a, b) => b.price - a.price);
 		},
 		FILTER_INCREASE: (state) => {
-			state.tricks.sort((a, b) => a.price - b.price);
+			state.displayedTricks.sort((a, b) => a.price - b.price);
 		},
 		FILTER_DIFFICULTY: (state, payload) => {
-			state.tricks = state.tricks.filter((item) => {
-				item.difficulty === payload;
-			});
+			state.displayedTricks = state.tricks.filter(
+				(item) => item.difficulty === payload
+			);
 		},
 		FILTER_CATEGORY: (state, payload) => {
-			state.tricks = state.tricks.filter((item) => {
-				item.category === payload;
-			});
+			state.displayedTricks = state.tricks.filter(
+				(item) => item.category === payload
+			);
 		},
 
 		loginSuccess(state, user) {
@@ -196,7 +198,7 @@ export default new Vuex.Store({
 					urlPictures:
 						'https://ae01.alicdn.com/kf/Hfe4f1013379b40cf9dcdca5b661b2800K/Optix-by-Tobias-Dostal-Magic-tricks.jpg',
 					price: 69,
-					difficulty: 'Beginer',
+					difficulty: 'Beginner',
 					author: 'Tobias Dostal',
 					description: 'Vanish bag',
 				},
