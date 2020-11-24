@@ -11,7 +11,7 @@
 			</v-card-title>
 			<v-card-subtitle>
 				<!-- price  -->
-				{{ trick.price }}
+				{{ trick.price }}$
 			</v-card-subtitle>
 
 			<v-card-subtitle>
