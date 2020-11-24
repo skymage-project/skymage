@@ -1,12 +1,6 @@
 <template>
   <v-col>
-    <v-card
-      :dark="goDark"
-      class="mx-auto"
-      max-width="344"
-      @mouseover="toggleHover"
-      @mouseout="toggleHover"
-    >
+    <v-card :dark="goDark" class="mx-auto" max-width="344" @mouseover="toggleHover" @mouseout="toggleHover">
       <v-img height="150px" :src="trick.urlPictures">
         <!-- url image -->
       </v-img>
@@ -30,9 +24,7 @@
         <v-spacer></v-spacer>
 
         <v-btn icon @click="showByIndex">
-          <v-icon :id="trick.id">
-            {{ show ? "mdi-chevron-up" : "mdi-chevron-down" }}</v-icon
-          >
+          <v-icon :id="trick.id"> {{ show ? "mdi-chevron-up" : "mdi-chevron-down" }}</v-icon>
         </v-btn>
       </v-card-actions>
 

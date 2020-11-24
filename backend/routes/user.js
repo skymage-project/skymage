@@ -37,7 +37,7 @@ router.post('/signup', async (req, res) => {
                 to: `${req.body.email}`,
                 subject: 'Thanks',
                 text: 'thank you for choosing our site!',
-                html: '<button ><a href="http://localhost:8080/signin"></a>verify</button>',
+                html: `<button onclick="()=>{alert('thank u')}"><a href="http://localhost:8080/signin"></a>verify</button>`,
             };
 
             transporter.sendMail(mailOptions, function (error, info) {
@@ -97,6 +97,7 @@ router.post('/signin', async (req, res) => {
         })
     }
 })
+
 
 
 module.exports = router;

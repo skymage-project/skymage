@@ -1,19 +1,15 @@
 <template>
-	<div>
-		<v-app-bar id="nav" :dark="goDark">
-			<v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-			<span @click="goHome"
-				><v-toolbar-title> Welcome To SkyMage</v-toolbar-title></span
-			>
+  <div>
+    <v-app-bar id="nav" :dark="goDark">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <span @click="goHome"><v-toolbar-title> Welcome To SkyMage</v-toolbar-title></span>
 
-			<v-toolbar-items>
-				<v-btn text @click="goAbout"> <span class="span">About</span></v-btn>
-				<v-btn text @click="goCatalog"> <span class="span">Tricks</span></v-btn>
-			</v-toolbar-items>
-			<v-spacer></v-spacer>
-			<v-btn text @click="logOut" v-if="loggedIn">
-				<span class="span">Logout</span></v-btn
-			>
+      <v-toolbar-items>
+        <v-btn text @click="goAbout"> <span class="span">About</span></v-btn>
+        <v-btn text @click="goCatalog"> <span class="span">Tricks</span></v-btn>
+      </v-toolbar-items>
+      <v-spacer></v-spacer>
+      <v-btn text @click="logOut" v-if="loggedIn"> <span class="span">Logout</span></v-btn>
 
 			<v-btn text @click="goSignin" v-else>
 				<span class="span">Signin</span></v-btn
@@ -51,7 +47,7 @@ export default {
   name: "NavBar",
   data() {
     return {
-      route:'/',
+      route: "/",
       drawer: null,
       goDark: true,
     };
@@ -107,9 +103,9 @@ export default {
 
 <style scoped>
 .span {
-	color: orange;
+  color: orange;
 }
 #nav {
-	background-color: #1e1e1e;
+  background-color: #1e1e1e;
 }
 </style>
