@@ -5,10 +5,20 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require("../config/auth.config.js")
 const verifySignUp = require('../middleware/verifySignUp.js');
+const nodemailer = require('nodemailer');
+const email = require('../config/email.config')
+
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: email.email,
+        pass: email.pass
+    }
+});
 
 router.post('/signup', async (req, res) => {
     try {
-        verifySignUp(req, res, async() => {
+        verifySignUp(req, res, async () => {
             const salt = await bcrypt.genSalt(10);
             const hashPass = await bcrypt.hash(req.body.password, salt);
             const user = await User.create({
@@ -19,9 +29,24 @@ router.post('/signup', async (req, res) => {
                 dateOfBirth: req.body.dateOfBirth,
                 country: req.body.country,
                 phoneNumber: req.body.phoneNumber,
-                status: "client"
+                status: "client",
+                access: false
+            })
+            const mailOptions = await {
+                from: `${email.email}`,
+                to: `${req.body.email}`,
+                subject: 'Thanks',
+                text: 'thank you for choosing our site!',
+                html: `<button onclick="()=>{alert('thank u')}"><a href="http://localhost:8080/signin"></a>verify</button>`,
+            };
+
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+                    console.log(error);
+                } else {
+                    console.log('Email sent: ' + info.response);
+                }
             });
-             res.json(user);
         });
     } catch (err) {
         res.status(500).send({
@@ -50,6 +75,11 @@ router.post('/signin', async (req, res) => {
                 message: "Invalid Password!"
             });
         }
+        if (!user.access) {
+            return res.status(401).send({
+                message: "verify your acount"
+            })
+        }
         const token = jwt.sign({
             id: user.id
         }, config.secret, {
@@ -67,6 +97,7 @@ router.post('/signin', async (req, res) => {
         })
     }
 })
+
 
 
 module.exports = router;
