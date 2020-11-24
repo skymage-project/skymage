@@ -3,6 +3,6 @@ const sequelize = require('../index')
 class UrlPictures extends Model { }
 UrlPictures.init({
     urlPictures: Sequelize.STRING
-}, { sequelize, modelName: 'urlPictures', timestamps: true})
+}, { sequelize, modelName: 'urlPicture', timestamps: true})
 
 module.exports = UrlPictures;
