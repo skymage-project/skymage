@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Filter />
+    <TricksFilter />
     <v-container class="grey lighten-5 mb-6">
       <v-row no-gutters style="height: 150px; row-gap: 2em">
         <Item v-for="trick in tricks" :key="trick.id" :trick="trick" />
@@ -11,12 +11,12 @@
 
 <script>
 import Item from "../components/Item.vue";
-import Filter from "../components/Filter.vue";
+import TricksFilter from "../components/TricksFilter.vue";
 import { mapState } from "vuex";
 export default {
   components: {
     Item,
-    Filter
+    TricksFilter,
   },
   created() {
     this.$store.dispatch("fetchTricks");

@@ -98,14 +98,14 @@ export default new Vuex.Store({
           urlVideos: "https://j.gifs.com/oVxynX.gif",
           urlPictures: "https://j.gifs.com/oVxynX.gif",
           price: 14.95,
-          difficulty: "Easy",
+          difficulty: "Beginner",
           author: "Beginner",
           description:
             "With the VAPE THRUU gimmick, you'll be able to borrow both objects (JUUL & BILL) making it completely universal.",
         },
 
         {
-          id: 3,
+          id: 2,
           category: "DvD",
           name: "Bernard Bilis LIVE (Penguin LIVE)",
           quickDescription:
@@ -118,7 +118,7 @@ export default new Vuex.Store({
           description: "Live Lecture",
         },
         {
-          id: 5,
+          id: 3,
           category: "Coins",
           name: "Extreme Burn 2.0 (Locked and Loaded) by Richard Sanders (Magical Changing Money Prank)",
           quickDescription:
@@ -131,7 +131,7 @@ export default new Vuex.Store({
           description: "You will learn 10 unique, hyper-visual changes; giving you an army of devastating bill changes to do in literally any situation imaginable. No stone is left unturned, from setting up the bills to performing the changes, and all the handling tips and subtleties in-between. You will be up and running in no time. AND as a special BONUS, you'll learn Richard's underground miracle, Slow Burn. They'll flip-out as they watch bills visually morph, while you slowly pass your hand over them! PLUS 75 MINUTES OF BRAND NEW MATERIAL that will allow you to change the bills and then hand them out for examination, spend them, etc. A total of almost 3 hours of killer magic on one remarkable DVD.",
         },
         {
-          id: 6,
+          id: 4,
           category: "Accessories",
           name: "Invisible Writer (Pencil Lead) by Vernet",
           quickDescription:
@@ -144,7 +144,7 @@ export default new Vuex.Store({
           description: "Thumb Tip",
         },
         {
-          id: 4,
+          id: 5,
           category: "Mental",
           name: "How to Read Minds Kit",
           quickDescription:
@@ -157,7 +157,7 @@ export default new Vuex.Store({
           description: "Mentalist For Beginner",
         },
         {
-          id: 7,
+          id: 6,
           category: "Mental",
           name: "Naked By Pablo Amira",
           quickDescription:
@@ -175,7 +175,7 @@ export default new Vuex.Store({
                 No difficult moves.",`
         },
         {
-          id: 8,
+          id: 7,
           category: "Beginers",
           name: "Optix",
           quickDescription:
@@ -183,12 +183,12 @@ export default new Vuex.Store({
           urlVideos: "https://ae01.alicdn.com/kf/Hfe4f1013379b40cf9dcdca5b661b2800K/Optix-by-Tobias-Dostal-Magic-tricks.jpg",
           urlPictures: "https://ae01.alicdn.com/kf/Hfe4f1013379b40cf9dcdca5b661b2800K/Optix-by-Tobias-Dostal-Magic-tricks.jpg",
           price: 69,
-          difficulty: "Beginer",
+          difficulty: "Beginner",
           author: "Tobias Dostal",
           description: "Vanish bag",
         },
         {
-          id: 2,
+          id: 8,
           category: "Close Up",
           name: "TSA by Adam Wilber",
           quickDescription:
@@ -209,7 +209,7 @@ export default new Vuex.Store({
           urlVideos: "https://cdn.shopify.com/s/files/1/0956/5418/products/60380-alt5_grande.png?v=1591631579",
           urlPictures: "https://cdn.shopify.com/s/files/1/0956/5418/products/60380-alt5_grande.png?v=1591631579",
           price: 30,
-          difficulty: "advanced",
+          difficulty: "Advanced",
           author: "Adam Wilber",
           description: "Vanish bag",
         },
