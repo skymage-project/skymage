@@ -18,9 +18,9 @@
 			<v-btn text @click="goSignin" v-else>
 				<span class="span">Signin</span></v-btn
 			>
-			<v-btn flat>
+			<v-btn>
 				<v-badge left color="red">
-					<span slot="badge">5</span>
+					<span slot="badge">{{ cart.itemToCart.length }}</span>
 					<v-icon>fas fa-shopping-cart</v-icon>
 				</v-badge>
 			</v-btn>
@@ -47,6 +47,7 @@
 	</div>
 </template>
 <script>
+import { mapState } from 'vuex';
 export default {
 	name: 'NavBar',
 	data() {
@@ -60,6 +61,7 @@ export default {
 		loggedIn() {
 			return this.$store.state.initialState.status.loggedIn;
 		},
+		...mapState(['cart']),
 	},
 	methods: {
 		logOut() {
