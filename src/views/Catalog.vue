@@ -14,14 +14,17 @@ import Item from "../components/Item.vue";
 import Filter from "../components/Filter.vue";
 import { mapState } from "vuex";
 export default {
+  name: "Catalog",
+  components: {
+    Item,
+    Filter,
+  },
   created() {
     this.$store.dispatch("fetchTricks");
   },
   computed: {
     ...mapState(["tricks"]),
   },
-  components: { Item, Filter },
-  name: "Catalog",
   data: () => ({
     show: {},
     goDark: true,
