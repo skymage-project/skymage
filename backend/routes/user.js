@@ -29,14 +29,15 @@ router.post('/signup', async (req, res) => {
                 dateOfBirth: req.body.dateOfBirth,
                 country: req.body.country,
                 phoneNumber: req.body.phoneNumber,
-                status: "client"
+                status: "client",
+                access:false
             })
             const mailOptions = await{
                 from: `${email.email}`,
                 to: `${req.body.email}`,
                 subject: 'Thanks',
                 text: 'thank you for choosing our site!',
-                html: '<button>verify</button>',
+                html: '<a href="http://localhost:8080/signin">Visit us </a>',
               };
 
               transporter.sendMail(mailOptions, function(error, info){
@@ -73,6 +74,11 @@ router.post('/signin', async (req, res) => {
                 accessToken: null,
                 message: "Invalid Password!"
             });
+        }
+        if(!user.access){
+            return res.status(401).send({
+                message: "verify your acount"
+            })
         }
         const token = jwt.sign({
             id: user.id

@@ -43,7 +43,7 @@ export default new Vuex.Store({
       state.initialState.user = null;
       Swal.fire({
         icon: "error",
-        title: "Failed! Email or Password is not valid!",
+        title: "Failed! Email or Password is not valid! or try to verify your account",
         showConfirmButton: false,
         timer: 2500,
       });
