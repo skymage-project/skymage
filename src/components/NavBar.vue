@@ -11,28 +11,36 @@
       <v-spacer></v-spacer>
       <v-btn text @click="logOut" v-if="loggedIn"> <span class="span">Logout</span></v-btn>
 
-      <v-btn text @click="goSignin" v-else> <span class="span">Signin</span></v-btn>
-      <v-btn>
-        <v-badge left color="red">
-          <span slot="badge">5</span>
-          <v-icon>fas fa-shopping-cart</v-icon>
-        </v-badge>
-      </v-btn>
-    </v-app-bar>
-    <v-navigation-drawer v-model="drawer" temporary absolute width="200" id="drawer">
-      <v-btn text>Beginners |</v-btn>
-      <v-btn text>Close Up</v-btn>
-      <v-btn text>Cards |</v-btn>
-      <v-btn text>Coins |</v-btn>
-      <v-btn text>Mental |</v-btn>
-      <v-btn text>BigShows |</v-btn>
-      <v-btn text>DvD |</v-btn>
-      <v-btn text>Books |</v-btn>
-      <v-btn text>Playing Cards |</v-btn>
-      <v-btn text>Accessories |</v-btn>
-      <v-btn text>Promotion |</v-btn>
-    </v-navigation-drawer>
-  </div>
+			<v-btn text @click="goSignin" v-else>
+				<span class="span">Signin</span></v-btn
+			>
+			<v-btn >
+				<v-badge left color="red">
+					<span slot="badge">5</span>
+					<v-icon>fas fa-shopping-cart</v-icon>
+				</v-badge>
+			</v-btn>
+		</v-app-bar>
+		<v-navigation-drawer
+			v-model="drawer"
+			temporary
+			absolute
+			width="200"
+			id="drawer"
+		>
+			<v-btn text>Beginners |</v-btn>
+			<v-btn text>Close Up</v-btn>
+			<v-btn text>Cards |</v-btn>
+			<v-btn text>Coins |</v-btn>
+			<v-btn text>Mental |</v-btn>
+			<v-btn text>BigShows |</v-btn>
+			<v-btn text>DvD |</v-btn>
+			<v-btn text>Books |</v-btn>
+			<v-btn text>Playing Cards |</v-btn>
+			<v-btn text>Accessories |</v-btn>
+			<v-btn text>Promotion |</v-btn>
+		</v-navigation-drawer>
+	</div>
 </template>
 <script>
 export default {
@@ -53,39 +61,37 @@ export default {
     logOut() {
       this.$store.dispatch("logout").then(() => {
         if (this.route === "/") {
-          this.$router.go();
-        } else {
-          this.$router.push("/");
-        }
+        return ;
+      }
+         this.$router.push("/");
       });
     },
     goHome() {
       if (this.route === "/") {
-        this.$router.go();
-      } else {
-        this.$router.push("/");
-        this.route = "/";
+        return;
       }
+        this.$router.push("/");
+        this.route="/"
+      
     },
     goCatalog() {
       if (this.route === "/catalog") {
-        this.$router.go();
-      } else {
+        return;
+      } 
         this.$router.push("/catalog");
-        this.route = "/catalog";
-      }
+        this.route="/catalog"
+      
     },
     goAbout() {
-      if (this.route === "/about") {
-        this.$router.go();
-      } else {
-        this.$router.push("/about");
-        this.route = "/about";
+		if (this.route === "/about") {
+        return;
       }
+        this.$router.push("/about");
+        this.route="/about"
     },
     goSignin() {
       this.$router.push("/signin");
-    },
+    }
   },
   watch: {
     group() {

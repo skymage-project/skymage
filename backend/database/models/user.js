@@ -10,6 +10,7 @@ User.init({
     country: Sequelize.STRING,
     phoneNumber: Sequelize.STRING,
     status: Sequelize.STRING,
+    access: Sequelize.BOOLEAN,
 }, { sequelize, modelName: 'user' });
 
 module.exports = User;
