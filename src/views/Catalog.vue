@@ -3,7 +3,7 @@
     <TricksFilter />
     <v-container class="grey lighten-5 mb-6">
       <v-row no-gutters style="height: 150px; row-gap: 2em">
-        <Item v-for="trick in tricks" :key="trick.id" :trick="trick" />
+        <Item v-for="trick in displayedTricks" :key="trick.id" :trick="trick" />
       </v-row>
     </v-container>
   </div>
@@ -14,6 +14,7 @@ import Item from "../components/Item.vue";
 import TricksFilter from "../components/TricksFilter.vue";
 import { mapState } from "vuex";
 export default {
+  name: "Catalog",
   components: {
     Item,
     TricksFilter,
@@ -22,7 +23,7 @@ export default {
     this.$store.dispatch("fetchTricks");
   },
   computed: {
-    ...mapState(["tricks"]),
+    ...mapState(["displayedTricks"]),
   },
   data: () => ({
     show: {},
