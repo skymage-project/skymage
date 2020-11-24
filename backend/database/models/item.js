@@ -8,7 +8,8 @@ Item.init({
     author: Sequelize.STRING,
     quantity: Sequelize.STRING,
     color: Sequelize.STRING,
-    size: Sequelize.STRING
+    size: Sequelize.STRING,
+    category : Sequelize.STRING
 }, { sequelize, modelName: 'item', timestamps: true });
 
 module.exports = Item;
