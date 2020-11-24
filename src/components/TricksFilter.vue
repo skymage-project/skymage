@@ -27,7 +27,6 @@
 
 <script>
 export default {
-  name: "TricksFilter",
   data: () => ({
     items: ["price: decreasing order", "price: increasing order", "bestsellers"],
     itemDifficulty: ["Beginner", "Intermediate", "Advanced"],
@@ -36,6 +35,7 @@ export default {
   methods: {
     search(event) {
       this.$store.dispatch("filterBy", event);
+      this.itemDifficulty.unshift("All", event);
     },
   },
 };

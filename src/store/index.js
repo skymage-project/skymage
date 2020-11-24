@@ -29,6 +29,10 @@ export default new Vuex.Store({
         (item) => item.difficulty === payload
       );
     },
+    RESET_ALL : (state) => {
+      console.log(state.tricks);
+      state.displayedTricks = state.tricks 
+    },
     FILTER_CATEGORY: (state, payload) => {
       state.displayedTricks = state.tricks.filter(
         (item) => item.category === payload
@@ -84,7 +88,9 @@ export default new Vuex.Store({
         commit("FILTER_INCREASE");
       } else if (["Beginner", "Intermediate", "Advanced"].includes(event)) {
         commit("FILTER_DIFFICULTY", event);
-      } else {
+      } else if(["All"].includes(event)) {
+        commit("RESET_ALL",event);
+      }else{
         commit("FILTER_CATEGORY", event);
       }
     },
