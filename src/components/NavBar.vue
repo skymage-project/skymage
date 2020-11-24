@@ -2,29 +2,24 @@
   <div>
     <v-app-bar id="nav" :dark="goDark">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <span @click="goHome"
-        ><v-toolbar-title> Welcome To SkyMage</v-toolbar-title></span
-      >
+      <span @click="goHome"><v-toolbar-title> Welcome To SkyMage</v-toolbar-title></span>
 
       <v-toolbar-items>
         <v-btn text @click="goAbout"> <span class="span">About</span></v-btn>
         <v-btn text @click="goCatalog"> <span class="span">Tricks</span></v-btn>
       </v-toolbar-items>
       <v-spacer></v-spacer>
-      <v-btn text @click="logOut" v-if="loggedIn">
-        <span class="span">Logout</span></v-btn
-      >
-      <v-btn text @click="goSignin" v-else>
-        <span class="span">Signin</span></v-btn
-      >
+      <v-btn text @click="logOut" v-if="loggedIn"> <span class="span">Logout</span></v-btn>
+
+      <v-btn text @click="goSignin" v-else> <span class="span">Signin</span></v-btn>
+      <v-btn>
+        <v-badge left color="red">
+          <span slot="badge">5</span>
+          <v-icon>fas fa-shopping-cart</v-icon>
+        </v-badge>
+      </v-btn>
     </v-app-bar>
-    <v-navigation-drawer
-      v-model="drawer"
-      temporary
-      absolute
-      width="200"
-      id="drawer"
-    >
+    <v-navigation-drawer v-model="drawer" temporary absolute width="200" id="drawer">
       <v-btn text>Beginners |</v-btn>
       <v-btn text>Close Up</v-btn>
       <v-btn text>Cards |</v-btn>
@@ -44,7 +39,7 @@ export default {
   name: "NavBar",
   data() {
     return {
-      route:'/',
+      route: "/",
       drawer: null,
       goDark: true,
     };
@@ -58,10 +53,10 @@ export default {
     logOut() {
       this.$store.dispatch("logout").then(() => {
         if (this.route === "/") {
-        this.$router.go();
-      }else{
-         this.$router.push("/");
-      }
+          this.$router.go();
+        } else {
+          this.$router.push("/");
+        }
       });
     },
     goHome() {
@@ -69,7 +64,7 @@ export default {
         this.$router.go();
       } else {
         this.$router.push("/");
-        this.route="/"
+        this.route = "/";
       }
     },
     goCatalog() {
@@ -77,20 +72,20 @@ export default {
         this.$router.go();
       } else {
         this.$router.push("/catalog");
-        this.route="/catalog"
+        this.route = "/catalog";
       }
     },
     goAbout() {
-		if (this.route === "/about") {
+      if (this.route === "/about") {
         this.$router.go();
       } else {
         this.$router.push("/about");
-        this.route="/about"
+        this.route = "/about";
       }
     },
     goSignin() {
       this.$router.push("/signin");
-    }
+    },
   },
   watch: {
     group() {
@@ -107,5 +102,4 @@ export default {
 #nav {
   background-color: #1e1e1e;
 }
-
 </style>
