@@ -2,8 +2,8 @@
   <v-app>
     <div>
       <NavBar />
+      <router-view />
     </div>
-    <router-view />
   </v-app>
 </template>
 <script>

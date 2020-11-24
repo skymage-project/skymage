@@ -1,6 +1,5 @@
 <template>
-	<v-app>
-		<v-jumbotron>
+		<div>
 			<v-container fill-height>
 				<v-layout align-center>
 					<v-flex>
@@ -35,8 +34,7 @@
 					</v-card>
 				</div>
 			</v-container>
-		</v-jumbotron>
-	</v-app>
+		</div>
 </template>
 
 <script>
