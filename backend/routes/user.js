@@ -30,7 +30,7 @@ router.post('/signup', async (req, res) => {
                 country: req.body.country,
                 phoneNumber: req.body.phoneNumber,
                 status: "client",
-                access:false
+                access: false
             })
             const mailOptions = await{
                 from: `${email.email}`,

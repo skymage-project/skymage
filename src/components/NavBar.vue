@@ -1,43 +1,50 @@
 <template>
-  <div>
-    <v-app-bar id="nav" :dark="goDark">
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <span @click="goHome"
-        ><v-toolbar-title> Welcome To SkyMage</v-toolbar-title></span
-      >
+	<div>
+		<v-app-bar id="nav" :dark="goDark">
+			<v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+			<span @click="goHome"
+				><v-toolbar-title> Welcome To SkyMage</v-toolbar-title></span
+			>
 
-      <v-toolbar-items>
-        <v-btn text @click="goAbout"> <span class="span">About</span></v-btn>
-        <v-btn text @click="goCatalog"> <span class="span">Tricks</span></v-btn>
-      </v-toolbar-items>
-      <v-spacer></v-spacer>
-      <v-btn text @click="logOut" v-if="loggedIn">
-        <span class="span">Logout</span></v-btn
-      >
-      <v-btn text @click="goSignin" v-else>
-        <span class="span">Signin</span></v-btn
-      >
-    </v-app-bar>
-    <v-navigation-drawer
-      v-model="drawer"
-      temporary
-      absolute
-      width="200"
-      id="drawer"
-    >
-      <v-btn text>Beginners |</v-btn>
-      <v-btn text>Close Up</v-btn>
-      <v-btn text>Cards |</v-btn>
-      <v-btn text>Coins |</v-btn>
-      <v-btn text>Mental |</v-btn>
-      <v-btn text>BigShows |</v-btn>
-      <v-btn text>DvD |</v-btn>
-      <v-btn text>Books |</v-btn>
-      <v-btn text>Playing Cards |</v-btn>
-      <v-btn text>Accessories |</v-btn>
-      <v-btn text>Promotion |</v-btn>
-    </v-navigation-drawer>
-  </div>
+			<v-toolbar-items>
+				<v-btn text @click="goAbout"> <span class="span">About</span></v-btn>
+				<v-btn text @click="goCatalog"> <span class="span">Tricks</span></v-btn>
+			</v-toolbar-items>
+			<v-spacer></v-spacer>
+			<v-btn text @click="logOut" v-if="loggedIn">
+				<span class="span">Logout</span></v-btn
+			>
+
+			<v-btn text @click="goSignin" v-else>
+				<span class="span">Signin</span></v-btn
+			>
+			<v-btn >
+				<v-badge left color="red">
+					<span slot="badge">5</span>
+					<v-icon>fas fa-shopping-cart</v-icon>
+				</v-badge>
+			</v-btn>
+		</v-app-bar>
+		<v-navigation-drawer
+			v-model="drawer"
+			temporary
+			absolute
+			width="200"
+			id="drawer"
+		>
+			<v-btn text>Beginners |</v-btn>
+			<v-btn text>Close Up</v-btn>
+			<v-btn text>Cards |</v-btn>
+			<v-btn text>Coins |</v-btn>
+			<v-btn text>Mental |</v-btn>
+			<v-btn text>BigShows |</v-btn>
+			<v-btn text>DvD |</v-btn>
+			<v-btn text>Books |</v-btn>
+			<v-btn text>Playing Cards |</v-btn>
+			<v-btn text>Accessories |</v-btn>
+			<v-btn text>Promotion |</v-btn>
+		</v-navigation-drawer>
+	</div>
 </template>
 <script>
 export default {
@@ -100,10 +107,9 @@ export default {
 
 <style scoped>
 .span {
-  color: orange;
+	color: orange;
 }
 #nav {
-  background-color: #1e1e1e;
+	background-color: #1e1e1e;
 }
-
 </style>
