@@ -29,6 +29,10 @@
 				{{ trick.name }}
 			</v-card-title>
 			<v-card-subtitle>
+				<!-- category  -->
+				{{ trick.category }}
+			</v-card-subtitle>
+			<v-card-subtitle>
 				<!-- price  -->
 				{{ trick.price }}$
 			</v-card-subtitle>

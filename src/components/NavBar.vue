@@ -59,7 +59,6 @@ export default {
 			route: '/',
 			drawer: null,
 			goDark: true,
-			showCart: false,
 		};
 	},
 	computed: {
@@ -72,35 +71,31 @@ export default {
 		logOut() {
 			this.$store.dispatch('logout').then(() => {
 				if (this.route === '/') {
-					this.$router.go();
-				} else {
-					this.$router.push('/');
+					return;
 				}
+				this.$router.push('/');
 			});
 		},
 		goHome() {
 			if (this.route === '/') {
-				this.$router.go();
-			} else {
-				this.$router.push('/');
-				this.route = '/';
+				return;
 			}
+			this.$router.push('/');
+			this.route = '/';
 		},
 		goCatalog() {
 			if (this.route === '/catalog') {
-				this.$router.go();
-			} else {
-				this.$router.push('/catalog');
-				this.route = '/catalog';
+				return;
 			}
+			this.$router.push('/catalog');
+			this.route = '/catalog';
 		},
 		goAbout() {
 			if (this.route === '/about') {
-				this.$router.go();
-			} else {
-				this.$router.push('/about');
-				this.route = '/about';
+				return;
 			}
+			this.$router.push('/about');
+			this.route = '/about';
 		},
 		goSignin() {
 			this.$router.push('/signin');
