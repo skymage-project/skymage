@@ -77,13 +77,13 @@ export default new Vuex.Store({
   actions: {
     filterBy({ commit }, event) {
       if (event === "price: decreasing order") {
-        commits("FILTER_DECREASE");
+        commit("FILTER_DECREASE");
       } else if (event === "price: increasing order") {
-        commits("FILTER_INCREASE");
+        commit("FILTER_INCREASE");
       } else if (["Easy", "Intermediate", "Hard"].includes(event)) {
-        commits("FILTER_DIFFICULTY", event);
+        commit("FILTER_DIFFICULTY", event);
       } else {
-        commits("FILTER_CATEGORY", event);
+        commit("FILTER_CATEGORY", event);
       }
     },
 
