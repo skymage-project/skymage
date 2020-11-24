@@ -5,6 +5,16 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require("../config/auth.config.js")
 const verifySignUp = require('../middleware/verifySignUp.js');
+const nodemailer = require('nodemailer');
+const email = require('../config/email.config')
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: email.email,
+    pass: email.pass
+  }
+});
 
 router.post('/signup', async (req, res) => {
     try {
@@ -20,8 +30,22 @@ router.post('/signup', async (req, res) => {
                 country: req.body.country,
                 phoneNumber: req.body.phoneNumber,
                 status: "client"
-            });
-             res.json(user);
+            })
+            const mailOptions = await{
+                from: `${email.email}`,
+                to: `${req.body.email}`,
+                subject: 'Thanks',
+                text: 'thank you for choosing our site!',
+                html: '<button>verify</button>',
+              };
+
+              transporter.sendMail(mailOptions, function(error, info){
+                if (error) {
+                  console.log(error);
+                } else {
+                  console.log('Email sent: ' + info.response);
+                }
+              });
         });
     } catch (err) {
         res.status(500).send({
