@@ -24,14 +24,14 @@
 
 <script>
 export default {
-  name: "Filter",
+  name: "TricksFilter",
   data: () => ({
     items: [
       "price: decreasing order",
       "price: increasing order",
       "bestsellers",
     ],
-    itemDifficulty: ["Easy", "Intermediate", "Hard"],
+    itemDifficulty: ["Beginner", "Intermediate", "Advanced"],
   }),
   methods: {
     search(event) {
