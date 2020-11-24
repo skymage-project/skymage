@@ -18,9 +18,9 @@
 			<v-btn text @click="goSignin" v-else>
 				<span class="span">Signin</span></v-btn
 			>
-			<v-btn flat>
+			<v-btn @click="toggleCart">
 				<v-badge left color="red">
-					<span slot="badge">5</span>
+					<span slot="badge">{{ cart.itemToCart.length }}</span>
 					<v-icon>fas fa-shopping-cart</v-icon>
 				</v-badge>
 			</v-btn>
@@ -29,6 +29,7 @@
 			v-model="drawer"
 			temporary
 			absolute
+			left
 			width="200"
 			id="drawer"
 		>
@@ -44,11 +45,15 @@
 			<v-btn text>Accessories |</v-btn>
 			<v-btn text>Promotion |</v-btn>
 		</v-navigation-drawer>
+		<Cart />
 	</div>
 </template>
 <script>
+import { mapState } from 'vuex';
+import Cart from './Cart';
 export default {
 	name: 'NavBar',
+	components: { Cart },
 	data() {
 		return {
 			route: '/',
@@ -60,43 +65,43 @@ export default {
 		loggedIn() {
 			return this.$store.state.initialState.status.loggedIn;
 		},
+		...mapState(['cart']),
 	},
 	methods: {
 		logOut() {
 			this.$store.dispatch('logout').then(() => {
 				if (this.route === '/') {
-					this.$router.go();
-				} else {
-					this.$router.push('/');
+					return;
 				}
+				this.$router.push('/');
 			});
 		},
 		goHome() {
 			if (this.route === '/') {
-				this.$router.go();
-			} else {
-				this.$router.push('/');
-				this.route = '/';
+				return;
 			}
+			this.$router.push('/');
+			this.route = '/';
 		},
 		goCatalog() {
 			if (this.route === '/catalog') {
-				this.$router.go();
-			} else {
-				this.$router.push('/catalog');
-				this.route = '/catalog';
+				return;
 			}
+			this.$router.push('/catalog');
+			this.route = '/catalog';
 		},
 		goAbout() {
 			if (this.route === '/about') {
-				this.$router.go();
-			} else {
-				this.$router.push('/about');
-				this.route = '/about';
+				return;
 			}
+			this.$router.push('/about');
+			this.route = '/about';
 		},
 		goSignin() {
 			this.$router.push('/signin');
+		},
+		toggleCart() {
+			this.$store.dispatch('toggleCart');
 		},
 	},
 	watch: {
