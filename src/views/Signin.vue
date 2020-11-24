@@ -1,5 +1,4 @@
 <template>
-<v-app>
   <v-dialog v-model="dialog" persistent max-width="600px" min-width="360px">
     <div>
       <v-tabs
@@ -48,7 +47,7 @@
                       x-large
                       :disabled="!valid"
                       color="#737373"
-                      @click="validate"
+                      @click="validateLog"
                     >
                       Login
                     </v-btn>
@@ -167,11 +166,11 @@
       </v-tabs>
     </div>
   </v-dialog>
-  </v-app>
 </template>
 
 <script>
 import Password from "vue-password-strength-meter";
+
 export default {
   name: "Signin",
 
@@ -185,34 +184,49 @@ export default {
   },
   components: { Password },
   methods: {
-    validate() {
+    validateLog(){
       if (this.$refs.loginForm.validate()) {
-        this.$store.dispatch("login", {
-          email: this.loginEmail,
-          password: this.loginPassword,
-        });
+        this.$store
+          .dispatch("login", {
+            email: this.loginEmail,
+            password: this.loginPassword,
+          })
+          .then(() => {
+            if (this.loggedIn) {
+              this.$router.push("/");
+            }
+          });
       }
+    },
+    validate() {
 
       if (this.$refs.registerForm.validate()) {
-        this.$store.dispatch("register", {
-          firstName: this.firstName,
-          lastName: this.lastName,
-          email: this.email,
-          password: this.password,
-          dateOfBirth: this.dateOfBirth,
-          phoneNumber: this.phoneNumber,
-          country: this.country,
-        });
+        this.$store
+          .dispatch("register", {
+            firstName: this.firstName,
+            lastName: this.lastName,
+            email: this.email,
+            password: this.password,
+            dateOfBirth: this.dateOfBirth,
+            phoneNumber: this.phoneNumber,
+            country: this.country,
+          })
+          .then(() => {
+            this.$store
+              .dispatch("login", {
+                email: this.email,
+                password: this.password,
+              })
+              .then(() => {
+                if (this.loggedIn) {
+                  this.$router.push("/");
+                }
+              });
+          });
       }
     },
     cancel() {
       this.$router.push("/");
-    },
-    reset() {
-      this.$refs.form.reset();
-    },
-    resetValidation() {
-      this.$refs.form.resetValidation();
     },
   },
   data: () => ({

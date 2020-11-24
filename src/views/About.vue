@@ -1,5 +1,5 @@
 <template>
- <v-card class="overflow-hidden">
+ <v-card>
     <v-app-bar
       absolute
       color="#6A76AB"

@@ -11,7 +11,19 @@
 				<v-btn text @click="goCatalog"> <span class="span">Tricks</span></v-btn>
 			</v-toolbar-items>
 			<v-spacer></v-spacer>
-			<v-btn text @click="goSignin"> <span class="span">Signin</span></v-btn>
+			<v-btn text @click="logOut" v-if="loggedIn">
+				<span class="span">Logout</span></v-btn
+			>
+
+			<v-btn text @click="goSignin" v-else>
+				<span class="span">Signin</span></v-btn
+			>
+			<v-btn flat>
+				<v-badge left color="red">
+					<span slot="badge">5</span>
+					<v-icon>fas fa-shopping-cart</v-icon>
+				</v-badge>
+			</v-btn>
 		</v-app-bar>
 		<v-navigation-drawer
 			v-model="drawer"
@@ -39,19 +51,49 @@ export default {
 	name: 'NavBar',
 	data() {
 		return {
+			route: '/',
 			drawer: null,
 			goDark: true,
 		};
 	},
+	computed: {
+		loggedIn() {
+			return this.$store.state.initialState.status.loggedIn;
+		},
+	},
 	methods: {
+		logOut() {
+			this.$store.dispatch('logout').then(() => {
+				if (this.route === '/') {
+					this.$router.go();
+				} else {
+					this.$router.push('/');
+				}
+			});
+		},
 		goHome() {
-			this.$router.push('/');
+			if (this.route === '/') {
+				this.$router.go();
+			} else {
+				this.$router.push('/');
+				this.route = '/';
+			}
 		},
 		goCatalog() {
-			this.$router.push('/catalog');
+			if (this.route === '/catalog') {
+				this.$router.go();
+			} else {
+				this.$router.push('/catalog');
+				this.route = '/catalog';
+			}
 		},
 		goAbout() {
-			this.$router.push('/about');
+			if (this.route === '/about') {
+				this.$router.go();
+			} else {
+				this.$router.push('/about');
+				this.route = '/about';
+			}
 		},
 		goSignin() {
 			this.$router.push('/signin');
