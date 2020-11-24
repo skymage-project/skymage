@@ -16,7 +16,7 @@ import { mapState } from "vuex";
 export default {
   components: {
     Item,
-    Filter,
+    Filter
   },
   created() {
     this.$store.dispatch("fetchTricks");
@@ -24,8 +24,6 @@ export default {
   computed: {
     ...mapState(["tricks"]),
   },
-  components: { Item },
-  name: "Catalog",
   data: () => ({
     show: {},
     goDark: true,
