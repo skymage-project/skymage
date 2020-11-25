@@ -4,6 +4,11 @@
       <v-img height="150px" :src="trick.urlPictures">
         <!-- url image -->
       </v-img>
+      <v-card-text class="pt-4" style="position: relative">
+        <v-btn absolute color="orange" class="white--text" fab medium right top @click="addToCart">
+          <v-icon>fas fa-shopping-cart</v-icon>
+        </v-btn>
+      </v-card-text>
       <v-card-title>
         <!-- NameTrick -->
         {{ trick.name }}
@@ -14,11 +19,7 @@
       </v-card-subtitle>
       <v-card-subtitle>
         <!-- price  -->
-        {{ trick.price }} $
-      </v-card-subtitle>
-      <v-card-subtitle>
-        <!-- QuickDescription -->
-        {{ trick.quickDescription }}
+        {{ trick.price }}$
       </v-card-subtitle>
 
       <v-card-actions transition="fade-transition">
@@ -56,6 +57,19 @@ export default {
     };
   },
   methods: {
+    showByIndex(e) {
+      this.show[e.target.id] = !this.show[e.target.id];
+      this.key++;
+    },
+    addToCart() {
+      let item = {
+        id: this.trick.id,
+        name: this.trick.name,
+        picture: this.trick.urlPictures,
+        price: this.trick.price,
+      };
+      this.$store.dispatch("addToCart", item);
+    },
     toggleHover() {
       this.hover = !this.hover;
     },
