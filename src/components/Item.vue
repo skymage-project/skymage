@@ -1,4 +1,4 @@
-<template class="col">
+<template>
   <v-col>
     <v-card
       class="mx-auto"
@@ -38,7 +38,7 @@
 
       <v-card-actions transition="fade-transition">
         <v-btn color="orange lighten-2" text> Read More </v-btn>
-        <v-btn color="orange lighten-2" v-if="hover">Quick View</v-btn>
+        <v-btn color="orange " v-show="hover">Quick View</v-btn>
         <v-spacer></v-spacer>
 
         <v-btn icon @click="showByIndex">
@@ -95,8 +95,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.col {
-  background-color: #121212;
-}
-</style>
+<style></style>
