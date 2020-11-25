@@ -27,6 +27,11 @@ const routes = [
 		name: 'Signin',
 		component: Signin,
 	},
+	{
+		path: '/profile',
+		name: 'Profile',
+		component: Profile,
+	},
 ];
 
 const router = new VueRouter({

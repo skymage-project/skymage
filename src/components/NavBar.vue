@@ -9,8 +9,8 @@
         <v-btn text @click="goCatalog"> <span class="span">Tricks</span></v-btn>
       </v-toolbar-items>
       <v-spacer></v-spacer>
+      <v-btn text @click="profile" v-if="loggedIn"> <span class="span">Profile</span></v-btn>
       <v-btn text @click="logOut" v-if="loggedIn"> <span class="span">Logout</span></v-btn>
-
       <v-btn text @click="goSignin" v-else> <span class="span">Signin</span></v-btn>
       <v-btn @click="toggleCart">
         <v-badge left color="red">
@@ -55,6 +55,13 @@ export default {
     ...mapState(["cart"]),
   },
   methods: {
+    profile(){
+       if (this.route === "/profile") {
+        return;
+      }
+      this.$router.push("/profile");
+      this.route = "/profile";
+    },
     logOut() {
       this.$store.dispatch("logout").then(() => {
         if (this.route === "/") {
