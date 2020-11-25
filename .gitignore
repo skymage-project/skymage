@@ -1,6 +1,6 @@
 .DS_Store
 node_modules
-/config
+backend/config
 /dist
 /backend/package-lock.json
 package-lock.json
