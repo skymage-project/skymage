@@ -16,9 +16,3 @@ export default {
   data: () => ({}),
 };
 </script>
-
-<style scoped>
-/* .divBody{
-	background-color: #1e1e1e;
-} */
-</style>

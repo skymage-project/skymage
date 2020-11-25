@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import userAuth from "../service/user.service";
 import Swal from "sweetalert2";
+import * as cart from "./modules/cart";
 Vue.use(Vuex);
 const user = JSON.parse(localStorage.getItem("user"));
 const initialState = user
@@ -29,6 +30,9 @@ export default new Vuex.Store({
         (item) => item.difficulty === payload
       );
     },
+    RESET_ALL: (state) => {
+      state.displayedTricks = state.tricks;
+    },
     FILTER_CATEGORY: (state, payload) => {
       state.displayedTricks = state.tricks.filter(
         (item) => item.category === payload
@@ -45,9 +49,11 @@ export default new Vuex.Store({
       state.initialState.user = null;
       Swal.fire({
         icon: "error",
-        title: "Failed! Email or Password is not valid!",
+        title: `Failed! 
+					Email or Password is not valid!
+					 Or try to verify your account from your email`,
         showConfirmButton: false,
-        timer: 2500,
+        timer: 3000,
       });
     },
 
@@ -56,7 +62,7 @@ export default new Vuex.Store({
         icon: "success",
         title: "You are registered",
         showConfirmButton: false,
-        timer: 2000,
+        timer: 3000,
       });
       state.initialState.status.loggedIn = false;
     },
@@ -84,6 +90,8 @@ export default new Vuex.Store({
         commit("FILTER_INCREASE");
       } else if (["Beginner", "Intermediate", "Advanced"].includes(event)) {
         commit("FILTER_DIFFICULTY", event);
+      } else if (["All"].includes(event)) {
+        commit("RESET_ALL", event);
       } else {
         commit("FILTER_CATEGORY", event);
       }
@@ -100,14 +108,14 @@ export default new Vuex.Store({
           urlVideos: "https://j.gifs.com/oVxynX.gif",
           urlPictures: "https://j.gifs.com/oVxynX.gif",
           price: 14.95,
-          difficulty: "Easy",
+          difficulty: "Beginner",
           author: "Beginner",
           description:
             "With the VAPE THRUU gimmick, you'll be able to borrow both objects (JUUL & BILL) making it completely universal.",
         },
 
         {
-          id: 3,
+          id: 2,
           category: "DvD",
           name: "Bernard Bilis LIVE (Penguin LIVE)",
           quickDescription:
@@ -122,7 +130,7 @@ export default new Vuex.Store({
           description: "Live Lecture",
         },
         {
-          id: 5,
+          id: 3,
           category: "Coins",
           name:
             "Extreme Burn 2.0 (Locked and Loaded) by Richard Sanders (Magical Changing Money Prank)",
@@ -138,7 +146,7 @@ export default new Vuex.Store({
             "You will learn 10 unique, hyper-visual changes; giving you an army of devastating bill changes to do in literally any situation imaginable. No stone is left unturned, from setting up the bills to performing the changes, and all the handling tips and subtleties in-between. You will be up and running in no time. AND as a special BONUS, you'll learn Richard's underground miracle, Slow Burn. They'll flip-out as they watch bills visually morph, while you slowly pass your hand over them! PLUS 75 MINUTES OF BRAND NEW MATERIAL that will allow you to change the bills and then hand them out for examination, spend them, etc. A total of almost 3 hours of killer magic on one remarkable DVD.",
         },
         {
-          id: 6,
+          id: 4,
           category: "Accessories",
           name: "Invisible Writer (Pencil Lead) by Vernet",
           quickDescription:
@@ -153,7 +161,7 @@ export default new Vuex.Store({
           description: "Thumb Tip",
         },
         {
-          id: 4,
+          id: 5,
           category: "Mental",
           name: "How to Read Minds Kit",
           quickDescription:
@@ -167,7 +175,7 @@ export default new Vuex.Store({
           description: "Mentalist For Beginner",
         },
         {
-          id: 7,
+          id: 6,
           category: "Mental",
           name: "Naked By Pablo Amira",
           quickDescription:
@@ -187,8 +195,8 @@ export default new Vuex.Store({
                 No difficult moves.",`,
         },
         {
-          id: 8,
-          category: "Beginers",
+          id: 7,
+          category: "Beginners",
           name: "Optix",
           quickDescription:
             "Optix isn't restricted by the ability to use only one kind of phone, it's universal. Borrow a spectators phone, then hand them your phone to film the magic... In an instant, their phone vanishes into thin air. No sleeves. No pulls. GONE.",
@@ -202,7 +210,7 @@ export default new Vuex.Store({
           description: "Vanish bag",
         },
         {
-          id: 2,
+          id: 8,
           category: "Close Up",
           name: "TSA by Adam Wilber",
           quickDescription:
@@ -216,7 +224,7 @@ export default new Vuex.Store({
         },
         {
           id: 9,
-          category: "Cards",
+          category: "Playing Cards",
           name: "Bicycle playing Cards",
           quickDescription: "Our favorite cards.",
           urlVideos:
@@ -224,13 +232,13 @@ export default new Vuex.Store({
           urlPictures:
             "https://cdn.shopify.com/s/files/1/0956/5418/products/60380-alt5_grande.png?v=1591631579",
           price: 30,
-          difficulty: "advanced",
+          difficulty: "Advanced",
           author: "Adam Wilber",
           description: "Vanish bag",
         },
         {
           id: 10,
-          category: "Book",
+          category: "Books",
           name: "DICTIONNAIRE RAISONNÉ ... XVIIIème Siècle",
           quickDescription:
             "Object through bill effects are incredible, but they all have one flaw.",
@@ -278,5 +286,5 @@ export default new Vuex.Store({
     },
   },
 
-  modules: {},
+  modules: { cart },
 });

@@ -212,16 +212,7 @@ export default {
             country: this.country,
           })
           .then(() => {
-            this.$store
-              .dispatch("login", {
-                email: this.email,
-                password: this.password,
-              })
-              .then(() => {
-                if (this.loggedIn) {
-                  this.$router.push("/");
-                }
-              });
+            this.$router.go();
           });
       }
     },
