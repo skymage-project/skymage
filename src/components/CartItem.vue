@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<v-card>
+		<v-card width="100%">
 			<v-img
-				:src="card.src"
+				:src="addedItem.picture"
 				class="white--text align-end"
 				gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
 				height="200px"
@@ -10,12 +10,12 @@
 				<v-btn icon class="heart-trick-button">
 					<v-icon>mdi-heart-outline</v-icon>
 				</v-btn>
-				<v-card-title v-text="card.title"></v-card-title>
+				<v-card-title v-text="addedItem.name"></v-card-title>
 			</v-img>
 
 			<v-card-actions>
 				<v-icon>mdi-cash</v-icon>
-				<span class="trick-price">{{ card.price }} DT</span>
+				<span class="trick-price">{{ addedItem.price }} DT</span>
 				<v-spacer></v-spacer>
 				<v-btn icon class="plus-cart-trick">
 					<v-icon>mdi-plus</v-icon>
@@ -33,14 +33,16 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
+	props: ['addedItem'],
 	name: 'CartItem',
 	data: () => ({
 		card: {
 			title: 'How to Read Minds Kit',
-			src: 'https://j.gifs.com/OM32OR.gif',
+			src: 'https://ae01.alicdn.com/kf/HTB15APbLCzqK1RjSZPxq6A4tVXaS.jpg',
 			flex: 6,
-			quantity: 9,
+			quantity: 6,
 			price: 90,
 		},
 	}),

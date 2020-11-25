@@ -18,7 +18,7 @@
 			>
 			<v-btn @click="toggleShowCart">
 				<v-badge left color="red">
-					<span slot="badge">{{ cart.itemToCart.length }}</span>
+					<span slot="badge">{{ cart.itemsToCart.length }}</span>
 					<v-icon>fas fa-shopping-cart</v-icon>
 				</v-badge>
 			</v-btn>
@@ -49,7 +49,7 @@
 	</div>
 </template>
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 import Cart from './Cart';
 export default {
 	name: 'NavBar',
@@ -67,6 +67,7 @@ export default {
 			return this.$store.state.initialState.status.loggedIn;
 		},
 		...mapState(['cart']),
+		...mapGetters(['cartItemsLength']),
 	},
 	methods: {
 		toggleShowCart(val) {

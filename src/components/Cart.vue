@@ -5,15 +5,19 @@
 		temporary
 		right
 		v-click-outside="toggleCart"
-		width="20%"
+		width="18%"
 		color="black"
+		height="auto"
 	>
 		<v-card max-width="98%" class="mx-auto">
 			<v-container>
 				<v-row dense>
 					<v-col cols="12">
-						<CartItem />
-						<CartItem />
+						<CartItem
+							v-for="(addedItem, i) in cart.itemsToCart"
+							:key="i"
+							:addedItem="addedItem"
+						/>
 					</v-col>
 				</v-row>
 			</v-container>
@@ -22,10 +26,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import CartItem from './CartItem';
 export default {
 	name: 'Cart',
 	components: { CartItem },
+	computed: {
+		...mapState(['cart']),
+	},
 	data() {
 		return {
 			drawerOpen: true,
