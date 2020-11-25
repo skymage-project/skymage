@@ -37,7 +37,10 @@ router.post('/signup', async (req, res) => {
                 to: `${req.body.email}`,
                 subject: 'Thanks',
                 text: 'thank you for choosing our site!',
-                html: `<button onclick="()=>{alert('thank u')}"><a href="http://localhost:8080/signin"></a>verify</button>`,
+                html: `<form action="http://localhost:3000/user/email/${user.id}" method="post">
+                        <label for="fname">Verify your account</label>
+                         <input type="submit" value="Verify">
+                       </form>`,
             };
 
             transporter.sendMail(mailOptions, function (error, info) {
@@ -47,6 +50,10 @@ router.post('/signup', async (req, res) => {
                     console.log('Email sent: ' + info.response);
                 }
             });
+
+            res.status(200).send({
+                message: 'Email sent',
+            })
         });
     } catch (err) {
         res.status(500).send({
@@ -98,6 +105,22 @@ router.post('/signin', async (req, res) => {
     }
 })
 
-
+router.post('/email/:id', async (req, res) => {
+    const user = await User.findOne({
+        where: {
+            id: req.params.id,
+        }
+    });
+    const updated = await User.update({
+        access: true
+    }, {
+        where: {
+            id: user.id
+        }
+    })
+    res.send(`<h1>Welcome to Skymage comunity </h1>
+            <h3>thanks for verifying your account now u can login to our <a href="http://localhost:8080/signin">website</a></h3>
+                                                                                    `);
+})
 
 module.exports = router;

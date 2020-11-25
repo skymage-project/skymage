@@ -211,18 +211,9 @@ export default {
             phoneNumber: this.phoneNumber,
             country: this.country,
           })
-          // .then(() => {
-          //   this.$store
-          //     .dispatch("login", {
-          //       email: this.email,
-          //       password: this.password,
-          //     })
-          //     .then(() => {
-          //       if (this.loggedIn) {
-          //         this.$router.push("/");
-          //       }
-          //     });
-          // });
+          .then(() => {
+            this.$router.go();
+          });
       }
     },
     cancel() {
