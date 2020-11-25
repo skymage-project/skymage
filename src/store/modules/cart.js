@@ -1,7 +1,15 @@
 export const state = { itemsToCart: [], showCart: false };
 export const mutations = {
 	ADD_ITEM_TO_CART: (state, payload) => {
-		state.itemsToCart.push(payload);
+		let itemExist = false;
+		for (var i = 0; i < state.itemsToCart.length; i++) {
+			if (payload.id === state.itemsToCart[i].id) {
+				state.itemsToCart[i].quantity += payload.quantity;
+				itemExist = true;
+				break;
+			}
+		}
+		!itemExist ? state.itemsToCart.push(payload) : 0;
 	},
 	TOGGLE_CART: (state) => {
 		state.showCart = !state.showCart;
