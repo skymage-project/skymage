@@ -2,7 +2,6 @@
 	<v-app>
 		<div>
 			<NavBar />
-
 			<router-view />
 		</div>
 	</v-app>
@@ -17,9 +16,3 @@ export default {
 	data: () => ({}),
 };
 </script>
-
-<style scoped>
-/* .divBody{
-	background-color: #1e1e1e;
-} */
-</style>

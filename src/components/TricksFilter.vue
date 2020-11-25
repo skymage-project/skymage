@@ -35,7 +35,7 @@ export default {
   methods: {
     search(event) {
       this.$store.dispatch("filterBy", event);
-      this.itemDifficulty.unshift("All", event);
+      this.itemDifficulty.unshift("All");
     },
   },
 };

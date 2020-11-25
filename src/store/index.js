@@ -31,7 +31,6 @@ export default new Vuex.Store({
 			);
 		},
 		RESET_ALL: (state) => {
-			console.log(state.tricks);
 			state.displayedTricks = state.tricks;
 		},
 		FILTER_CATEGORY: (state, payload) => {
@@ -50,10 +49,11 @@ export default new Vuex.Store({
 			state.initialState.user = null;
 			Swal.fire({
 				icon: 'error',
-				title:
-					'Failed! Email or Password is not valid! or try to verify your account',
+				title: `Failed! 
+					Email or Password is not valid!
+					 Or try to verify your account from your email`,
 				showConfirmButton: false,
-				timer: 2500,
+				timer: 3000,
 			});
 		},
 
@@ -62,7 +62,7 @@ export default new Vuex.Store({
 				icon: 'success',
 				title: 'You are registered',
 				showConfirmButton: false,
-				timer: 2000,
+				timer: 3000,
 			});
 			state.initialState.status.loggedIn = false;
 		},
@@ -254,6 +254,7 @@ export default new Vuex.Store({
 			];
 			commit('FETCH_TRICKS', tricks);
 		},
+
 		login({ commit }, user) {
 			return userAuth.login(user).then(
 				(user) => {
