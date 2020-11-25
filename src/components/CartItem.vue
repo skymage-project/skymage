@@ -21,7 +21,7 @@
 					<v-icon>mdi-plus</v-icon>
 				</v-btn>
 				<v-btn icon>
-					<v-icon>mdi-numeric-{{ card.quantity }}-circle-outline</v-icon>
+					<v-icon>mdi-numeric-{{ addedItem.quantity }}-circle-outline</v-icon>
 				</v-btn>
 
 				<v-btn icon>
