@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import Catalog from '../views/Catalog.vue';
 import Signin from '../views/Signin.vue';
 import About from '../views/About.vue';
+import Profile from '../views/Profile.vue';
 Vue.use(VueRouter);
 
 const routes = [
