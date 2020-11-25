@@ -2,9 +2,7 @@
   <div>
     <v-app-bar id="nav" :dark="goDark">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <span @click="goHome"
-        ><v-toolbar-title> Welcome To SkyMage</v-toolbar-title></span
-      >
+      <v-toolbar-title @click="goHome"> Welcome To SkyMage</v-toolbar-title>
 
       <v-toolbar-items>
         <v-btn text @click="goAbout"> <span class="span">About</span></v-btn>
@@ -33,17 +31,17 @@
       width="200"
       id="drawer"
     >
-      <v-btn text>Beginners |</v-btn>
-      <v-btn text>Close Up</v-btn>
-      <v-btn text>Cards |</v-btn>
-      <v-btn text>Coins |</v-btn>
-      <v-btn text>Mental |</v-btn>
-      <v-btn text>BigShows |</v-btn>
-      <v-btn text>DvD |</v-btn>
-      <v-btn text>Books |</v-btn>
-      <v-btn text>Playing Cards |</v-btn>
-      <v-btn text>Accessories |</v-btn>
-      <v-btn text>Promotion |</v-btn>
+      <v-btn text @click="search('Beginners')">Beginners</v-btn>
+      <v-btn text @click="search('Close Up')">Close Up</v-btn>
+      <v-btn text @click="search('Cards')">Cards</v-btn>
+      <v-btn text @click="search('Coins')">Coins</v-btn>
+      <v-btn text @click="search('Mental')">Mental</v-btn>
+      <v-btn text @click="search('BigShows')">BigShows</v-btn>
+      <v-btn text @click="search('DvD')">DvD</v-btn>
+      <v-btn text @click="search('Books')">Books</v-btn>
+      <v-btn text @click="search('Playing Cards')">Playing Cards</v-btn>
+      <v-btn text @click="search('Accessories')">Accessories</v-btn>
+      <v-btn text @click="search('Promotion')">Promotion</v-btn>
     </v-navigation-drawer>
     <Cart />
   </div>
@@ -102,6 +100,11 @@ export default {
     },
     toggleCart() {
       this.$store.dispatch("toggleCart");
+    },
+    search(event) {
+      this.$router
+        .push("/catalog")
+        .then(() => this.$store.dispatch("filterBy", event));
     },
   },
   watch: {

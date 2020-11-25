@@ -16,11 +16,21 @@
 
           <div class="title mb-3">Check out our newest features!</div>
 
-          <v-btn class="mx-0" color="primary" large>
-            See more
-          </v-btn>
+          <v-btn class="mx-0" color="primary" large> See more </v-btn>
         </v-flex>
       </v-layout>
+      <div>
+        <v-card class="overflow-hidden">
+          <v-app-bar
+            absolute
+            color="#6A76AB"
+            dark
+            prominent
+            src="https://j.gifs.com/L73vD4.gif"
+          >
+          </v-app-bar>
+        </v-card>
+      </div>
     </v-container>
   </div>
 </template>
