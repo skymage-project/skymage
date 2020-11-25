@@ -31,7 +31,6 @@ export default new Vuex.Store({
 			);
 		},
 		RESET_ALL: (state) => {
-			console.log(state.tricks);
 			state.displayedTricks = state.tricks;
 		},
 		FILTER_CATEGORY: (state, payload) => {
