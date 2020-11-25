@@ -49,12 +49,9 @@ export default new Vuex.Store({
 			state.initialState.user = null;
 			Swal.fire({
 				icon: 'error',
-				title:
-					`Failed! 
-					Email or Password is not valid!
-					 Or try to verify your account from your email`,
-				showConfirmButton: false,
-				timer: 3000,
+				title:'Failed!', 
+				text:`Email or Password is not valid!
+					 Or activate your account from your email`,
 			});
 		},
 
@@ -62,8 +59,7 @@ export default new Vuex.Store({
 			Swal.fire({
 				icon: 'success',
 				title: 'You are registered',
-				showConfirmButton: false,
-				timer: 3000,
+				text: 'Please activate your account from the verification email we sent you'
 			});
 			state.initialState.status.loggedIn = false;
 		},
@@ -72,8 +68,6 @@ export default new Vuex.Store({
 			Swal.fire({
 				icon: 'error',
 				title: 'Failed! Email is already in use!',
-				showConfirmButton: false,
-				timer: 2500,
 			});
 			state.initialState.status.loggedIn = false;
 		},
