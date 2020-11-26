@@ -92,6 +92,7 @@ export default {
         name: this.trick.name,
         picture: this.trick.urlPictures,
         price: this.trick.price,
+        quantity: 1,
       };
       this.$store.dispatch("addToCart", item);
     },
