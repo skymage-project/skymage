@@ -36,7 +36,7 @@ router.post('/signup', async (req, res) => {
                 from: `${email.email}`,
                 to: `${req.body.email}`,
                 subject: 'Thanks',
-                text: 'thank you for choosing our site!',
+                text: 'Thank you for choosing our site!',
                 html: `<form action="http://localhost:3000/user/email/${user.id}" method="post">
                         <label for="fname">Verify your account</label>
                          <input type="submit" value="Verify">
@@ -95,8 +95,13 @@ router.post('/signin', async (req, res) => {
         res.header('accessToken', token).send({
             "accessToken": token,
             "id": user.id,
-            username: user.username,
-            email: user.email,
+            "email": user.email,
+            "firstName": user.firstName,
+            "lastName": user.lastName,
+            "dateOfBirth": user.dateOfBirth,
+            "country": user.country,
+            "phoneNumber": user.phoneNumber,
+            "status": user.status,
         })
     } catch (err) {
         res.status(500).send({

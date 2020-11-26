@@ -19,7 +19,14 @@
         </v-badge>
       </v-btn>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" temporary absolute left width="200" id="drawer">
+    <v-navigation-drawer
+      v-model="drawer"
+      temporary
+      absolute
+      left
+      width="200"
+      id="drawer"
+    >
       <v-btn text @click="search('Beginners')">Beginners</v-btn>
       <v-btn text @click="search('Close Up')">Close Up</v-btn>
       <v-btn text @click="search('Cards')">Cards</v-btn>
@@ -98,7 +105,9 @@ export default {
       this.$store.dispatch("toggleCart");
     },
     search(event) {
-      this.$router.push("/catalog").then(() => this.$store.dispatch("filterBy", event));
+      this.$router
+        .push("/catalog")
+        .then(() => this.$store.dispatch("filterBy", event));
     },
   },
   watch: {

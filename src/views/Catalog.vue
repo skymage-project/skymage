@@ -1,7 +1,7 @@
 <template>
   <div>
     <TricksFilter />
-    <v-container class="grey lighten-5 mb-6">
+    <v-container>
       <v-row no-gutters style="height: 150px; row-gap: 2em">
         <Item v-for="trick in displayedTricks" :key="trick.id" :trick="trick" />
       </v-row>
@@ -27,7 +27,6 @@ export default {
   },
   data: () => ({
     show: {},
-    goDark: true,
     key: 0,
   }),
   methods: {
