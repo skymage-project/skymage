@@ -7,24 +7,24 @@
 				gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
 				height="200px"
 			>
-				<v-btn icon class="heart-trick-button">
-					<v-icon>mdi-heart-outline</v-icon>
-				</v-btn>
-				<v-card-title v-text="addedItem.name"></v-card-title>
+				<v-card-title>{{
+					addedItem.name.length > 20
+						? addedItem.name.slice(0, 20) + '...'
+						: addedItem.name
+				}}</v-card-title>
 			</v-img>
 
 			<v-card-actions>
-				<v-icon>mdi-cash</v-icon>
 				<span class="trick-price">{{ addedItem.price }} DT</span>
 				<v-spacer></v-spacer>
-				<v-btn icon class="plus-cart-trick">
+				<span class="trick-price">QTY</span>
+				<v-btn icon class="plus-cart-trick" @click="addItemToCart">
 					<v-icon>mdi-plus</v-icon>
 				</v-btn>
 				<v-btn icon>
 					<v-icon>mdi-numeric-{{ addedItem.quantity }}-circle-outline</v-icon>
 				</v-btn>
-
-				<v-btn icon>
+				<v-btn icon @click="removeItemFromCart">
 					<v-icon>mdi-delete-outline</v-icon>
 				</v-btn>
 			</v-card-actions>
@@ -46,19 +46,41 @@ export default {
 			price: 90,
 		},
 	}),
+	methods: {
+		addItemToCart() {
+			let item = {
+				id: this.addedItem.id,
+				name: this.addedItem.name,
+				picture: this.addedItem.picture,
+				price: this.addedItem.price,
+				quantity: 1,
+			};
+			this.$store.dispatch('addToCart', item);
+		},
+		removeItemFromCart() {
+			this.$store.dispatch('removeFromCart', this.addedItem.id);
+		},
+		itemName() {
+			if (this.addedItem.name.length > 20) {
+				return this.addedItem.name.slice(0, 20) + '...';
+			} else {
+				return this.addedItem.name;
+			}
+		},
+	},
 };
 </script>
 
 <style lang="scss" scoped>
 .heart-trick-button {
 	position: relative;
-	right: -15em;
-	top: -7em;
+	right: -19em;
+	top: -5em;
 }
 .trick-price {
-	font-family: 'Roboto', monospace;
+	font-family: 'Audiowide', cursive;
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 16px;
 }
 .plus-cart-trick {
 	position: relative;

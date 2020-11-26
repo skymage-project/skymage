@@ -3,7 +3,7 @@ const sequelize = require('../index');
 
 class Description extends Model {}
 Description.init({
-    text: Sequelize.STRING,
+    text: Sequelize.TEXT,
     title: Sequelize.STRING,
     instruction: Sequelize.STRING
 

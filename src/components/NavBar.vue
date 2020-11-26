@@ -18,8 +18,8 @@
 				<span class="span">Signin</span></v-btn
 			>
 			<v-btn @click="toggleShowCart">
-				<v-badge left color="red">
-					<span slot="badge">{{ cart.itemsToCart.length }}</span>
+				<v-badge left color="warning">
+					<span slot="badge">{{ cartItemsLength }}</span>
 					<v-icon>fas fa-shopping-cart</v-icon>
 				</v-badge>
 			</v-btn>
