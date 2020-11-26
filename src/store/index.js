@@ -5,10 +5,10 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import * as cart from "./modules/cart";
 Vue.use(Vuex);
-const user = JSON.parse(localStorage.getItem("user"));
+const user = JSON.parse(localStorage.getItem('user'));
 const initialState = user
-  ? { status: { loggedIn: true }, user }
-  : { status: { loggedIn: false }, user: null };
+	? { status: { loggedIn: true }, user }
+	: { status: { loggedIn: false }, user: null };
 export default new Vuex.Store({
   state: {
     initialState,
@@ -44,43 +44,43 @@ export default new Vuex.Store({
       state.displayedTricks = state.tricks.slice();
     },
 
-    loginSuccess(state, user) {
-      state.initialState.status.loggedIn = true;
-      state.initialState.user = user;
-    },
+		loginSuccess(state, user) {
+			state.initialState.status.loggedIn = true;
+			state.initialState.user = user;
+		},
 
-    loginFailure(state) {
-      state.initialState.status.loggedIn = false;
-      state.initialState.user = null;
-      Swal.fire({
-        icon: "error",
-        title: `Failed! 
+		loginFailure(state) {
+			state.initialState.status.loggedIn = false;
+			state.initialState.user = null;
+			Swal.fire({
+				icon: 'error',
+				title: `Failed! 
 					Email or Password is not valid!
 					 Or try to verify your account from your email`,
-        showConfirmButton: false,
-        timer: 3000,
-      });
-    },
+				showConfirmButton: false,
+				timer: 3000,
+			});
+		},
 
-    registerSuccess(state) {
-      Swal.fire({
-        icon: "success",
-        title: "You are registered",
-        showConfirmButton: false,
-        timer: 3000,
-      });
-      state.initialState.status.loggedIn = false;
-    },
+		registerSuccess(state) {
+			Swal.fire({
+				icon: 'success',
+				title: 'You are registered',
+				showConfirmButton: false,
+				timer: 3000,
+			});
+			state.initialState.status.loggedIn = false;
+		},
 
-    registerFailure(state) {
-      Swal.fire({
-        icon: "error",
-        title: "Failed! Email is already in use!",
-        showConfirmButton: false,
-        timer: 2500,
-      });
-      state.initialState.status.loggedIn = false;
-    },
+		registerFailure(state) {
+			Swal.fire({
+				icon: 'error',
+				title: 'Failed! Email is already in use!',
+				showConfirmButton: false,
+				timer: 2500,
+			});
+			state.initialState.status.loggedIn = false;
+		},
 
     logout(state) {
       state.initialState.status.loggedIn = false;
@@ -288,24 +288,37 @@ export default new Vuex.Store({
       );
     },
 
-    register({ commit }, user) {
-      return userAuth.register(user).then(
-        (response) => {
-          commit("registerSuccess");
-          return Promise.resolve(response.data);
-        },
-        (error) => {
-          commit("registerFailure");
-          return Promise.reject(error);
-        }
-      );
-    },
+		login({ commit }, user) {
+			return userAuth.login(user).then(
+				(user) => {
+					commit('loginSuccess', user);
+					return Promise.resolve(user);
+				},
+				(error) => {
+					commit('loginFailure');
+					return Promise.reject(error);
+				}
+			);
+		},
 
-    logout({ commit }) {
-      userAuth.logout();
-      commit("logout");
-    },
-  },
+		register({ commit }, user) {
+			return userAuth.register(user).then(
+				(response) => {
+					commit('registerSuccess');
+					return Promise.resolve(response.data);
+				},
+				(error) => {
+					commit('registerFailure');
+					return Promise.reject(error);
+				}
+			);
+		},
 
-  modules: { cart },
+		logout({ commit }) {
+			userAuth.logout();
+			commit('logout');
+		},
+	},
+
+	modules: { cart },
 });
