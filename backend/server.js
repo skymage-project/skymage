@@ -3,10 +3,16 @@ const bodyParser = require("body-parser");
 const db = require('./database/index');
 const verifyToken = require('./middleware/verifyToken');
 const cors = require("cors");
+const helmet = require("helmet");
+var morgan = require('morgan')
 const user =require('./routes/user')
 const app = express();
 
 app.use(cors());
+
+app.use(helmet());
+
+app.use(morgan('combined'))
 
 app.use(bodyParser.json());
 
