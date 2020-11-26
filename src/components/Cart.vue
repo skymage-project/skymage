@@ -9,7 +9,7 @@
 		color="black"
 		height="auto"
 	>
-		<v-card max-width="98%" class="mx-auto">
+		<v-card max-width="100%" class="mx-auto">
 			<v-container>
 				<v-row dense>
 					<v-col cols="12">
@@ -18,6 +18,22 @@
 							:key="i"
 							:addedItem="addedItem"
 						/>
+						<v-row no-gutters>
+							<v-col cols="12" sm="6" md="8">
+								<v-card class="pa-2">
+									<v-btn color="warning" dark block @click="goPurchase">
+										Checkout
+									</v-btn>
+								</v-card>
+							</v-col>
+							<v-col cols="6" md="4">
+								<v-card class="pa-2">
+									<v-btn color="white" block tile outlined>
+										{{ getTotalCartPrice }} DT
+									</v-btn>
+								</v-card>
+							</v-col>
+						</v-row>
 					</v-col>
 				</v-row>
 			</v-container>
@@ -26,13 +42,14 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 import CartItem from './CartItem';
 export default {
 	name: 'Cart',
 	components: { CartItem },
 	computed: {
 		...mapState(['cart']),
+		...mapGetters(['getTotalCartPrice']),
 	},
 	data() {
 		return {
@@ -42,6 +59,13 @@ export default {
 	methods: {
 		toggleCart() {
 			this.$emit('my-click-outside');
+		},
+		goPurchase() {
+			if (this.route === '/purchase') {
+				return;
+			}
+			this.$router.push('/purchase');
+			this.route = '/purchase';
 		},
 	},
 };
