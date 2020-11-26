@@ -184,7 +184,7 @@ export default {
   },
   components: { Password },
   methods: {
-    validateLog(){
+    validateLog() {
       if (this.$refs.loginForm.validate()) {
         this.$store
           .dispatch("login", {
@@ -199,7 +199,6 @@ export default {
       }
     },
     validate() {
-
       if (this.$refs.registerForm.validate()) {
         this.$store
           .dispatch("register", {

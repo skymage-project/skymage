@@ -38,7 +38,14 @@
 
       <v-card-actions transition="fade-transition">
         <v-btn color="orange lighten-2" text> Read More </v-btn>
-        <v-btn color="orange " v-show="hover">Quick View</v-btn>
+        <v-btn color="orange " v-show="hover" @click="showD">Quick View</v-btn>
+
+        <TrickOverView
+          :trick="trick"
+          :showDiv="showDiv"
+          @toggle-over-view="showD"
+        />
+
         <v-spacer></v-spacer>
 
         <v-btn icon @click="showByIndex">
@@ -63,12 +70,15 @@
 </template>
 
 <script>
+import TrickOverView from "./TrickOverView";
 export default {
+  components: { TrickOverView },
   props: ["trick"],
   data() {
     return {
       show: false,
       hover: false,
+      showDiv: false,
     };
   },
   methods: {
@@ -90,6 +100,9 @@ export default {
     },
     showByIndex(e) {
       this.show = !this.show;
+    },
+    showD() {
+      this.showDiv = !this.showDiv;
     },
   },
 };

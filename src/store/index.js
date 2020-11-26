@@ -132,8 +132,7 @@ export default new Vuex.Store({
         {
           id: 3,
           category: "Coins",
-          name:
-            "Extreme Burn 2.0 (Locked and Loaded) by Richard Sanders (Magical Changing Money Prank)",
+          name: "Extreme Burn 2.0  by Richard Sanders",
           quickDescription:
             "One of our all-time best sellers. The most visual bill-change EVER. Lightning fast, and completely examinable.",
           urlVideos:
