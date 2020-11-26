@@ -19,9 +19,6 @@ export default {
     Item,
     TricksFilter,
   },
-  created() {
-    this.$store.dispatch("fetchTricks");
-  },
   computed: {
     ...mapState(["displayedTricks"]),
   },
@@ -34,6 +31,9 @@ export default {
       this.show[e.target.id] = !this.show[e.target.id];
       this.key++;
     },
+  },
+  mounted() {
+    this.$store.dispatch("getItems");
   },
 };
 </script>
