@@ -5,7 +5,7 @@
 		temporary
 		right
 		v-click-outside="toggleCart"
-		width="18%"
+		width="20%"
 		color="black"
 		height="auto"
 	>
