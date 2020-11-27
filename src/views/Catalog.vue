@@ -1,7 +1,7 @@
 <template>
   <div>
     <TricksFilter />
-    <v-container class="grey lighten-5 mb-6">
+    <v-container>
       <v-row no-gutters style="height: 150px; row-gap: 2em">
         <Item v-for="trick in displayedTricks" :key="trick.id" :trick="trick" />
       </v-row>
@@ -19,15 +19,11 @@ export default {
     Item,
     TricksFilter,
   },
-  created() {
-    this.$store.dispatch("fetchTricks");
-  },
   computed: {
     ...mapState(["displayedTricks"]),
   },
   data: () => ({
     show: {},
-    goDark: true,
     key: 0,
   }),
   methods: {
@@ -35,6 +31,9 @@ export default {
       this.show[e.target.id] = !this.show[e.target.id];
       this.key++;
     },
+  },
+  mounted() {
+    this.$store.dispatch("getItems");
   },
 };
 </script>

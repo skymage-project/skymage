@@ -1,7 +1,6 @@
 <template>
 	<v-col>
 		<v-card
-			:dark="goDark"
 			class="mx-auto"
 			max-width="344"
 			@mouseover="toggleHover"
@@ -39,7 +38,7 @@
 
 			<v-card-actions transition="fade-transition">
 				<v-btn color="orange lighten-2" text> Read More </v-btn>
-				<v-btn color="orange lighten-2" v-if="hover">Quick View</v-btn>
+				<v-btn color="orange " v-show="hover">Quick View</v-btn>
 				<v-spacer></v-spacer>
 
 				<v-btn icon @click="showByIndex">
@@ -69,7 +68,6 @@ export default {
 	data() {
 		return {
 			show: false,
-			goDark: true,
 			hover: false,
 		};
 	},
@@ -84,6 +82,7 @@ export default {
 				name: this.trick.name,
 				picture: this.trick.urlPictures,
 				price: this.trick.price,
+				quantity: 1,
 			};
 			this.$store.dispatch('addToCart', item);
 		},
