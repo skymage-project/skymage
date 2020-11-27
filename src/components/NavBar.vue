@@ -114,9 +114,12 @@ export default {
 			this.$router.push('/signin');
 		},
 		search(event) {
-			this.$router
-				.push('/catalog')
-				.then(() => this.$store.dispatch('filterBy', event));
+			if (this.route === '/catalog') {
+				this.$store.dispatch('filterBy', event);
+			} else {
+				this.$router.push('/about');
+				this.route = '/about';
+			}
 		},
 	},
 	watch: {
