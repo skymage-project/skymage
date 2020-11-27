@@ -3,13 +3,14 @@ const sequelize = require('../index')
 class Item extends Model {}
 Item.init({
     name: Sequelize.STRING,
-    price: Sequelize.INTEGER,
+    category : Sequelize.STRING,
+    price: Sequelize.STRING,
+    quickDescription : Sequelize.STRING,
     difficulty: Sequelize.STRING,
     author: Sequelize.STRING,
     quantity: Sequelize.STRING,
     color: Sequelize.STRING,
     size: Sequelize.STRING,
-    category : Sequelize.STRING
 }, { sequelize, modelName: 'item', timestamps: true });
 
 module.exports = Item;

@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import Catalog from '../views/Catalog.vue';
 import Signin from '../views/Signin.vue';
 import About from '../views/About.vue';
+import Profile from '../views/Profile.vue';
 import Purchase from '../views/Purchase.vue';
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
 		path: '/signin',
 		name: 'Signin',
 		component: Signin,
+	},
+	{
+		path: '/profile',
+		name: 'Profile',
+		component: Profile,
 	},
 	{
 		path: '/purchase',
