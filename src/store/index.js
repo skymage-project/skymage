@@ -270,19 +270,7 @@ export default new Vuex.Store({
     //   ];
     //   commit("FETCH_TRICKS", tricks);
     // },
-    login({ commit }, user) {
-      return userAuth.login(user).then(
-        (user) => {
-          commit("loginSuccess", user);
-          return Promise.resolve(user);
-        },
-        (error) => {
-          commit("loginFailure");
-          return Promise.reject(error);
-        }
-      );
-    },
-
+    
 		login({ commit }, user) {
 			return userAuth.login(user).then(
 				(user) => {
