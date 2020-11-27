@@ -211,9 +211,9 @@ export default {
             phoneNumber: this.phoneNumber,
             country: this.country,
           })
-          .then(() => {
-            this.$router.go();
-          });
+          // .then(() => {
+          //   this.$router.go();
+          // });
       }
     },
     cancel() {
