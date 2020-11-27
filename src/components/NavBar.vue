@@ -9,6 +9,7 @@
 				<v-btn text @click="goCatalog"> <span class="span">Tricks</span></v-btn>
 			</v-toolbar-items>
 			<v-spacer></v-spacer>
+			<v-btn text @click="profile" v-if="loggedIn"> <span class="span">Profile</span></v-btn>
 			<v-btn text @click="logOut" v-if="loggedIn">
 				<span class="span">Logout</span></v-btn
 			>
@@ -70,6 +71,13 @@ export default {
 		...mapGetters(['cartItemsLength']),
 	},
 	methods: {
+		 profile(){
+       if (this.route === "/profile") {
+        return;
+      }
+      this.$router.push("/profile");
+      this.route = "/profile";
+    },
 		toggleShowCart(val) {
 			this.showCart = !this.showCart;
 		},
