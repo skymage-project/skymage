@@ -73,7 +73,10 @@
             <v-icon> mdi-currency-usd</v-icon>
           </v-btn>
         </v-bottom-navigation>
-        <h1 v-if="value===0">im wishes</h1>
+        <div v-if="value===0">
+        <h1>im wishes</h1>
+          <Wishes />
+          </div>
         <h1 v-if="value===1">im fatoura</h1>
       <div style="margin-top: 2000px">hzhj</div>
     </div>
@@ -81,9 +84,13 @@
 </template>
 
 <script>
+import Wishes from "../components/Wishes.vue"
 export default {
   name: "Profile",
-  data: () => ({ value: 0 }),
+  components: {
+    Wishes,
+  },
+  data: () => ({ value:0 }),
   computed: {
     user() {
       return this.$store.state.initialState.user;
