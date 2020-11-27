@@ -33,6 +33,8 @@ const routes = [
 		path: '/profile',
 		name: 'Profile',
 		component: Profile,
+	},
+	{
 		path: '/purchase',
 		name: 'Purchase',
 		component: Purchase,
