@@ -30,7 +30,19 @@ router.post('/signup', async (req, res) => {
                 country: req.body.country,
                 phoneNumber: req.body.phoneNumber,
                 status: "client",
-                access: false
+                access: false,
+                img: req.body.img,
+		        wishList: req.body.wishList,
+		        purchasedItems: req.body.purchasedItems,
+                address: req.body.address,
+                company: req.body.company,
+                addressOptional: req.body.addressOptional,
+                postalCode: req.body.postalCode,
+                city: req.body.city,
+                shippingRate: req.body.shippingRate,
+                creditCardNumber: req.body.creditCardNumber,
+                expirationCardDate: req.body.expirationCardDate,
+                securityCode: req.body.securityCode
             })
             const mailOptions = await {
                 from: `${email.email}`,
@@ -102,6 +114,18 @@ router.post('/signin', async (req, res) => {
             "country": user.country,
             "phoneNumber": user.phoneNumber,
             "status": user.status,
+            "img": user.img,
+            "wishList": user.wishList,
+            "purchasedItems": user.purchasedItems,
+            "address": user.address,
+            "company": user.company,
+            "addressOptional": user.addressOptional,
+            "postalCode": user.postalCode,
+            "city": user.city,
+            "shippingRate": user.shippingRate,
+            "creditCardNumber": user.creditCardNumber,
+            "expirationCardDate": user.expirationCardDate,
+            "securityCode": user.securityCode
         })
     } catch (err) {
         res.status(500).send({
