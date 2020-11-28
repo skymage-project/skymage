@@ -11,11 +11,18 @@
       <v-hover>
         <div id="avatar-container" slot-scope="{ hover }">
           <v-avatar size="110">
-            <v-img src="https://www.w3schools.com/howto/img_avatar.png"></v-img>
+            <v-img :src="img"></v-img>
           </v-avatar>
-          <v-btn id="uploads-btn" v-if="hover" fab dark x-small absolute>
+          <v-btn id="uploads-btn" v-if="hover" fab dark x-small absolute @click='$refs.image.click()'>
             <v-icon>mdi-camera</v-icon>
           </v-btn>
+          <input
+            type="file"
+            style="display: none"
+            ref="image"
+            accept="image/*"
+            @change="onFilePicked"
+          >
         </div>
       </v-hover>
       <v-card height="300" width="400" style="border-radius: 8px">
@@ -111,18 +118,36 @@
 <script>
 import Wishes from "../components/Wishes.vue";
 import Invoice from "../components/Invoice.vue";
+import axios from "axios";
 export default {
   name: "Profile",
   components: {
     Wishes,
     Invoice
   },
-  data: () => ({ value: 0 }),
+  data: () => ({
+     value: 0 ,
+     img:'',
+     }),
   computed: {
     user() {
       return this.$store.state.initialState.user;
     },
   },
+  methods: {
+    onFilePicked(e) {
+      const img = e.target.files[0];
+      if (img !== undefined) {
+        const fr = new FormData()
+        fr.append('image',img)
+        console.log(fr)
+      }
+    },
+
+  },
+  mounted(){
+     this.user.img===null? this.img='https://www.w3schools.com/howto/img_avatar.png':this.img=this.user.img
+  }
 };
 </script>
 

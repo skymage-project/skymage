@@ -102,6 +102,14 @@ router.post('/signin', async (req, res) => {
             "country": user.country,
             "phoneNumber": user.phoneNumber,
             "status": user.status,
+            "img": user.img,
+            "wishList": user.wishList,
+            "purchasedItems": user.purchasedItems,
+            "address": user.address,
+            "company": user.company,
+            "addressOptional": user.addressOptional,
+            "city": user.city,
+            "shippingRate": user.shippingRate,
         })
     } catch (err) {
         res.status(500).send({
