@@ -26,13 +26,28 @@ export default {
 
    register (user) {
     return axios.post('http://localhost:3000/user/signup', {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        password: user.password,
-        dateOfBirth: user.dateOfBirth,
-        country: user.country,
-        phoneNumber: user.phoneNumber,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      password: user.password,
+      email: user.email,
+      dateOfBirth: user.dateOfBirth,
+      country: user.country,
+      phoneNumber: user.phoneNumber,
+      status: "client",
+      access: false,
+      img: user.img,
+      wishList: user.wishList,
+      purchasedItems: user.purchasedItems,
+      address: user.address,
+      company: user.company,
+      addressOptional: user.addressOptional,
+      postalCode: user.postalCode,
+      city: user.city,
+      shippingRate: user.shippingRate,
+      creditCardNumber: user.creditCardNumber,
+      expirationCardDate: user.expirationCardDate,
+      securityCode: user.securityCode
+
     });
   }
 }
