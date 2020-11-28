@@ -310,8 +310,8 @@ export default new Vuex.Store({
 		},
 
 		logout({ commit }) {
-			userAuth.logout();
-			commit('logout');
+      userAuth.logout()
+      commit('logout');
 		},
 	},
 

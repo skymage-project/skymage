@@ -1,6 +1,5 @@
 <template>
-  <div id="app">
-  <v-app id="inspire">
+  <div>
     <v-hover v-slot="{ hover }">
       <v-card
         class="mx-auto"
@@ -30,9 +29,10 @@
             color="orange"
             class="white--text"
             fab
-            large
+            medium
             right
             top
+            @click="addToCart"
           >
             <v-icon>mdi-cart</v-icon>
           </v-btn>
@@ -42,20 +42,32 @@
           <h3 class="display-1 font-weight-light orange--text mb-2">
             QW cooking utensils
           </h3>
-          <div class="font-weight-light title mb-2">
+          <div class="font-weight-light title mb-2" style="color:grey">
             Our Vintage kitchen utensils delight any chef.<br>
             Made of bamboo by hand
           </div>
         </v-card-text>
       </v-card>
     </v-hover>
-  </v-app>
 </div>
 </template>
 
 <script>
 export default {
+  props: ['trick'],
  name:"Wishes",
+ methods: {
+   addToCart() {
+			let item = {
+				id: this.trick.id,
+				name: this.trick.name,
+				picture: this.trick.urlPictures,
+				price: this.trick.price,
+				quantity: 1,
+			};
+			this.$store.dispatch('addToCart', item);
+		},
+ },
 }
 </script>
 

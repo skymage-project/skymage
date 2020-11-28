@@ -18,79 +18,106 @@
           </v-btn>
         </div>
       </v-hover>
-        <v-card height="300" width="400" style="border-radius: 8px;">
-          <v-row>
-            <v-col cols="6" sm="6">
-              <h2>Name:</h2>
-            </v-col>
-            <v-col cols="6" sm="6">
-              <h4>{{ user.firstName + " " + user.lastName }}</h4>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="6" sm="6">
-              <h2>Date of birth:</h2>
-            </v-col>
-            <v-col cols="6" sm="6">
-              <h4>{{ user.dateOfBirth }}</h4>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="6" sm="6">
-              <h2>Country:</h2>
-            </v-col>
-            <v-col cols="6" sm="6">
-              <h4>{{ user.country }}</h4>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="6" sm="6">
-              <h2>Email:</h2>
-            </v-col>
-            <v-col cols="6" sm="6">
-              <h4>{{ user.email }}</h4>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="6" sm="6">
-              <h2>Phone:</h2>
-            </v-col>
-            <v-col cols="6" sm="6">
-              <h4>{{ user.phoneNumber }}</h4>
-            </v-col>
-          </v-row>
-        </v-card>
-        <v-bottom-navigation id="btnNav" v-model="value" dark shift grow>
-          <v-btn>
-            <span>Wishes</span>
+      <v-card height="300" width="400" style="border-radius: 8px">
+        <v-row>
+          <v-col cols="6" sm="6">
+            <h2>Name:</h2>
+          </v-col>
+          <v-col cols="6" sm="6">
+            <h4>{{ user.firstName + " " + user.lastName }}</h4>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="6" sm="6">
+            <h2>Date of birth:</h2>
+          </v-col>
+          <v-col cols="6" sm="6">
+            <h4>{{ user.dateOfBirth }}</h4>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="6" sm="6">
+            <h2>Country:</h2>
+          </v-col>
+          <v-col cols="6" sm="6">
+            <h4>{{ user.country }}</h4>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="6" sm="6">
+            <h2>Email:</h2>
+          </v-col>
+          <v-col cols="6" sm="6">
+            <h4>{{ user.email }}</h4>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="6" sm="6">
+            <h2>Phone:</h2>
+          </v-col>
+          <v-col cols="6" sm="6">
+            <h4>{{ user.phoneNumber }}</h4>
+          </v-col>
+        </v-row>
+      </v-card>
+      <v-bottom-navigation id="btnNav" v-model="value" dark shift grow>
+        <v-btn>
+          <span>Wishes</span>
 
-            <v-icon>mdi-heart</v-icon>
-          </v-btn>
+          <v-icon>mdi-heart</v-icon>
+        </v-btn>
 
-          <v-btn>
-            <span>Fatoura</span>
+        <v-btn>
+          <span>Invoice</span>
 
-            <v-icon> mdi-currency-usd</v-icon>
-          </v-btn>
-        </v-bottom-navigation>
-        <div v-if="value===0">
-        <h1>im wishes</h1>
-          <Wishes />
-          </div>
-        <h1 v-if="value===1">im fatoura</h1>
+          <v-icon> mdi-currency-usd</v-icon>
+        </v-btn>
+      </v-bottom-navigation>
+      <div v-if="value === 0">
+        <v-timeline>
+          <v-timeline-item v-for="n in 4" :key="n">
+            <template v-slot:icon>
+              <v-avatar>
+                <img src="http://i.pravatar.cc/64" />
+              </v-avatar>
+            </template>
+            <template v-slot:opposite>
+              <span>Lorem ipsum</span>
+            </template>
+            <Wishes/>
+          </v-timeline-item>
+        </v-timeline>
+      </div>
+      <div v-if="value === 1">
+        <v-timeline>
+        <v-timeline-item
+      v-for="n in 3"
+      :key="n"
+      color="red lighten-2"
+      large
+    >
+      <template v-slot:opposite>
+        <span>Date</span>
+      </template>
+      <Invoice />
+    </v-timeline-item>
+    </v-timeline>
+      </div>
       <div style="margin-top: 2000px">hzhj</div>
     </div>
   </div>
 </template>
 
 <script>
-import Wishes from "../components/Wishes.vue"
+import Wishes from "../components/Wishes.vue";
+import Invoice from "../components/Invoice.vue";
 export default {
   name: "Profile",
   components: {
     Wishes,
+    Invoice
   },
-  data: () => ({ value:0 }),
+  data: () => ({ value: 0 }),
   computed: {
     user() {
       return this.$store.state.initialState.user;

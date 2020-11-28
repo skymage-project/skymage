@@ -21,7 +21,7 @@ export default {
   },
 
   logout () {
-    localStorage.removeItem('user');
+    return localStorage.removeItem('user');
   },
 
    register (user) {
