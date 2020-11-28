@@ -1,12 +1,12 @@
 <template>
 	<v-card
 		class="mx-auto"
-		width="30%"
+		width="18%"
 		height="380px"
 		@mouseover="toggleHover"
 		@mouseout="toggleHover"
 	>
-		<v-img height="150px" :src="trick.urlPictures">
+		<v-img height="150px" :src="trick.urlPictures[0].urlPictures">
 			<!-- url image -->
 		</v-img>
 		<v-card-text class="pt-4" style="position:relative;">
