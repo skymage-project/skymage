@@ -3,9 +3,9 @@ const cloud = require('../config/cloudinary.config');
 
 
 cloudinary.config({
-    cloud_name: 'skymage',
-    api_key: "475172826588341",
-    api_secret: "t_n18PuWw0nPxtO9TBbZQbW_af4"
+    cloud_name: cloud.Cloud_name,
+    api_key: cloud.API_Key,
+    api_secret: cloud.API_Secret
 })
 
 module.exports={cloudinary};
