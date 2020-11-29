@@ -68,7 +68,7 @@
         </v-row>
       </v-card>
       <v-bottom-navigation id="btnNav" v-model="value" dark shift grow>
-        <v-btn>
+        <v-btn >
           <span>Wishes</span>
 
           <v-icon>mdi-heart</v-icon>
@@ -127,27 +127,28 @@ export default {
   },
   data: () => ({
      value: 0 ,
-     img:'',
+
      }),
   computed: {
     user() {
       return this.$store.state.initialState.user;
     },
+    img() {
+      return this.user.img?this.user.img:'https://www.w3schools.com/howto/img_avatar.png'
+    }
   },
   methods: {
     onFilePicked(e) {
       const img = e.target.files[0];
       if (img !== undefined) {
-        const fr = new FormData()
-        fr.append('image',img)
-        console.log(fr)
+        this.$store.dispatch('updateProfilePic',img).then(() => {
+          this.$router.go()
+        })
       }
     },
 
   },
-  mounted(){
-     this.user.img===null? this.img='https://www.w3schools.com/howto/img_avatar.png':this.img=this.user.img
-  }
+
 };
 </script>
 

@@ -43,6 +43,9 @@ export default new Vuex.Store({
       state.tricks = payload;
       state.displayedTricks = state.tricks.slice();
     },
+    UPDATE_PROFILE_PIC:(state, payload) => {
+      state.initialState.user = payload;
+    },
 
 		loginSuccess(state, user) {
 			state.initialState.status.loggedIn = true;
@@ -300,7 +303,19 @@ export default new Vuex.Store({
 		logout({ commit }) {
       userAuth.logout()
       commit('logout');
-		},
+    },
+    
+    updateProfilePic({commit},img) {
+      return userAuth.updateProfilePic(img,initialState.user.id).then(
+        (result) => {
+         const newUser = JSON.parse(localStorage.getItem('user'));
+         newUser.img=result.data.url;
+         localStorage.setItem('user',JSON.stringify(newUser));
+        }).then(
+          (user) => {
+            commit('UPDATE_PROFILE_PIC',user);
+          })
+    }
 	},
 
 	modules: { cart },

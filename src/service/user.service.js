@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 
-
 export default {
     
     login (user) {
@@ -18,6 +17,15 @@ export default {
 
         return response.data;
       });
+  },
+
+  updateProfilePic(img,id){
+      const fd = new FormData()
+      fd.append('image',img)
+    return  axios.put(`http://localhost:3000/user/upload/${id}`,fd,{
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }});
   },
 
   logout () {
