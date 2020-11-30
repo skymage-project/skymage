@@ -10,6 +10,7 @@ const initialState = user
 	? { status: { loggedIn: true }, user }
 	: { status: { loggedIn: false }, user: null };
 export default new Vuex.Store({
+<<<<<<< HEAD
 	state: {
 		initialState,
 		tricks: [],
@@ -43,6 +44,44 @@ export default new Vuex.Store({
 			state.tricks = payload;
 			state.displayedTricks = state.tricks.slice();
 		},
+=======
+  state: {
+    initialState,
+    tricks: [],
+    displayedTricks: [],
+  },
+  mutations: {
+    // FETCH_TRICKS: (state, payload) => {
+    //   state.tricks = payload;
+    //   state.displayedTricks = payload;
+    // },
+    FILTER_DECREASE: (state) => {
+      state.displayedTricks.sort((a, b) => b.price - a.price);
+    },
+    FILTER_INCREASE: (state) => {
+      state.displayedTricks.sort((a, b) => a.price - b.price);
+    },
+    FILTER_DIFFICULTY: (state, payload) => {
+      state.displayedTricks = state.tricks.filter(
+        (item) => item.difficulty === payload
+      );
+    },
+    RESET_ALL: (state) => {
+      state.displayedTricks = state.tricks;
+    },
+    FILTER_CATEGORY: (state, payload) => {
+      state.displayedTricks = state.tricks.filter(
+        (item) => item.category === payload
+      );
+    },
+    GET_ITEMS: (state, payload) => {
+      state.tricks = payload;
+      state.displayedTricks = state.tricks.slice();
+    },
+    UPDATE_PROFILE_PIC:(state, payload) => {
+      state.initialState.user = payload;
+    },
+>>>>>>> a92de550e4c99e99b930c210fcb758f81d0ff2ad
 
 		loginSuccess(state, user) {
 			state.initialState.status.loggedIn = true;
@@ -130,9 +169,21 @@ export default new Vuex.Store({
 		},
 
 		logout({ commit }) {
-			userAuth.logout();
-			commit('logout');
-		},
+      userAuth.logout()
+      commit('logout');
+    },
+    
+    updateProfilePic({commit},img) {
+      return userAuth.updateProfilePic(img,initialState.user.id).then(
+        (result) => {
+         const newUser = JSON.parse(localStorage.getItem('user'));
+         newUser.img=result.data.url;
+         localStorage.setItem('user',JSON.stringify(newUser));
+        }).then(
+          (user) => {
+            commit('UPDATE_PROFILE_PIC',user);
+          })
+    }
 	},
 
 	modules: { cart },
