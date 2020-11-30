@@ -4,6 +4,7 @@ backend/config
 /dist
 /backend/package-lock.json
 /backend/config
+/backend/tmp
 package-lock.json
 # local env files
 .env.local
