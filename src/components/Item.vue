@@ -1,13 +1,15 @@
 <template>
 	<v-card
 		class="mx-auto"
-		width="18%"
+		width="23%"
 		height="380px"
 		@mouseover="toggleHover"
 		@mouseout="toggleHover"
 	>
 		<v-img height="150px" :src="trick.urlPictures[0].urlPictures">
-			<!-- url image -->
+			<v-btn icon @click="addtToWishlist">
+				<v-icon>mdi-heart-outline</v-icon>
+			</v-btn>
 		</v-img>
 		<v-card-text class="pt-4" style="position:relative;">
 			<v-btn
@@ -26,7 +28,7 @@
 		<v-card-title>
 			<!-- NameTrick -->
 			{{
-				trick.name.length > 20 ? trick.name.slice(0, 20) + '...' : trick.name
+				trick.name.length > 20 ? trick.name.slice(0, 30) + '...' : trick.name
 			}}
 		</v-card-title>
 		<v-card-subtitle>
@@ -81,7 +83,7 @@ export default {
 			let item = {
 				id: this.trick.id,
 				name: this.trick.name,
-				picture: this.trick.urlPictures,
+				picture: this.trick.urlPictures[0].urlPictures,
 				price: this.trick.price,
 				quantity: 1,
 			};
@@ -92,6 +94,16 @@ export default {
 		},
 		showByIndex(e) {
 			this.show = !this.show;
+		},
+		addtToWishlist() {
+			let item = {
+				id: this.trick.id,
+				name: this.trick.name,
+				picture: this.trick.urlPictures[0].urlPictures,
+				price: this.trick.price,
+				quantity: 1,
+			};
+			this.$store.dispatch('addtToWishlist', item);
 		},
 	},
 };

@@ -8,7 +8,9 @@ const UrlPictures = db.UrlPictures;
 const UrlVideos = db.UrlVideos;
 
 router.get('/', async (req, res) => {
-	await Item.findAll({ include: UrlPictures }).then((items) => res.send(items));
+	await Item.findAll({ include: { all: true } }).then((items) =>
+		res.send(items)
+	);
 });
 
 router.get('/img', async (req, res) => {

@@ -1,4 +1,4 @@
-export const state = { itemsToCart: [], showCart: false };
+export const state = { itemsToCart: [], showCart: false, wishList: [] };
 export const mutations = {
 	ADD_ITEM_TO_CART: (state, payload) => {
 		let itemExist = false;
@@ -19,6 +19,16 @@ export const mutations = {
 			}
 		}
 	},
+	ADD_ITEM_TO_WISHLIST: (state, payload) => {
+		let itemExist = false;
+		for (var i = 0; i < state.wishList.length; i++) {
+			if (payload.id === state.wishList.id) {
+				itemExist = true;
+				break;
+			}
+		}
+		!itemExist ? state.wishList.push(payload) : 0;
+	},
 };
 export const actions = {
 	addToCart({ commit }, payload) {
@@ -29,6 +39,9 @@ export const actions = {
 	},
 	removeFromCart({ commit }, payload) {
 		commit('REMOVE_ITEM_FROM_CART', payload);
+	},
+	addtToWishlist({ commit }, payload) {
+		commit('ADD_ITEM_TO_WISHLIST', payload);
 	},
 };
 export const getters = {
