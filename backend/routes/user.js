@@ -186,16 +186,15 @@ const upload = multer({
 router.put('/upload/:id', upload.single('image'), async (req, res, next) => {
     try {
         const result = await cloudinary.uploader.upload(req.file.path);
+        res.json({
+            url: result.url,
+        });
         const user = await User.update({
             img: result.url
         }, {
             where: {
                 id: req.params.id
             }
-        });
-
-        res.json({
-            url: result.url,
         });
     } catch (error) {
         console.error(error);

@@ -143,11 +143,9 @@ export default new Vuex.Store({
 				.then((result) => {
 					const newUser = JSON.parse(localStorage.getItem('user'));
 					newUser.img = result.data.url;
+					commit('UPDATE_PROFILE_PIC', newUser);
 					localStorage.setItem('user', JSON.stringify(newUser));
 				})
-				.then((user) => {
-					commit('UPDATE_PROFILE_PIC', user);
-				});
 		},
 	},
 
