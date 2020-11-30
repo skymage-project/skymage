@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 
-
 export default {
     
     login (user) {
@@ -20,19 +19,43 @@ export default {
       });
   },
 
+  updateProfilePic(img,id){
+      const fd = new FormData()
+      fd.append('image',img)
+    return  axios.put(`http://localhost:3000/user/upload/${id}`,fd,{
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }});
+  },
+
   logout () {
-    localStorage.removeItem('user');
+    return localStorage.removeItem('user');
   },
 
    register (user) {
     return axios.post('http://localhost:3000/user/signup', {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        password: user.password,
-        dateOfBirth: user.dateOfBirth,
-        country: user.country,
-        phoneNumber: user.phoneNumber,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      password: user.password,
+      email: user.email,
+      dateOfBirth: user.dateOfBirth,
+      country: user.country,
+      phoneNumber: user.phoneNumber,
+      status: "client",
+      access: false,
+      img: user.img,
+      wishList: user.wishList,
+      purchasedItems: user.purchasedItems,
+      address: user.address,
+      company: user.company,
+      addressOptional: user.addressOptional,
+      postalCode: user.postalCode,
+      city: user.city,
+      shippingRate: user.shippingRate,
+      creditCardNumber: user.creditCardNumber,
+      expirationCardDate: user.expirationCardDate,
+      securityCode: user.securityCode
+
     });
   }
 }
