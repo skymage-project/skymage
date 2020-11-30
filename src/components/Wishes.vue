@@ -58,10 +58,10 @@ export default {
     },
     addToCart() {
       let item = {
-        id: this.trick.id,
-        name: this.trick.name,
-        picture: this.trick.urlPictures,
-        price: this.trick.price,
+        id: this.wish.id,
+        name: this.wish.name,
+        picture: this.wish.urlPictures,
+        price: this.wish.price,
         quantity: 1,
       };
       this.$store.dispatch("addToCart", item);

@@ -56,10 +56,14 @@ router.post('/signup', async (req, res) => {
                 to: `${req.body.email}`,
                 subject: 'Thanks',
                 text: 'Thank you for choosing our site!',
-                html: `<form action="http://localhost:3000/user/email/${user.id}" method="post">
+                html: `<div style='text-align:center'>
+                <h1> Hi ${user.firstName}+ ${user.lastName}</h1>
+                <h4>Please verify that your email address is ${req.body.email}</h4>
+                <h4>and that you entered it when signin up for SkyMage
+                <form action="http://localhost:3000/user/email/${user.id}" method="post">
                         <label for="fname">Verify your account</label>
                          <input type="submit" value="Verify">
-                       </form>`,
+                       </form></div>`,
             };
 
             transporter.sendMail(mailOptions, function (error, info) {

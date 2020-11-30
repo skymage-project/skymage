@@ -104,7 +104,7 @@
       large
     >
       <template v-slot:opposite>
-        <span>Date</span>
+        <span>22/09/2020</span>
       </template>
       <Invoice />
     </v-timeline-item>
