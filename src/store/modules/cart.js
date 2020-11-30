@@ -29,6 +29,13 @@ export const mutations = {
 		}
 		!itemExist ? state.wishList.push(payload) : 0;
 	},
+	REMOVE_FROM_WISHES:(state, payload)=>{
+		for (var i = 0; i < state.wishList.length; i++) {
+			if(payload===state.wishList[i].id){
+				state.wishList.splice(i,1);
+			}
+		}
+	}
 };
 export const actions = {
 	addToCart({ commit }, payload) {
@@ -43,6 +50,9 @@ export const actions = {
 	addtToWishlist({ commit }, payload) {
 		commit('ADD_ITEM_TO_WISHLIST', payload);
 	},
+	removeFromWishes({ commit },payload) {
+		commit('REMOVE_FROM_WISHES', payload);
+	}
 };
 export const getters = {
 	cartItemsLength: (state) => {
