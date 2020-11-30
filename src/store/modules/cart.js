@@ -11,6 +11,19 @@ export const mutations = {
 		}
 		!itemExist ? state.itemsToCart.push(payload) : 0;
 	},
+	DECREASE_ITEM_FROM_CART: (state,payload) => {
+		let itemExist = false;
+		for (var i = 0; i < state.itemsToCart.length; i++) {
+			if (payload.id === state.itemsToCart[i].id) {
+				if(state.itemsToCart[i].quantity > 0){
+					state.itemsToCart[i].quantity -= payload.quantity;
+					itemExist = true;
+					break;
+				}
+			}
+		}
+		!itemExist ? state.itemsToCart.splice(payload.id,1) : 0;
+	},
 	REMOVE_ITEM_FROM_CART: (state, payload) => {
 		for (var i = 0; i < state.itemsToCart.length; i++) {
 			if (payload === state.itemsToCart[i].id) {
@@ -34,6 +47,9 @@ export const actions = {
 	addToCart({ commit }, payload) {
 		commit('ADD_ITEM_TO_CART', payload);
 	},
+	decreaseQuantity({commit}, payload) {
+		commit('DECREASE_ITEM_FROM_CART', payload)
+	},
 	toggleCart({ commit }) {
 		commit('TOGGLE_CART');
 	},
@@ -56,3 +72,4 @@ export const getters = {
 		return price;
 	},
 };
+
