@@ -199,7 +199,7 @@ export default new Vuex.Store({
     //           author: "Pablo Amira",
     //           description: `ou approach the audience with a "naked" deck of cards. The deck is shown to be blank both back and front. A spectator is asked to name a card - any card - a completely free choice. The cards are spread through once more and a single back appears nestled among the sea of blanks.
     //           The card is turned over to reveal - the spectator's selection!
-    //
+
     //     {
     //       id: 7,
     //       "category": "Beginners",
