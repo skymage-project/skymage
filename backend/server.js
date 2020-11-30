@@ -4,8 +4,8 @@ const db = require('./database/index');
 const verifyToken = require('./middleware/verifyToken');
 const cors = require("cors");
 const helmet = require("helmet");
-var morgan = require('morgan')
-const user =require('./routes/user')
+var morgan = require('morgan');
+const user =require('./routes/user');
 const app = express();
 
 app.use(cors());

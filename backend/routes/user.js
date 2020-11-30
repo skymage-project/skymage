@@ -6,7 +6,14 @@ const jwt = require('jsonwebtoken');
 const config = require("../config/auth.config.js")
 const verifySignUp = require('../middleware/verifySignUp.js');
 const nodemailer = require('nodemailer');
-const email = require('../config/email.config')
+const email = require('../config/email.config');
+const multer = require('multer');
+const path = require('path');
+
+const {
+    cloudinary
+} = require('../cloudinary/configuration');
+
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -30,7 +37,19 @@ router.post('/signup', async (req, res) => {
                 country: req.body.country,
                 phoneNumber: req.body.phoneNumber,
                 status: "client",
-                access: false
+                access: false,
+                img: req.body.img,
+                wishList: req.body.wishList,
+                purchasedItems: req.body.purchasedItems,
+                address: req.body.address,
+                company: req.body.company,
+                addressOptional: req.body.addressOptional,
+                postalCode: req.body.postalCode,
+                city: req.body.city,
+                shippingRate: req.body.shippingRate,
+                creditCardNumber: req.body.creditCardNumber,
+                expirationCardDate: req.body.expirationCardDate,
+                securityCode: req.body.securityCode
             })
             const mailOptions = await {
                 from: `${email.email}`,
@@ -60,7 +79,7 @@ router.post('/signup', async (req, res) => {
             message: err.message
         })
     }
-})
+});
 
 
 router.post('/signin', async (req, res) => {
@@ -102,13 +121,25 @@ router.post('/signin', async (req, res) => {
             "country": user.country,
             "phoneNumber": user.phoneNumber,
             "status": user.status,
+            "img": user.img,
+            "wishList": user.wishList,
+            "purchasedItems": user.purchasedItems,
+            "address": user.address,
+            "company": user.company,
+            "addressOptional": user.addressOptional,
+            "postalCode": user.postalCode,
+            "city": user.city,
+            "shippingRate": user.shippingRate,
+            "creditCardNumber": user.creditCardNumber,
+            "expirationCardDate": user.expirationCardDate,
+            "securityCode": user.securityCode
         })
     } catch (err) {
         res.status(500).send({
             message: err.message
         })
     }
-})
+});
 
 router.post('/email/:id', async (req, res) => {
     const user = await User.findOne({
@@ -126,6 +157,45 @@ router.post('/email/:id', async (req, res) => {
     res.send(`<h1>Welcome to Skymage comunity </h1>
             <h3>thanks for verifying your account now u can login to our <a href="http://localhost:8080/signin">website</a></h3>
                                                                                     `);
-})
+});
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'tmp');
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + path.extname(file.originalname));
+    }
+});
+const fileFilter = (req, file, cb) => {
+    if (file.mimetype == 'image/jpeg' || file.mimetype == 'image/png') {
+        cb(null, true);
+    } else {
+        cb(null, false);
+    }
+}
+const upload = multer({
+    storage: storage,
+    fileFilter: fileFilter
+});
+
+router.put('/upload/:id', upload.single('image'), async (req, res, next) => {
+    try {
+        const result = await cloudinary.uploader.upload(req.file.path);
+        const user = await User.update({
+            img: result.url
+        }, {
+            where: {
+                id: req.params.id
+            }
+        });
+
+        res.json({
+            url: result.url,
+        });
+    } catch (error) {
+        console.error(error);
+    }
+});
 
 module.exports = router;
