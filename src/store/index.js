@@ -13,74 +13,7 @@ export default new Vuex.Store({
   state: {
     initialState,
     tricks: [],
-    displayedTricks: [
-      {
-        id: 1,
-        category: "Cards",
-        name: "D4M",
-        quickDescription:
-          "D4M est un effet de carte déchirée et restaurée incroyablement visuel et unique. Il est entièrement examinable et laisse à vos spectateurs un souvenir qu'ils voudront garder et montrer pour toujours.",
-        urlVideos:
-          '<iframe width="1143" height="643" src="https://www.youtube.com/embed/N05hau_70F4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-        urlPictures: [
-          "https://www.bigmagie.com/6322-large_default/d4m-matthew-wright.jpg",
-          "https://www.bigmagie.com/6323-large_default/d4m-matthew-wright.jpg",
-          "https://www.bigmagie.com/6324-thickbox_default/d4m-matthew-wright.jpg",
-        ],
-        price: "14.95",
-        difficulty: "Beginner",
-        author: "Beginner",
-        quantity: "10",
-        descriptionText:
-          "Un spectateur sélectionne une carte, qui peut être entièrement inspectée. Elle est ensuite marquée pour identification. Le magicien la déchire en morceaux et, de façon inexplicable, les remet en place avec deux des morceaux inversés. Hyper visuel et examinable instantanément. Avec des instructions de téléchargement complètes et détaillées, aucun détail explicatif n'a été omis et de nombreuses idées de présentation et de routines sont explorées. Il s'agit véritablement d'un chef-d'œuvre de magie moderne que vous serez fier de pouvoir présenter dans le cadre de votre répertoire de travail. D4M est conçu pour être un worker. Avec un temps de préparation de quelques secondes seulement et des contraintes d'angles réduites au minimum, D4M est parfait pour le close-up, le salon et même sur scène. Cette routine est directement issue du numéro de Matthew à la FISM et a été plébiscitée par les magiciens du monde entier.",
-        descriptionTitle: "DESCRIPTION",
-        descriptionInstruction: "descriptionInstruction",
-      },
-      {
-        id: 2,
-        category: "Cards",
-        name: "D4M",
-        quickDescription:
-          "D4M est un effet de carte déchirée et restaurée incroyablement visuel et unique. Il est entièrement examinable et laisse à vos spectateurs un souvenir qu'ils voudront garder et montrer pour toujours.",
-        urlVideos:
-          '<iframe width="1143" height="643" src="https://www.youtube.com/embed/N05hau_70F4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-        urlPictures: [
-          "https://www.bigmagie.com/6322-large_default/d4m-matthew-wright.jpg",
-          "https://www.bigmagie.com/6323-large_default/d4m-matthew-wright.jpg",
-          "https://www.bigmagie.com/6324-thickbox_default/d4m-matthew-wright.jpg",
-        ],
-        price: "14.95",
-        difficulty: "Beginner",
-        author: "Beginner",
-        quantity: "10",
-        descriptionText:
-          "Un spectateur sélectionne une carte, qui peut être entièrement inspectée. Elle est ensuite marquée pour identification. Le magicien la déchire en morceaux et, de façon inexplicable, les remet en place avec deux des morceaux inversés. Hyper visuel et examinable instantanément. Avec des instructions de téléchargement complètes et détaillées, aucun détail explicatif n'a été omis et de nombreuses idées de présentation et de routines sont explorées. Il s'agit véritablement d'un chef-d'œuvre de magie moderne que vous serez fier de pouvoir présenter dans le cadre de votre répertoire de travail. D4M est conçu pour être un worker. Avec un temps de préparation de quelques secondes seulement et des contraintes d'angles réduites au minimum, D4M est parfait pour le close-up, le salon et même sur scène. Cette routine est directement issue du numéro de Matthew à la FISM et a été plébiscitée par les magiciens du monde entier.",
-        descriptionTitle: "DESCRIPTION",
-        descriptionInstruction: "descriptionInstruction",
-      },
-      {
-        id: 3,
-        category: "Cards",
-        name: "D4M",
-        quickDescription:
-          "D4M est un effet de carte déchirée et restaurée incroyablement visuel et unique. Il est entièrement examinable et laisse à vos spectateurs un souvenir qu'ils voudront garder et montrer pour toujours.",
-        urlVideos:
-          '<iframe width="1143" height="643" src="https://www.youtube.com/embed/N05hau_70F4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-        urlPictures: [
-          "https://www.bigmagie.com/6322-large_default/d4m-matthew-wright.jpg",
-          "https://www.bigmagie.com/6323-large_default/d4m-matthew-wright.jpg",
-          "https://www.bigmagie.com/6324-thickbox_default/d4m-matthew-wright.jpg",
-        ],
-        price: "14.95",
-        difficulty: "Beginner",
-        author: "Beginner",
-        quantity: "10",
-        descriptionText:
-          "Un spectateur sélectionne une carte, qui peut être entièrement inspectée. Elle est ensuite marquée pour identification. Le magicien la déchire en morceaux et, de façon inexplicable, les remet en place avec deux des morceaux inversés. Hyper visuel et examinable instantanément. Avec des instructions de téléchargement complètes et détaillées, aucun détail explicatif n'a été omis et de nombreuses idées de présentation et de routines sont explorées. Il s'agit véritablement d'un chef-d'œuvre de magie moderne que vous serez fier de pouvoir présenter dans le cadre de votre répertoire de travail. D4M est conçu pour être un worker. Avec un temps de préparation de quelques secondes seulement et des contraintes d'angles réduites au minimum, D4M est parfait pour le close-up, le salon et même sur scène. Cette routine est directement issue du numéro de Matthew à la FISM et a été plébiscitée par les magiciens du monde entier.",
-        descriptionTitle: "DESCRIPTION",
-        descriptionInstruction: "descriptionInstruction",
-      },
-    ],
+    displayedTricks: [],
   },
   mutations: {
     // FETCH_TRICKS: (state, payload) => {
