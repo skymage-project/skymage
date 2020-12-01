@@ -147,6 +147,10 @@ export default new Vuex.Store({
 					localStorage.setItem('user', JSON.stringify(newUser));
 				})
 		},
+		sendMessage({commit},message) {
+			 userAuth.sendMessage(message);
+			 commit('SEND_MESSAGE')
+		}
 	},
 
 	modules: { cart },

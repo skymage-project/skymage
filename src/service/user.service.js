@@ -57,5 +57,9 @@ export default {
       securityCode: user.securityCode
 
     });
+  },
+
+  sendMessage (message) {
+    
   }
 }
