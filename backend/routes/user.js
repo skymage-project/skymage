@@ -54,7 +54,7 @@ router.post('/signup', async (req, res) => {
 				html: `<div style='text-align:center'>
                 <h1> Hi ${user.firstName}+ ${user.lastName}</h1>
                 <h4>Please verify that your email address is ${req.body.email}</h4>
-                <h4>and that you entered it when signin up for SkyMage
+                <h4>and that you entered it when signin up for SkyMage</h4>
                 <form action="http://localhost:3000/user/email/${user.id}" method="post">
                         <label for="fname">Verify your account</label>
                          <input type="submit" value="Verify">
