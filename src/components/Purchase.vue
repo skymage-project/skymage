@@ -5,7 +5,36 @@
         <v-col sm="5" md="6">
           <a href="http://localhost:8080">SKYMAGE</a>
           <h2>Contact information</h2>
-          Already have an account?<a href="http://localhost:8080/signin">Log in</a>
+          <br />
+          <h3>Already have an account? You can login from here</h3>
+          <br />
+          <v-form ref="loginForm" v-model="valid" lazy-validation>
+            <v-row>
+              <v-col cols="12" sm="6">
+                <v-text-field v-model="firstName" label="First Name" :rules="[rules.required]" maxlength="20" solo-inverted required></v-text-field>
+              </v-col>
+
+              <v-col cols="12" sm="6">
+                <v-text-field v-model="lastName" label="Last Name" :rules="[rules.required]" maxlength="20" solo-inverted required></v-text-field>
+              </v-col>
+
+              <v-col cols="12">
+                <v-text-field v-model="loginEmail" :rules="loginEmailRules" label="E-mail" solo-inverted required></v-text-field>
+              </v-col>
+              <v-col cols="12">
+                <v-text-field v-model="loginPassword" :append-icon="show1 ? 'eye' : 'eye-off'" :rules="[rules.required, rules.min]" :type="show1 ? 'text' : 'password'" name="input-10-1" label="Password" hint="At least 8 characters" counter @click:append="show1 = !show1" solo-inverted></v-text-field>
+              </v-col>
+              <v-col class="d-flex" cols="12" sm="6" xsm="12"> </v-col>
+              <v-spacer></v-spacer>
+              <v-col class="d-flex ml-auto" cols="12" sm="6" xsm="12">
+                <v-btn x-large :disabled="!valid" color="#737373" @click="Login"> Login </v-btn>
+              </v-col>
+            </v-row>
+          </v-form>
+          <hr />
+          <h2>OR</h2>
+          <br />
+          <h2>You need to create an account from here to complete your purchase</h2>
           <v-form ref="registerForm" v-model="valid" lazy-validation>
             <v-container>
               <v-row>
@@ -63,25 +92,21 @@
                 </v-col>
               </v-row>
 
-              <v-btn x-large :disabled="!valid" color="#737373" @click="register">Register</v-btn>
+              <v-btn x-large :disabled="!valid" color="warning" @click="goToCompleteThePurchase">Continue The Shipping</v-btn>
             </v-container>
           </v-form>
         </v-col>
         <v-col sm="5" offset-sm="2" md="6" offset-md="0">
           <CartItemList />
           <h3>Subtotal : {{ getTotalCartPrice }} DT</h3>
-          <h3>
-            Shipping :
-            <p>Calculated at next step</p>
-          </h3>
+          <h3>Shipping : Calculated at next step</h3>
           <hr />
           <h3>Total : {{ getTotalCartPrice }} DT</h3>
-          <v-btn x-large color="warning" @click="goToCompleteThePurchase">Continue The Shipping</v-btn>
         </v-col>
       </v-row>
     </div>
     <div v-if="check">
-      <Shipping />
+      <Shipping :firstName="firstName" :lastName="lastName" />
     </div>
   </div>
 </template>
@@ -98,6 +123,9 @@ export default {
     ...mapGetters(["getTotalCartPrice"]),
     passwordMatch() {
       return () => this.password === this.verify || "Password must match";
+    },
+    loggedIn() {
+      return this.$store.state.initialState.status.loggedIn;
     },
   },
   data: () => ({
@@ -322,6 +350,9 @@ export default {
     dateOfBirth: "",
     phoneNumber: "",
     country: "",
+    loginPassword: "",
+    loginEmail: "",
+    loginEmailRules: [(v) => !!v || "Required", (v) => /.+@.+\..+/.test(v) || "E-mail must be valid"],
     emailRules: [(v) => !!v || "Required", (v) => /.+@.+\..+/.test(v) || "E-mail must be valid"],
     rules: {
       required: (value) => !!value || "Required.",
@@ -329,30 +360,35 @@ export default {
     },
   }),
   methods: {
-    register() {
+    goToCompleteThePurchase() {
       if (this.$refs.registerForm.validate()) {
-        this.$store
-          .dispatch("register", {
-            firstName: this.firstName,
-            lastName: this.lastName,
-            email: this.email,
-            password: this.password,
-            dateOfBirth: this.dateOfBirth,
-            phoneNumber: this.phoneNumber,
-            country: this.country,
-            company: this.company,
-            address: this.address,
-            postalCode: this.postalCode,
-            city: this.city,
-            addressOptional: this.addressOptional,
-          })
-          .then(() => {
-            this.$router.push("/signin");
-          });
+        this.$store.dispatch("register", {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          email: this.email,
+          password: this.password,
+          dateOfBirth: this.dateOfBirth,
+          phoneNumber: this.phoneNumber,
+          country: this.country,
+          company: this.company,
+          address: this.address,
+          postalCode: this.postalCode,
+          city: this.city,
+          addressOptional: this.addressOptional,
+        });
+        return (this.check = !this.check);
       }
     },
-    goToCompleteThePurchase() {
-      return (this.check = !this.check);
+    Login() {
+      if (this.$refs.loginForm.validate()) {
+        this.$store.dispatch("login", {
+          email: this.loginEmail,
+          password: this.loginPassword,
+          firstName: this.firstName,
+          lastName: this.lastName,
+        });
+        return (this.check = !this.check);
+      }
     },
   },
 };
