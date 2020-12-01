@@ -5,6 +5,7 @@ db.descriptions = require('./description');
 db.Feedback = require('./Feedback');
 db.UrlVideos = require('./urlVideos');
 db.UrlPictures = require('./urlPictures');
+db.wishlists = require('./wishlist');
 
 db.descriptions.belongsTo(db.items);
 db.items.hasOne(db.descriptions);
@@ -21,7 +22,4 @@ db.items.hasMany(db.UrlPictures);
 db.items.belongsToMany(db.users, { through: 'PurchaseRecords' });
 db.users.belongsToMany(db.items, { through: 'PurchaseRecords' });
 
-/* db.items.belongsToMany(db.users, { through: 'WishList' });
-db.users.belongsToMany(db.items, { through: 'WishList' });
- */
 module.exports = db;
