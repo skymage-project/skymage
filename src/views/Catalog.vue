@@ -22,23 +22,8 @@ export default {
   computed: {
     ...mapState(["displayedTricks"]),
   },
-  data: () => ({
-    show: {},
-    key: 0,
-  }),
-  methods: {
-    showByIndex(e) {
-      this.show[e.target.id] = !this.show[e.target.id];
-      this.key++;
-    },
-  },
   created() {
-    console.log(this.$route.params);
-    if (this.$route.params.filter) {
-      this.$store.dispatch("filterBy", this.$route.params.filter);
-    } else {
-      this.$store.dispatch("getItems");
-    }
+    this.$store.dispatch("getItems");
   },
 };
 </script>

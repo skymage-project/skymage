@@ -5,7 +5,7 @@ import Catalog from "../views/Catalog.vue";
 import Signin from "../views/Signin.vue";
 import About from "../views/About.vue";
 import Profile from "../views/Profile.vue";
-import Purchase from "../views/Purchase.vue";
+import Final from "../views/Final.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -35,9 +35,9 @@ const routes = [
     component: Profile,
   },
   {
-    path: "/purchase",
-    name: "Purchase",
-    component: Purchase,
+    path: "/final",
+    name: "Final",
+    component: Final,
   },
 ];
 

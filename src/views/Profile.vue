@@ -82,16 +82,16 @@
       </v-bottom-navigation>
       <div v-if="value === 0">
         <v-timeline>
-          <v-timeline-item v-for="n in 4" :key="n">
+          <v-timeline-item v-for="(wish, i) in cart.wishList" :key="i">
             <template v-slot:icon>
               <v-avatar>
-                <img src="http://i.pravatar.cc/64" />
+                <img :src="user.img||'http://i.pravatar.cc/64'" />
               </v-avatar>
             </template>
             <template v-slot:opposite>
-              <span>Lorem ipsum</span>
+              <span style="color:orange;font-size: 28px;">Date of choose</span>
             </template>
-            <Wishes/>
+            <Wishes :wish="wish"/>
           </v-timeline-item>
         </v-timeline>
       </div>
@@ -104,7 +104,7 @@
       large
     >
       <template v-slot:opposite>
-        <span>Date</span>
+        <span>22/09/2020</span>
       </template>
       <Invoice />
     </v-timeline-item>
@@ -119,6 +119,7 @@
 import Wishes from "../components/Wishes.vue";
 import Invoice from "../components/Invoice.vue";
 import axios from "axios";
+import { mapState } from "vuex";
 export default {
   name: "Profile",
   components: {
@@ -130,6 +131,7 @@ export default {
 
      }),
   computed: {
+    ...mapState(["cart"]),
     user() {
       return this.$store.state.initialState.user;
     },

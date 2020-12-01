@@ -2,9 +2,8 @@
   <div>
     <v-app-bar id="nav" :dark="goDark">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title @click="goHome"> Welcome To SkyMage</v-toolbar-title>
-
       <v-toolbar-items>
+        <v-btn @click="goHome">Welcome To SkyMage</v-btn>
         <v-btn text @click="goAbout"> <span class="span">About</span></v-btn>
         <v-btn text @click="goCatalog"> <span class="span">Tricks</span></v-btn>
       </v-toolbar-items>
@@ -119,8 +118,11 @@ export default {
       if (this.route === "/catalog") {
         this.$store.dispatch("filterBy", event);
       } else {
-        this.$router.push({ name: "Catalog", params: { filter: event } });
-        this.route = "/catalog";
+        const me = this;
+        this.$router.push("/catalog").then(() => {
+          me.route = "/catalog";
+          me.$store.dispatch("filterBy", event);
+        });
       }
     },
   },
