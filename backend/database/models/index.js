@@ -1,5 +1,5 @@
 const db = require('../index');
-db.user = require('./user');
+db.users = require('./user');
 db.items = require('./item');
 db.descriptions = require('./description');
 db.Feedback = require('./Feedback');
@@ -18,10 +18,10 @@ db.items.hasMany(db.UrlVideos);
 db.UrlPictures.belongsTo(db.items);
 db.items.hasMany(db.UrlPictures);
 
-db.items.belongsToMany(db.user, { through: 'PurchaseRecords' });
-db.user.belongsToMany(db.items, { through: 'PurchaseRecords' });
+db.items.belongsToMany(db.users, { through: 'PurchaseRecords' });
+db.users.belongsToMany(db.items, { through: 'PurchaseRecords' });
 
-db.items.belongsToMany(db.user, { through: 'WishList' });
-db.user.belongsToMany(db.items, { through: 'WishList' });
-
+/* db.items.belongsToMany(db.users, { through: 'WishList' });
+db.users.belongsToMany(db.items, { through: 'WishList' });
+ */
 module.exports = db;

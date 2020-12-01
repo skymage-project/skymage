@@ -1,6 +1,5 @@
 [
 	{
-		"id": 1,
 		"category": "Cards",
 		"name": "D4M",
 		"quickDescription": "D4M est un effet de carte déchirée et restaurée incroyablement visuel et unique. Il est entièrement examinable et laisse à vos spectateurs un souvenir qu'ils voudront garder et montrer pour toujours.",
@@ -15,7 +14,8 @@
 		"author": "Beginner",
 		"quantity": "10",
 		"descriptionText": "Un spectateur sélectionne une carte, qui peut être entièrement inspectée. Elle est ensuite marquée pour identification. Le magicien la déchire en morceaux et, de façon inexplicable, les remet en place avec deux des morceaux inversés. Hyper visuel et examinable instantanément. Avec des instructions de téléchargement complètes et détaillées, aucun détail explicatif n'a été omis et de nombreuses idées de présentation et de routines sont explorées. Il s'agit véritablement d'un chef-d'œuvre de magie moderne que vous serez fier de pouvoir présenter dans le cadre de votre répertoire de travail. D4M est conçu pour être un worker. Avec un temps de préparation de quelques secondes seulement et des contraintes d'angles réduites au minimum, D4M est parfait pour le close-up, le salon et même sur scène. Cette routine est directement issue du numéro de Matthew à la FISM et a été plébiscitée par les magiciens du monde entier.",
-		"descriptionTitle": "DESCRIPTION"
+		"descriptionTitle": "DESCRIPTION",
+		"descriptionInstruction": "descriptionInstruction"
 	},
 
 	{
