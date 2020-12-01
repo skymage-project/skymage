@@ -29,7 +29,6 @@ export default {
 	logout() {
 		return localStorage.removeItem('user');
 	},
-
 	register(user) {
 		return axios.post('http://localhost:3000/user/signup', {
 			firstName: user.firstName,
@@ -52,5 +51,10 @@ export default {
 			expirationCardDate: user.expirationCardDate,
 			securityCode: user.securityCode,
 		});
-	},
+  },
+  
+  
+  sendMessage (message) {
+    
+  }
 };

@@ -205,4 +205,33 @@ router.put('/upload/:id', upload.single('image'), async (req, res, next) => {
 	}
 });
 
+
+router.post('/message', async (req, res)=>{
+    try{
+        
+    const mailOptions = await {
+        from: `${req.body.email}`,
+        to: `${email.email}`,
+        subject: `Feedback from ${req.body.name}`,
+        text: `${req.body.message}`,
+    };
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
+
+    res.status(200).send({
+        message: 'Email sent',
+    });
+    } catch (err) {
+        res.status(500).send({
+            message: err.message
+        })
+    }
+
+})
+
 module.exports = router;
