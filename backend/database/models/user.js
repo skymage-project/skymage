@@ -12,8 +12,6 @@ User.init(
 		status: Sequelize.STRING,
 		phoneNumber: Sequelize.STRING,
 		img: Sequelize.STRING,
-		wishList: Sequelize.STRING,
-		purchasedItems: Sequelize.STRING,
 		address: Sequelize.STRING,
 		company: Sequelize.STRING,
 		addressOptional: Sequelize.STRING,
