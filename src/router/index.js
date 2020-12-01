@@ -38,7 +38,7 @@ const routes = [
 		path: '/final',
 		name: 'Final',
 		component: Final,
-	},
+	}
 ];
 
 const router = new VueRouter({

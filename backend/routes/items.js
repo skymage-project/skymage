@@ -13,14 +13,6 @@ router.get('/', async (req, res) => {
 	);
 });
 
-router.get('/img', async (req, res) => {
-	await UrlPictures.findAll().then((items) => res.send(items));
-});
-
-// router.get("/desc",async (req, res) => {
-//     await Description.findAll().then((items) => res.send(items));
-// })
-
 router.post('/add', async (req, res) => {
 	try {
 		const item = await Item.create({
