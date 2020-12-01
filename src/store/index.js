@@ -4,6 +4,8 @@ import userAuth from '../service/user.service';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import * as cart from './modules/cart';
+import * as wishlist from './modules/wishlist';
+import * as purchase from './modules/purchase';
 Vue.use(Vuex);
 const user = JSON.parse(localStorage.getItem('user'));
 const initialState = user
@@ -16,10 +18,6 @@ export default new Vuex.Store({
 		displayedTricks: [],
 	},
 	mutations: {
-		// FETCH_TRICKS: (state, payload) => {
-		//   state.tricks = payload;
-		//   state.displayedTricks = payload;
-		// },
 		FILTER_DECREASE: (state) => {
 			state.displayedTricks.sort((a, b) => b.price - a.price);
 		},
@@ -145,9 +143,13 @@ export default new Vuex.Store({
 					newUser.img = result.data.url;
 					commit('UPDATE_PROFILE_PIC', newUser);
 					localStorage.setItem('user', JSON.stringify(newUser));
-				})
+				});
 		},
+		sendMessage({commit},message) {
+			 userAuth.sendMessage(message);
+			 commit('SEND_MESSAGE')
+		}
 	},
 
-	modules: { cart },
+	modules: { cart, purchase, wishlist },
 });

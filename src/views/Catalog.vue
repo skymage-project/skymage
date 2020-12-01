@@ -22,16 +22,6 @@ export default {
 	computed: {
 		...mapState(['displayedTricks']),
 	},
-	data: () => ({
-		show: {},
-		key: 0,
-	}),
-	methods: {
-		showByIndex(e) {
-			this.show[e.target.id] = !this.show[e.target.id];
-			this.key++;
-		},
-	},
 	created() {
 		this.$store.dispatch('getItems');
 	},
