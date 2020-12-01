@@ -18,8 +18,10 @@ db.items.hasMany(db.UrlVideos);
 db.UrlPictures.belongsTo(db.items);
 db.items.hasMany(db.UrlPictures);
 
-/* db.items.belongsToMany(db.user, { through: 'PurchaseRecords' });
+db.items.belongsToMany(db.user, { through: 'PurchaseRecords' });
 db.user.belongsToMany(db.items, { through: 'PurchaseRecords' });
- */
+
+db.items.belongsToMany(db.user, { through: 'WishList' });
+db.user.belongsToMany(db.items, { through: 'WishList' });
 
 module.exports = db;

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../database/models/index');
+const User = require('../database/models/user');
 const Item = db.items;
 const Description = db.descriptions;
 const Feedback = db.Feedback;
@@ -35,17 +36,17 @@ router.post('/add', async (req, res) => {
 			size: req.body.size,
 		});
 		const description = await Description.create({
-			text: req.body.text,
-			title: req.body.title,
-			instruction: req.body.instruction,
+			descriptionText: req.body.text,
+			descriptionTitle: req.body.title,
+			descriptionInstruction: req.body.instruction,
 		});
 		await item.setDescription(description);
 
 		const feedback = await Feedback.create({
-			userName: req.body.userName,
-			rating: req.body.rating,
-			comment: req.body.comment,
-			date: req.body.date,
+			feedbackUserName: req.body.userName,
+			feedbackRating: req.body.rating,
+			feedbackComment: req.body.comment,
+			feedbackDate: req.body.date,
 		});
 		await item.setFeedbacks(feedback);
 
@@ -59,6 +60,22 @@ router.post('/add', async (req, res) => {
 		});
 		await item.setUrlVideos(urlVideos);
 		res.json('added');
+	} catch (err) {
+		console.log(err);
+	}
+});
+
+router.post('/purchase', async (req, res) => {
+	try {
+		User.findAll({
+			where: {
+				id: req.body.userID,
+			},
+		}).then((user) => {
+			user.setItems(req.body.ItemsBought).then((res) => {
+				console.log(res);
+			});
+		});
 	} catch (err) {
 		console.log(err);
 	}
