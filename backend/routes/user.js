@@ -52,7 +52,7 @@ router.post('/signup', async (req, res) => {
 				subject: 'Thanks',
 				text: 'Thank you for choosing our site!',
 				html: `<div style='text-align:center'>
-                <h1> Hi ${user.firstName}+ ${user.lastName}</h1>
+                <h1> Hi ${user.firstName} ${user.lastName}</h1>
                 <h4>Please verify that your email address is ${req.body.email}</h4>
                 <h4>and that you entered it when signin up for SkyMage</h4>
                 <form action="http://localhost:3000/user/email/${user.id}" method="post">
@@ -159,9 +159,9 @@ router.post('/email/:id', async (req, res) => {
 			},
 		}
 	);
-	res.send(`<h1>Welcome to Skymage comunity </h1>
-            <h3>thanks for verifying your account now u can login to our <a href="http://localhost:8080/signin">website</a></h3>
-                                                                                    `);
+    res.statusCode = 302;
+    res.setHeader("Location", "http://localhost:8080/signin");
+    res.end();
 });
 
 const storage = multer.diskStorage({
@@ -208,7 +208,6 @@ router.put('/upload/:id', upload.single('image'), async (req, res, next) => {
 
 router.post('/message', async (req, res)=>{
     try{
-        
     const mailOptions = await {
         from: `${req.body.email}`,
         to: `${email.email}`,

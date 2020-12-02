@@ -117,7 +117,14 @@ export default {
             country: this.country,
           })
           .then(() => {
-            this.$router.go();
+            this.firstName = '';
+            this.lastName = '';
+            this.email = '';
+            this.password = '';
+            this.dateOfBirth = '';
+            this.phoneNumber = '';
+            this.country = '';
+            this.tab = 0;
           });
       }
     },

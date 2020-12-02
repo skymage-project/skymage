@@ -17,12 +17,9 @@
             <div class="w3-half">
               <input class="w3-input" style="color: orange; border-color: orange" type="text" placeholder="Name" required name="Name" v-model="name" />
             </div>
-            <div class="w3-half">
-              <input class="w3-input" style="color: orange; border-color: orange" type="text" placeholder="Email" required name="email" v-model="email" />
-            </div>
+            <input class="w3-input" style="color: orange; border-color: orange" type="text" placeholder="Message" required name="message" v-model="message" />
+            <button @click="sendMessage" class="w3-button w3-orange w3-section w3-right">SEND</button>
           </div>
-          <input class="w3-input" style="color: orange; border-color: orange" type="text" placeholder="Message" required name="message" v-model="message" />
-          <button onclick="sendMessage" class="w3-button w3-orange w3-section w3-right">SEND</button>
         </div>
       </div>
     </div>
@@ -42,7 +39,11 @@ export default {
         email: this.email,
         message: this.message,
       };
-      this.$store.dispatch("sendMessage", message);
+      this.$store.dispatch("sendMessage", message).then(() => {
+        this.name = "";
+        this.email = "";
+        this.message = "";
+      });
     },
   },
 };

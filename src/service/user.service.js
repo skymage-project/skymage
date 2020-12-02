@@ -52,17 +52,15 @@ export default {
 			securityCode: user.securityCode,
 		});
   },
-  
-  
+
   sendMessage (message) {
-    
+
+    return axios.post('http://localhost:3000/user/message', {
+		email: message.email,
+		name: message.name,
+		message: message.message,
+	})
   },
-
-
-
-
-
-
 
   updateRegister(user){
 	return axios.put('http://localhost:3000/user/update', {
@@ -76,6 +74,8 @@ export default {
 		creditCardNumber: user.creditCardNumber,
 		expirationCardDate: user.expirationCard,
 		securityCode: user.securityCode
-	});
-  }
-};
+	})
+},
+}
+
+    
