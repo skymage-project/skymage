@@ -33,7 +33,7 @@
 					/>
 				</div>
 			</v-hover>
-			<v-card height="300" width="400" style="border-radius: 8px">
+			<v-card width="600" style="border-radius: 8px">
 				<v-row>
 					<v-col cols="6" sm="6">
 						<h2>Name:</h2>
@@ -75,48 +75,50 @@
 					</v-col>
 				</v-row>
 			</v-card>
-			<v-bottom-navigation id="btnNav" v-model="value" dark shift grow>
-				<v-btn>
-					<span>Wishes</span>
+			<div>
+				<v-bottom-navigation id="btnNav" v-model="value" dark shift grow>
+					<v-btn>
+						<span>Wishes</span>
 
-					<v-icon>mdi-heart</v-icon>
-				</v-btn>
+						<v-icon>mdi-heart</v-icon>
+					</v-btn>
 
-				<v-btn>
-					<span>Invoice</span>
+					<v-btn>
+						<span>Invoice</span>
 
-					<v-icon> mdi-currency-usd</v-icon>
-				</v-btn>
-			</v-bottom-navigation>
-			<div v-if="value === 0">
-				<v-timeline>
-					<v-timeline-item
-						v-for="(wish, i) in wishlist.wishListTricksInfos"
-						:key="i"
-					>
-						<template v-slot:icon>
-							<v-avatar>
-								<img :src="user.img || 'http://i.pravatar.cc/64'" />
-							</v-avatar>
-						</template>
-						<template v-slot:opposite>
-							<span style="color:orange;font-size: 28px;">{{
-								momentTime(wish.updatedAt)
-							}}</span>
-						</template>
-						<Wishes :wish="wish" />
-					</v-timeline-item>
-				</v-timeline>
-			</div>
-			<div v-if="value === 1">
-				<v-timeline>
-					<v-timeline-item v-for="n in 3" :key="n" color="orange" x-small>
-						<template v-slot:opposite>
-							<span>22/09/2020</span>
-						</template>
-						<Invoice />
-					</v-timeline-item>
-				</v-timeline>
+						<v-icon> mdi-currency-usd</v-icon>
+					</v-btn>
+				</v-bottom-navigation>
+				<div v-if="value === 0">
+					<v-timeline>
+						<v-timeline-item
+							v-for="(wish, i) in wishlist.wishListTricksInfos"
+							:key="i"
+						>
+							<template v-slot:icon>
+								<v-avatar>
+									<img :src="user.img || 'http://i.pravatar.cc/64'" />
+								</v-avatar>
+							</template>
+							<template v-slot:opposite>
+								<span style="color: orange; font-size: 28px">{{
+									momentTime(wish.updatedAt)
+								}}</span>
+							</template>
+							<Wishes :wish="wish" />
+						</v-timeline-item>
+					</v-timeline>
+				</div>
+				<div v-if="value === 1">
+					<v-timeline>
+						<v-timeline-item v-for="n in 3" :key="n" color="orange" x-small>
+							<template v-slot:opposite>
+								<span>22/09/2020</span>
+							</template>
+							<Invoice />
+						</v-timeline-item>
+					</v-timeline>
+				</div>
 			</div>
 			<div style="margin-top: 2000px">hzhj</div>
 		</div>
@@ -178,7 +180,7 @@ h2 {
 	color: rgb(255, 255, 255);
 }
 h4 {
-	margin-top: 7px;
+	margin-top: 20px;
 	color: orange;
 }
 #btnNav {

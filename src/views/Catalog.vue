@@ -2,7 +2,7 @@
 	<div>
 		<TricksFilter />
 		<v-container inline>
-			<v-row style="height: 150px; row-gap: 2em">
+			<v-row style="row-gap: 2em">
 				<Item v-for="trick in displayedTricks" :key="trick.id" :trick="trick" />
 			</v-row>
 		</v-container>
