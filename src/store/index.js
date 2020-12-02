@@ -91,6 +91,12 @@ export default new Vuex.Store({
 			state.initialState.status.loggedIn = false;
 			state.initialState.user = null;
 		},
+		REGISTER_UPDATED() {
+			Swal.fire({
+			icon: 'success',
+			text:'Your profile has been updated successfully'
+		});
+	}
 	},
 	actions: {
 		filterBy({ commit }, event) {
@@ -157,8 +163,16 @@ export default new Vuex.Store({
 			 userAuth.sendMessage(message).then(() => {
 				commit('SEND_MESSAGE')
 			 })
-		}
+			},
+			
+		updateRegister({ commit }, user) {
+			return userAuth.updateRegister(user).then(
+				() => {
+					commit('REGISTER_UPDATED');
+				},
+			);
+		},
 	},
-
+	
 	modules: { cart, purchase, wishlist },
 });

@@ -17,12 +17,12 @@
               <v-row>
                 <v-col cols="6">
                   <v-subheader class="grey--text text--lighten-1 pl-0 subheader">CARDHOLDER’S NAME</v-subheader>
-                  <v-text-field single-line :rules="[rules.required]" outlined maxlength="19  " />
+                  <v-text-field single-line :value="user.firstName + ' ' + user.lastName" :rules="[rules.required]" outlined maxlength="19" />
                 </v-col>
 
                 <v-col cols="6">
                   <v-subheader class="grey--text text--lighten-1 pl-0 subheader">CARD NUMBER</v-subheader>
-                  <v-text-field single-line outlined mask="credit-card" :rules="[rules.required]" v-model="valueOfCardNumber" hide-details />
+                  <v-text-field single-line outlined mask="credit-card" :rules="[rules.required]" v-model="creditCardNumber" hide-details />
                 </v-col>
 
                 <v-col col="4">
@@ -37,7 +37,7 @@
 
                 <v-col col="4">
                   <v-subheader class="grey--text text--lighten-1 pl-0 subheader">CVV</v-subheader>
-                  <v-text-field single-line outlined v-model="cvv" type="text" :rules="[rules.required]" maxlength="3" />
+                  <v-text-field single-line outlined v-model="cvv" type="password" :rules="[rules.required]" maxlength="3" />
                 </v-col>
               </v-row>
             </v-card-text>
@@ -61,7 +61,7 @@
       </v-row>
     </div>
     <div v-if="check">
-      <PurchaseDone :selected="selected" :firstName="firstName" :lastName="lastName" />
+      <PurchaseDone :selected="selected" :shippingRate="shippingRate" />
     </div>
   </div>
 </template>
@@ -71,18 +71,24 @@ import PurchaseDone from "../components/PurchaseDone";
 import CartItemList from "../components/CartItemList";
 import { mapState, mapGetters } from "vuex";
 export default {
-  props: ["selected", "firstName", "lastName"],
+  props: ["selected", "shippingRate"],
   components: { CartItemList, PurchaseDone },
   computed: {
     ...mapState(["cart"]),
     ...mapGetters(["getTotalCartPrice"]),
+    loggedIn() {
+      return this.$store.state.initialState.status.loggedIn;
+    },
+    user() {
+      return this.$store.state.initialState.user;
+    },
   },
   data: () => ({
     check: false,
     URL_IMAGE: "https://i.imgur.com/lY1wk82.png",
     YearList: ["2021", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"],
     MonthList: ["January", "February", "March", "April", "May", "June", "Jully", "August", "September", "October", "November", "December"],
-    valueOfCardNumber: null,
+    creditCardNumber: null,
     cvv: null,
     rules: {
       required: (value) => !!value || "Required.",
