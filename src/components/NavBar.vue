@@ -8,10 +8,16 @@
         <v-btn text @click="goCatalog"> <span class="span">Tricks</span></v-btn>
       </v-toolbar-items>
       <v-spacer></v-spacer>
-      <v-btn text @click="profile" v-if="loggedIn"> <span class="span">Profile</span></v-btn>
-      <v-btn text @click="logOut" v-if="loggedIn"> <span class="span">Logout</span></v-btn>
+      <v-btn text @click="profile" v-if="loggedIn">
+        <span class="span">Profile</span></v-btn
+      >
+      <v-btn text @click="logOut" v-if="loggedIn">
+        <span class="span">Logout</span></v-btn
+      >
 
-      <v-btn text @click="goSignin" v-else> <span class="span">Signin</span></v-btn>
+      <v-btn text @click="goSignin" v-else>
+        <span class="span">Signin</span></v-btn
+      >
       <v-btn @click="toggleShowCart">
         <v-badge left color="warning">
           <span slot="badge">{{ cartItemsLength }}</span>
@@ -19,7 +25,14 @@
         </v-badge>
       </v-btn>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" temporary absolute left width="200" id="drawer">
+    <v-navigation-drawer
+      v-model="drawer"
+      temporary
+      absolute
+      left
+      width="200"
+      id="drawer"
+    >
       <v-btn text @click="search('Beginners')">Beginners</v-btn>
       <v-btn text @click="search('Close Up')">Close Up</v-btn>
       <v-btn text @click="search('Cards')">Cards</v-btn>
