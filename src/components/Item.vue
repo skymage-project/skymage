@@ -55,6 +55,11 @@ export default {
       hover: false,
     };
   },
+  computed: {
+    userId() {
+      return this.$store.state.initialState.user.id;
+    },
+  },
   methods: {
     showByIndex(e) {
       this.show[e.target.id] = !this.show[e.target.id];
@@ -77,14 +82,11 @@ export default {
       this.show = !this.show;
     },
     addtToWishlist() {
-      let item = {
-        id: this.trick.id,
-        name: this.trick.name,
-        picture: this.trick.urlPictures[0].urlPictures,
-        price: this.trick.price,
-        quantity: 1,
-      };
-      this.$store.dispatch("addtToWishlist", item);
+      let addWish = { UserId: this.userId, ItemId: this.trick.id };
+      this.$store.dispatch("addToWishList", {
+        UserId: this.userId,
+        ItemId: this.trick.id,
+      });
     },
   },
 };
