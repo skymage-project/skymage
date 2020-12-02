@@ -84,9 +84,9 @@ export default {
     },
     logOut() {
       this.$store.dispatch("logout").then(() => {
-        if (this.route === "/") {
-          return;
-        }
+        // if (this.route === '/' ) {
+        // 	return;
+        // }
         this.$router.push("/");
       });
     },

@@ -45,6 +45,13 @@ export default new Vuex.Store({
       state.initialState.user = payload;
     },
 
+    SEND_MESSAGE: (state, payload) => {
+      Swal.fire({
+        icon: "success",
+        text: "Thank you! we will answer you as soon as we can",
+      });
+    },
+
     loginSuccess(state, user) {
       state.initialState.status.loggedIn = true;
       state.initialState.user = user;
@@ -82,6 +89,12 @@ export default new Vuex.Store({
     logout(state) {
       state.initialState.status.loggedIn = false;
       state.initialState.user = null;
+    },
+    REGISTER_UPDATED() {
+      Swal.fire({
+        icon: "success",
+        text: "Your profile has been updated successfully",
+      });
     },
   },
   actions: {
@@ -146,8 +159,15 @@ export default new Vuex.Store({
         });
     },
     sendMessage({ commit }, message) {
-      userAuth.sendMessage(message);
-      commit("SEND_MESSAGE");
+      userAuth.sendMessage(message).then(() => {
+        commit("SEND_MESSAGE");
+      });
+    },
+
+    updateRegister({ commit }, user) {
+      return userAuth.updateRegister(user).then(() => {
+        commit("REGISTER_UPDATED");
+      });
     },
   },
 

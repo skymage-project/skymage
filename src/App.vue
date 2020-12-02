@@ -16,6 +16,5 @@ export default {
     NavBar,
     Footer,
   },
-  data: () => ({}),
 };
 </script>

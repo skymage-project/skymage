@@ -57,6 +57,7 @@
 import TrickOverView from "./TrickOverView";
 export default {
   components: { TrickOverView },
+
   props: ["trick"],
   data() {
     return {
