@@ -59,11 +59,13 @@ import TrickOverView from './TrickOverView';
 import { mapGetters } from 'vuex';
 export default {
 	props: ['trick'],
+	components: { TrickOverView },
 	data() {
 		return {
 			show: false,
 			hover: false,
 			wished: false,
+			showDiv: false,
 		};
 	},
 	computed: {
