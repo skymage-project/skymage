@@ -41,9 +41,10 @@ const routes = [
     component: Final,
   },
   {
-    path: "/cards",
+    path: "/cards/:id",
     name: "Cards",
     component: Cards,
+    props: true,
   },
 ];
 

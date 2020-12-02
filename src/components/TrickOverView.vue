@@ -114,7 +114,7 @@ export default {
     },
     openFull() {
       // this.full = true;
-      this.$router.push("/cards");
+      this.$router.push({ name: "Cards", params: { id: this.trick.id } });
     },
     bindImg() {},
     addItemToCart() {

@@ -28,7 +28,7 @@
     <v-card-title>
       <!-- NameTrick -->
       {{
-        trick.name.length > 20 ? trick.name.slice(0, 30) + "..." : trick.name
+        trick.name.length > 20 ? trick.name.slice(0, 18) + "..." : trick.name
       }}
     </v-card-title>
     <v-card-subtitle>
@@ -40,34 +40,16 @@
       {{ trick.price }}DT
     </v-card-subtitle>
 
-    <v-card-actions transition="fade-transition">
-      <v-btn color="orange lighten-2" text> Read More </v-btn>
-      <v-btn color="orange " v-show="hover" @click="showD">Quick View</v-btn>
+    <v-btn class="buttonQuick" color="orange " v-show="hover" @click="showD"
+      >Quick View</v-btn
+    >
 
-      <TrickOverView
-        :trick="trick"
-        :showDiv="showDiv"
-        @toggle-over-view="showD"
-      />
-      <v-spacer></v-spacer>
-
-      <v-btn icon @click="showByIndex">
-        <v-icon :id="trick.id">
-          {{ show ? "mdi-chevron-up" : "mdi-chevron-down" }}</v-icon
-        >
-      </v-btn>
-    </v-card-actions>
-
-    <v-expand-transition>
-      <div v-if="show">
-        <v-divider></v-divider>
-
-        <v-card-text>
-          <!-- description of the trick -->
-          {{ trick.description }}
-        </v-card-text>
-      </div>
-    </v-expand-transition>
+    <TrickOverView
+      :trick="trick"
+      :showDiv="showDiv"
+      @toggle-over-view="showD"
+    />
+    <v-spacer></v-spacer>
   </v-card>
 </template>
 
@@ -123,4 +105,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.buttonQuick {
+  position: relative;
+  left: 8em;
+  top: -1em;
+}
+</style>
