@@ -7,10 +7,27 @@ export const addToWishList = (addWish) => {
 			ItemId: addWish.ItemId,
 		})
 		.then((response) => {
+			console.log(response);
 			return response;
 		});
 };
 
-export const RemoveFromWishList = (UserId, ItemId) => {
-	//let user = JSON.parse(localStorage.getItem('user'));
+export const removeFromWishList = (removeWish) => {
+	console.log(removeWish);
+	return axios.delete('http://localhost:3000/items/removeItemFromWishList', {
+		data: {
+			UserId: removeWish.UserId,
+			ItemId: removeWish.ItemId,
+		},
+	});
+};
+
+export const fetchWishList = (UserId) => {
+	return axios
+		.post('http://localhost:3000/items/fetchWishList', {
+			UserId: UserId,
+		})
+		.then((response) => {
+			return response.data;
+		});
 };

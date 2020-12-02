@@ -7,8 +7,9 @@
 		@mouseout="toggleHover"
 	>
 		<v-img height="150px" :src="trick.urlPictures[0].urlPictures">
-			<v-btn icon @click="addtToWishlist">
-				<v-icon>mdi-heart-outline</v-icon>
+			<v-btn icon @click="toggleWish">
+				<v-icon v-if="wished">mdi-heart</v-icon>
+				<v-icon v-else>mdi-heart-outline</v-icon>
 			</v-btn>
 		</v-img>
 		<v-card-text class="pt-4" style="position:relative;">
@@ -41,43 +42,28 @@
 		</v-card-subtitle>
 
 		<v-card-actions transition="fade-transition">
-			<v-btn color="orange lighten-2" text> Read More </v-btn>
 			<v-btn color="orange " v-show="hover">Quick View</v-btn>
 			<v-spacer></v-spacer>
-
-			<v-btn icon @click="showByIndex">
-				<v-icon :id="trick.id">
-					{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon
-				>
-			</v-btn>
 		</v-card-actions>
-
-		<v-expand-transition>
-			<div v-if="show">
-				<v-divider></v-divider>
-
-				<v-card-text>
-					<!-- description of the trick -->
-					{{ trick.description }}
-				</v-card-text>
-			</div>
-		</v-expand-transition>
 	</v-card>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
 	props: ['trick'],
 	data() {
 		return {
 			show: false,
 			hover: false,
+			wished: false,
 		};
 	},
 	computed: {
 		userId() {
 			return this.$store.state.initialState.user.id;
 		},
+		...mapGetters(['getWishListItems']),
 	},
 	methods: {
 		showByIndex(e) {
@@ -100,13 +86,38 @@ export default {
 		showByIndex(e) {
 			this.show = !this.show;
 		},
-		addtToWishlist() {
-			let addWish = { UserId: this.userId, ItemId: this.trick.id };
-			this.$store.dispatch('addToWishList', {
-				UserId: this.userId,
-				ItemId: this.trick.id,
-			});
+		toggleWish() {
+			if (this.wished) {
+				this.$store
+					.dispatch('removeFromWishList', {
+						UserId: this.userId,
+						ItemId: this.trick.id,
+					})
+					.then(() => {
+						this.wished = false;
+						console.log(this.wished);
+					});
+			} else {
+				this.$store
+					.dispatch('addToWishList', {
+						UserId: this.userId,
+						ItemId: this.trick.id,
+					})
+					.then(() => {
+						this.wished = true;
+						console.log(this.wished);
+					});
+			}
 		},
+	},
+	created: function() {
+		if (this.getWishListItems) {
+			for (var i = 0; i < this.getWishListItems.length; i++) {
+				if (this.getWishListItems[i].ItemId === this.trick.id) {
+					this.wished = true;
+				}
+			}
+		}
 	},
 };
 </script>
