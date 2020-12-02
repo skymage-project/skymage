@@ -1,38 +1,81 @@
 import axios from 'axios';
 
-
-
 export default {
-    
-    login (user) {
-      
-    return axios
-      .post('http://localhost:3000/user/signin', {
-        email: user.email,
-        password: user.password
-      })
-      .then(response => {
-        if (response.data.accessToken) {
-          localStorage.setItem('user', JSON.stringify(response.data));
-        }
+	login(user) {
+		return axios
+			.post('http://localhost:3000/user/signin', {
+				email: user.email,
+				password: user.password,
+			})
+			.then((response) => {
+				if (response.data.accessToken) {
+					localStorage.setItem('user', JSON.stringify(response.data));
+				}
 
-        return response.data;
-      });
+				return response.data;
+			});
+	},
+
+	updateProfilePic(img, id) {
+		const fd = new FormData();
+		fd.append('image', img);
+		return axios.put(`http://localhost:3000/user/upload/${id}`, fd, {
+			headers: {
+				'Content-Type': 'multipart/form-data',
+			},
+		});
+	},
+
+	logout() {
+		return localStorage.removeItem('user');
+	},
+	register(user) {
+		return axios.post('http://localhost:3000/user/signup', {
+			firstName: user.firstName,
+			lastName: user.lastName,
+			password: user.password,
+			email: user.email,
+			dateOfBirth: user.dateOfBirth,
+			country: user.country,
+			phoneNumber: user.phoneNumber,
+			status: 'client',
+			access: false,
+			img: user.img,
+			address: user.address,
+			company: user.company,
+			addressOptional: user.addressOptional,
+			postalCode: user.postalCode,
+			city: user.city,
+			shippingRate: user.shippingRate,
+			creditCardNumber: user.creditCardNumber,
+			expirationCardDate: user.expirationCardDate,
+			securityCode: user.securityCode,
+		});
   },
 
-  logout () {
-    localStorage.removeItem('user');
+  sendMessage (message) {
+
+    return axios.post('http://localhost:3000/user/message', {
+		email: message.email,
+		name: message.name,
+		message: message.message,
+	})
   },
 
-   register (user) {
-    return axios.post('http://localhost:3000/user/signup', {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        password: user.password,
-        dateOfBirth: user.dateOfBirth,
-        country: user.country,
-        phoneNumber: user.phoneNumber,
-    });
-  }
+  updateRegister(user){
+	return axios.put('http://localhost:3000/user/update', {
+		email: user.email,
+		address: user.address,
+		company: user.company,
+		addressOptional: user.addressOptional,
+		postalCode: user.postalCode,
+		city: user.city,
+		shippingRate: user.shippingRate,
+		creditCardNumber: user.creditCardNumber,
+		expirationCardDate: user.expirationCard,
+		securityCode: user.securityCode
+	})
+},
 }
+
+    
