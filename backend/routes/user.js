@@ -208,7 +208,6 @@ router.put('/upload/:id', upload.single('image'), async (req, res, next) => {
 
 router.post('/message', async (req, res)=>{
     try{
-        console.log(req.body);
     const mailOptions = await {
         from: `${req.body.email}`,
         to: `${email.email}`,
