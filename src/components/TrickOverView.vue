@@ -30,12 +30,6 @@
                       class="pa-2"
                       width="25%"
                     >
-                      <!-- <v-img
-                        v-model="selected"
-                        @click="bindImg"
-                        height="120px"
-                        v-html="item.content"
-                      /> -->
                       <v-img
                         height="120px"
                         v-html="getiframeDown(item.urlPictures)"
@@ -66,10 +60,14 @@
                     <v-btn
                       color="orange lighten-2"
                       class="buttonV"
-                      @click="toggleOverView"
+                      @click="
+                        toggleOverView();
+                        openFull();
+                      "
                       >View Full Page</v-btn
                     ></v-col
                   >
+
                   <v-col cols="5"
                     ><h1 class="price">{{ trick.price }} $</h1></v-col
                   >
@@ -111,8 +109,6 @@
                     ></v-col
                   >
                 </v-row>
-                <!-- <v-spacer></v-spacer>
-                <v-row><v-col>button</v-col></v-row> -->
               </v-layout>
             </v-card>
           </v-col>
@@ -123,7 +119,9 @@
 </template>
 <script>
 import { mapState, mapGetters } from "vuex";
+import OnetrickFullPage from "./OnetrickFullPage.vue";
 export default {
+  components: { OnetrickFullPage },
   props: ["showDiv", "trick"],
   name: "TrickOverView",
   computed: {
@@ -133,33 +131,16 @@ export default {
   data() {
     return {
       show: false,
-      // items: [
-      //   {
-      //     id: "1",
-      //     content:
-      //       '<img width="640" height="370" src="https://i.pinimg.com/originals/a7/55/a9/a755a93ecc3605830526040c842d7d71.jpg"/>',
-      //   },
-      //   {
-      //     id: "2",
-      //     content:
-      //       '<img width="640" height="370" src="https://d8jyfye76ik7i.cloudfront.net/gallery/blog/thumbs/whats-the-difference-between-bicycle-rider-back-and-standard-decks-of-cards.jpg"/>',
-      //   },
-      //   {
-      //     id: "3",
-      //     content:
-      //       '<img width="640" height="370" src="https://i.ebayimg.com/images/g/xoMAAOSwUlxfVXFc/s-l1600.jpg"/>',
-      //   },
-      //   {
-      //     id: "4",
-      //     content:
-      //       '<iframe width="640" height="370" src="https://www.youtube.com/embed/3lfQIK9hN7k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-      //   },
-      // ],
+      full: true,
     };
   },
   methods: {
     toggleOverView() {
       this.$emit("toggle-over-view");
+    },
+    openFull() {
+      // this.full = true;
+      this.$router.push("/cards");
     },
     bindImg() {},
     addItemToCart() {
@@ -205,24 +186,4 @@ export default {
   position: relative;
   top: -0.5vw;
 }
-/* .buttonV {
-  position: relative;
-  top: -18vw;
-  left: -2vw;
-}
-.titleV {
-  position: relative;
-  top: -39vw;
-  left: 53vw;
-  width: 23vw;
-}
-.text {
-  position: relative;
-  top: -80vh;
-  left: 113vh;
-}
-.v-caroussel__controls {
-  left: 0.1em;
-  width: 52vw;
-} */
 </style>

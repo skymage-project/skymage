@@ -6,6 +6,7 @@ import Signin from "../views/Signin.vue";
 import About from "../views/About.vue";
 import Profile from "../views/Profile.vue";
 import Final from "../views/Final.vue";
+import Cards from "../views/Cards.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -38,6 +39,11 @@ const routes = [
     path: "/final",
     name: "Final",
     component: Final,
+  },
+  {
+    path: "/cards",
+    name: "Cards",
+    component: Cards,
   },
 ];
 
