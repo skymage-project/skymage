@@ -55,6 +55,10 @@ export default {
   
   
   sendMessage (message) {
-    
+    return axios.post('http://localhost:3000/user/message', {
+		email: message.email,
+		name: message.name,
+		message: message.message,
+	})
   }
 };
