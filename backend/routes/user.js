@@ -159,9 +159,9 @@ router.post('/email/:id', async (req, res) => {
 			},
 		}
 	);
-	res.send(`<h1>Welcome to Skymage comunity </h1>
-            <h3>thanks for verifying your account now u can login to our <a href="http://localhost:8080/signin">website</a></h3>
-                                                                                    `);
+    res.statusCode = 302;
+    res.setHeader("Location", "http://localhost:8080/signin");
+    res.end();
 });
 
 const storage = multer.diskStorage({
@@ -208,7 +208,6 @@ router.put('/upload/:id', upload.single('image'), async (req, res, next) => {
 
 router.post('/message', async (req, res)=>{
     try{
-        
     const mailOptions = await {
         from: `${req.body.email}`,
         to: `${email.email}`,
