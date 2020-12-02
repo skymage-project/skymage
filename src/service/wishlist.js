@@ -31,3 +31,13 @@ export const fetchWishList = (UserId) => {
 			return response.data;
 		});
 };
+
+export const fetchWishListItems = (ArrayOfItems) => {
+	return axios
+		.post('http://localhost:3000/items/fetchItemsWishList', {
+			ArrayOfItems,
+		})
+		.then((response) => {
+			return response.data;
+		});
+};

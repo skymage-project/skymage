@@ -132,7 +132,6 @@ router.post('/purchase', async (req, res) => {
 					id: req.body.listOfItemsId,
 				},
 			}).then((items) => {
-				console.log('ttttttttttttt');
 				console.log(items);
 				items[0].addUser(items[0].dataValues.id, user[0].dataValues.id);
 				res.json('purchased');
@@ -180,6 +179,23 @@ router.post('/fetchWishList', async (req, res) => {
 			},
 		});
 		res.json(wishListItems);
+	} catch (err) {
+		res.send(err);
+	}
+});
+router.post('/fetchItemsWishList', async (req, res) => {
+	try {
+		let arrayOfIds = [];
+		for (var i = 0; i < req.body.ArrayOfItems.length; i++) {
+			arrayOfIds.push(req.body.ArrayOfItems[i].ItemId);
+		}
+		const wishListItemsDetails = await Item.findAll({
+			where: {
+				id: arrayOfIds,
+			},
+			include: { all: true },
+		});
+		res.json(wishListItemsDetails);
 	} catch (err) {
 		res.send(err);
 	}

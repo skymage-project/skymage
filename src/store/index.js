@@ -145,11 +145,15 @@ export default new Vuex.Store({
 					localStorage.setItem('user', JSON.stringify(newUser));
 				});
 		},
-		sendMessage({commit},message) {
-			 userAuth.sendMessage(message);
-			 commit('SEND_MESSAGE')
-		}
+		sendMessage({ commit }, message) {
+			userAuth.sendMessage(message);
+			commit('SEND_MESSAGE');
+		},
 	},
-
+	getters: {
+		getTricks: (state) => {
+			return state.tricks;
+		},
+	},
 	modules: { cart, purchase, wishlist },
 });
