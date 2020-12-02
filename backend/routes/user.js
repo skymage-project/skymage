@@ -54,7 +54,7 @@ router.post('/signup', async (req, res) => {
 				html: `<div style='text-align:center'>
                 <h1> Hi ${user.firstName}+ ${user.lastName}</h1>
                 <h4>Please verify that your email address is ${req.body.email}</h4>
-                <h4>and that you entered it when signin up for SkyMage
+                <h4>and that you entered it when signin up for SkyMage</h4>
                 <form action="http://localhost:3000/user/email/${user.id}" method="post">
                         <label for="fname">Verify your account</label>
                          <input type="submit" value="Verify">
@@ -204,5 +204,34 @@ router.put('/upload/:id', upload.single('image'), async (req, res, next) => {
 		console.error(error);
 	}
 });
+
+
+router.post('/message', async (req, res)=>{
+    try{
+        
+    const mailOptions = await {
+        from: `${req.body.email}`,
+        to: `${email.email}`,
+        subject: `Feedback from ${req.body.name}`,
+        text: `${req.body.message}`,
+    };
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
+
+    res.status(200).send({
+        message: 'Email sent',
+    });
+    } catch (err) {
+        res.status(500).send({
+            message: err.message
+        })
+    }
+
+})
 
 module.exports = router;

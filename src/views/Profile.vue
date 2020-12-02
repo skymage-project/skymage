@@ -100,8 +100,8 @@
         <v-timeline-item
       v-for="n in 3"
       :key="n"
-      color="red lighten-2"
-      large
+      color="orange"
+      x-small
     >
       <template v-slot:opposite>
         <span>22/09/2020</span>

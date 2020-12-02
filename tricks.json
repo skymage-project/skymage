@@ -19,24 +19,26 @@
   },
 
   {
-    "id": 2,
     "category": "DvD",
     "name": "Black Art Project (2 DVD)",
     "quickDescription": "Vous l'avez sûrement déjà vu mais peut-être encore jamais utilisé... Découvrez un projet DVD complet dédié au Black Art, un principe permettant de concevoir des effets dignes d'un trucage vidéo qui changera à coup sûr votre magie.",
     "urlVideos": "https://youtu.be/_9rcdwvXYHs",
-    "urlPictures": "https://www.bigmagie.com/5718-large_default/black-art-project-2-dvd.jpg",
+    "urlPictures": [
+      "https://www.bigmagie.com/5718-large_default/black-art-project-2-dvd.jpg"
+    ],
     "price": "99",
     "difficulty": "Intermediate",
     "author": "SansMinds",
     "quantity": "10"
   },
   {
-    "id": 3,
     "category": "Coins",
     "name": "Extreme Burn 2.0 (Locked and Loaded) by Richard Sanders (Magical Changing Money Prank)",
     "quickDescription": "One of our all-time best sellers. The most visual bill-change EVER. Lightning fast, and completely examinable.",
     "urlVideos": "https://s3.amazonaws.com/images.penguinmagic.com/images/products/original/5249b-55d61ad0e09ef.png",
-    "urlPictures": "https://www.bigmagie.com/4376-large_default/biobender-eric-jones.jpg",
+    "urlPictures": [
+      "https://www.bigmagie.com/4376-large_default/biobender-eric-jones.jpg"
+    ],
     "price": "15",
     "difficulty": "Beginner",
     "author": "Adam Wilber",
@@ -44,12 +46,13 @@
     "descriptionTitle": "Extreme Burn 2.0 (Locked and Loaded) by Richard Sanders (Magical Changing Money Prank)"
   },
   {
-    "id": 4,
     "category": "Accessories",
     "name": "Invisible Writer (Pencil Lead) by Vernet",
     "quickDescription": "ernet Magic has the most complete line of writers. But there was one missing, until now -- a writer undetectable under conditions of high scrutiny.",
     "urlVideos": "https://s3.amazonaws.com/images.penguinmagic.com/images/products/original/17455a-5db86ff254717.png",
-    "urlPictures": "https://www.bigmagie.com/6014-large_default/3-in-1-set-de-des-leo-smetsers.jpg",
+    "urlPictures": [
+      "https://www.bigmagie.com/6014-large_default/3-in-1-set-de-des-leo-smetsers.jpg"
+    ],
     "price": "18",
     "difficulty": "Advanced",
     "author": "Vernet",
@@ -57,12 +60,13 @@
     "descriptionTitle": "Invisible Writer (Pencil Lead) by Vernet"
   },
   {
-    "id": 5,
     "category": "Mental",
     "name": "How to Read Minds Kit",
     "quickDescription": "Yes you can. The kit includes over 20 techniques that you can use to improve every aspect of your life.",
     " urlVideos": "https://ksr-ugc.imgix.net/assets/027/438/990/9f1eb3b10e2856b3a0bcb6f8af9e998e_original.jpg?ixlib=rb-2.1.0&crop=faces&w=1552&h=873&fit=crop&v=1575649462&auto=format&frame=1&q=92&s=f640ccdb1322fece0aae15176eada760",
-    "urlPictures": "https://www.bigmagie.com/4154-large_default/akkelian-envelopes.jpg",
+    "urlPictures": [
+      "https://www.bigmagie.com/4154-large_default/akkelian-envelopes.jpg"
+    ],
     "price": "119",
     "difficulty": "Beginner",
     "author": "Peter Turner",
@@ -70,23 +74,25 @@
     "descriptionTitle": "How to Read Minds Kit"
   },
   {
-    "id": 6,
     "category": "Mental",
     "name": "Naked By Pablo Amira",
     "quickDescription": "Their THOUGHT OF card appears within a completely BLANK deck.",
     "urlVideos": "https://s3.amazonaws.com/images.penguinmagic.com/images/products/original/7736a-529f6035669cc.jpg",
-    "urlPictures": "https://www.bigmagie.com/4985-large_default/bias-pad-scott-alexander.jpg",
+    "urlPictures": [
+      "https://www.bigmagie.com/4985-large_default/bias-pad-scott-alexander.jpg"
+    ],
     "price": "29",
     "difficulty": "Advanced",
     "author": "Pablo Amira"
   },
   {
-    "id": 7,
     "category": "Beginners",
     "name": "Optix",
     "quickDescription": "Optix isn't restricted by the ability to use only one kind of phone, it's universal. Borrow a spectators phone, then hand them your phone to film the magic... In an instant, their phone vanishes into thin air. No sleeves. No pulls. GONE.",
     "urlVideos": "https://ae01.alicdn.com/kf/Hfe4f1013379b40cf9dcdca5b661b2800K/Optix-by-Tobias-Dostal-Magic-tricks.jpg",
-    "urlPictures": "https://www.bigmagie.com/1460-large_default/boites-chinoises.jpg",
+    "urlPictures": [
+      "https://www.bigmagie.com/1460-large_default/boites-chinoises.jpg"
+    ],
     "price": "69",
     "difficulty": "Beginner",
     "author": "Tobias Dostal",
@@ -94,12 +100,13 @@
     "descriptionTitle": "Optix"
   },
   {
-    "id": 8,
     "category": "Close Up",
     "name": "TSA by Adam Wilber",
     "quickDescription": "Object through bill effects are incredible, but they all have one flaw.",
     "urlVideos": "https://j.gifs.com/oVxynX.gif",
-    "urlPictures": "https://www.bigmagie.com/4955-large_default/amazing-acrobatic-knot-daryl.jpg",
+    "urlPictures": [
+      "https://www.bigmagie.com/4955-large_default/amazing-acrobatic-knot-daryl.jpg"
+    ],
     "price": "225.95",
     "difficulty": "Advanced",
     "author": "Adam Wilber",
@@ -107,12 +114,11 @@
     "descriptionTitle": "TSA by Adam Wilber"
   },
   {
-    "id": 9,
     "category": "Playing Cards",
     "name": "Bicycle playing Cards",
     "quickDescription": "Our favorite cards.",
     "urlVideos": "https://cdn.shopify.com/s/files/1/0956/5418/products/60380-alt5_grande.png?v=1591631579",
-    "urlPictures": "https://www.bigmagie.com/3459-large_default/alcardmy.jpg",
+    "urlPictures": ["https://www.bigmagie.com/3459-large_default/alcardmy.jpg"],
     "price": "30",
     "difficulty": "Advanced",
     "author": "Adam Wilber",
@@ -120,12 +126,13 @@
     "descriptionTitle": "Bicycle playing Cards"
   },
   {
-    "id": 10,
     "category": "Books",
     "name": "DICTIONNAIRE RAISONNÉ ... XVIIIème Siècle",
     "quickDescription": "Object through bill effects are incredible, but they all have one flaw.",
     "urlVideos": "https://www.magicdream.fr/media/catalog/product/cache/b1dcc1b7ddcba4f7a1e2837af86f3b14/m/a/magie_livre_ancien_bresson_1870.jpg",
-    "urlPictures": "https://www.magicdream.fr/media/catalog/product/cache/b1dcc1b7ddcba4f7a1e2837af86f3b14/m/a/magie_livre_ancien_bresson_1870.jpg",
+    "urlPictures": [
+      "https://www.magicdream.fr/media/catalog/product/cache/b1dcc1b7ddcba4f7a1e2837af86f3b14/m/a/magie_livre_ancien_bresson_1870.jpg"
+    ],
     "price": "3000",
     "difficulty": "Intermediate",
     "author": "Adam Wilber",
