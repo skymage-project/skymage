@@ -1,18 +1,31 @@
 <template>
-  <v-parallax
-    dark
-    src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700416024.jpg"
-  >
+  <div>
+    <v-parallax
+      dark
+      style="opacity: 0.3;"
+      :src="this.product.urlPictures[0].urlPictures"
+    >
+    </v-parallax>
     <v-row align="center" justify="center">
       <v-col class="text-center" cols="12">
         <v-container fill-height> </v-container>
       </v-col>
       <!-- <v-col cols="6"> {{ displayedTricks.price }} </v-col> -->
       <h1>This is {{ this.product.name }} Page</h1>
+      <!-- <iframe " /> -->
+      <iframe
+        width="640"
+        height="370"
+        src="https://www.youtube.com/embed/_9rcdwvXYHs"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
 
       <!-- <h1>This is {{ this.$route.params.price }} Page</h1> -->
+      <!-- "https://youtu.be/_9rcdwvXYHs" -->
     </v-row>
-  </v-parallax>
+  </div>
 </template>
 
 <script>
