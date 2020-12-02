@@ -52,13 +52,30 @@ export default {
 			securityCode: user.securityCode,
 		});
   },
-  
-  
+
   sendMessage (message) {
+
     return axios.post('http://localhost:3000/user/message', {
 		email: message.email,
 		name: message.name,
 		message: message.message,
 	})
-  }
-};
+  },
+
+  updateRegister(user){
+	return axios.put('http://localhost:3000/user/update', {
+		email: user.email,
+		address: user.address,
+		company: user.company,
+		addressOptional: user.addressOptional,
+		postalCode: user.postalCode,
+		city: user.city,
+		shippingRate: user.shippingRate,
+		creditCardNumber: user.creditCardNumber,
+		expirationCardDate: user.expirationCard,
+		securityCode: user.securityCode
+	})
+},
+}
+
+    

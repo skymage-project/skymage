@@ -52,7 +52,7 @@ router.post('/signup', async (req, res) => {
 				subject: 'Thanks',
 				text: 'Thank you for choosing our site!',
 				html: `<div style='text-align:center'>
-                <h1> Hi ${user.firstName}+ ${user.lastName}</h1>
+                <h1> Hi ${user.firstName} ${user.lastName}</h1>
                 <h4>Please verify that your email address is ${req.body.email}</h4>
                 <h4>and that you entered it when signin up for SkyMage</h4>
                 <form action="http://localhost:3000/user/email/${user.id}" method="post">
@@ -231,6 +231,27 @@ router.post('/message', async (req, res)=>{
         })
     }
 
+})
+
+router.put('/update',async (req, res) => {
+	const user = await User.update({
+			company: req.body.company,
+			address: req.body.address,
+			postalCode: req.body.postalCode,
+			city: req.body.city,
+			addressOptional: req.body.addressOptional,
+			shippingRate: req.body.shippingRate,
+			creditCardNumber: req.body.creditCardNumber,
+			expirationCardDate: req.body.expirationCard,
+			securityCode: req.body.securityCode
+		},
+		{
+			where: {
+				email: req.body.email
+			},
+		}
+	)
+	res.json('updated') 
 })
 
 module.exports = router;
