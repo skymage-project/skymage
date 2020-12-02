@@ -54,7 +54,7 @@
               name="message"
               v-model="message"
             />
-            <button onclick="sendMessage"
+            <button @click="sendMessage"
               class="w3-button w3-orange w3-section w3-right"
             >
               SEND
@@ -79,7 +79,11 @@ export default {
         email: this.email,
         message: this.message,
         };
-      this.$store.dispatch('sendMessage',message);
+      this.$store.dispatch('sendMessage',message).then(()=>{
+        this.name='';
+        this.email='';
+        this.message='';
+      })
     }
   }
 }
