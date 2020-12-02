@@ -44,19 +44,19 @@
               <v-layout fill-height>
                 <v-row>
                   <v-col cols="12"
-                    ><h1 class="titleV">
+                    ><h2 class="titleV">
                       {{ trick.name }}
-                    </h1></v-col
+                    </h2></v-col
                   >
 
                   <v-col cols="12"
-                    ><h3 class="text">
+                    ><h4 class="text">
                       {{ trick.quickDescription }}
-                    </h3></v-col
+                    </h4></v-col
                   >
-                  <v-col cols="12"></v-col>
+                  <!-- <v-col cols="12"></v-col> -->
 
-                  <v-col cols="7">
+                  <v-col cols="6">
                     <v-btn
                       color="orange lighten-2"
                       class="buttonV"
@@ -69,32 +69,7 @@
                   >
 
                   <v-col cols="5"
-                    ><h1 class="price">{{ trick.price }} $</h1></v-col
-                  >
-
-                  <v-col cols="2"
-                    ><v-btn icon class="plus-cart-trick" @click="addItemToCart">
-                      <v-icon>mdi-plus</v-icon>
-                    </v-btn></v-col
-                  >
-                  <v-col cols="2">
-                    <v-btn icon>
-                      <v-icon
-                        >mdi-numeric-{{
-                          getItemQuantity(trick.id)
-                        }}-circle-outline</v-icon
-                      >
-                    </v-btn>
-                  </v-col>
-                  <v-col cols="2"
-                    ><v-btn icon @click="decreaseQuantity">
-                      <v-icon>mdi-minus</v-icon>
-                    </v-btn></v-col
-                  >
-                  <v-col cols="3"
-                    ><v-btn icon @click="removeItemFromCart">
-                      <v-icon>mdi-delete-outline</v-icon>
-                    </v-btn></v-col
+                    ><p class="price">{{ trick.price }}DT</p></v-col
                   >
                   <v-col cols="6"></v-col>
                   <v-col cols="6"
@@ -126,7 +101,6 @@ export default {
   name: "TrickOverView",
   computed: {
     ...mapState(["displayedTricks", "cart"]),
-    ...mapGetters(["getItemQuantity"]),
   },
   data() {
     return {
@@ -148,32 +122,14 @@ export default {
       let item = {
         id: this.trick.id,
         name: this.trick.name,
-        picture: this.trick.picture,
+        picture: this.trick.urlPictures[0].urlPictures,
         price: this.trick.price,
         quantity: quantity,
       };
       this.$store.dispatch("addToCart", item);
     },
-    decreaseQuantity() {
-      let quantity = this.trick.quantity - 1;
-      let item = {
-        id: this.trick.id,
-        name: this.trick.name,
-        picture: this.trick.picture,
-        price: this.trick.price,
-        quantity: quantity,
-      };
-      this.$store.dispatch("decreaseQuantity", item);
-    },
-    removeItemFromCart() {
-      this.$store.dispatch("removeFromCart", this.trick.id);
-    },
     getiframe(url) {
-      if (url.includes("www.youtube.com")) {
-        return `<iframe width="640" height="370" src="${url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-      } else {
-        return `<img width="600" height="370" src="${url}"/>`;
-      }
+      return `<img width="600" height="370" src="${url}"/>`;
     },
     getiframeDown(url) {
       return `<img width="120px" height="120px" src="${url}"/>`;
@@ -184,6 +140,8 @@ export default {
 <style scoped>
 .price {
   position: relative;
-  top: -0.5vw;
+  top: 0vw;
+  font-weight: bold;
+  font-size: 20px;
 }
 </style>

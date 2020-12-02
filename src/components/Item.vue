@@ -37,7 +37,7 @@
     </v-card-subtitle>
     <v-card-subtitle>
       <!-- price  -->
-      {{ trick.price }}$
+      {{ trick.price }}DT
     </v-card-subtitle>
 
     <v-card-actions transition="fade-transition">
