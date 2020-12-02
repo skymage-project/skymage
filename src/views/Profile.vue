@@ -25,7 +25,7 @@
           >
         </div>
       </v-hover>
-      <v-card height="300" width="400" style="border-radius: 8px">
+      <v-card width="600" style="border-radius: 8px">
         <v-row>
           <v-col cols="6" sm="6">
             <h2>Name:</h2>
@@ -167,7 +167,7 @@ h2 {
   color: rgb(255, 255, 255);
 }
 h4 {
-  margin-top: 7px;
+  margin-top: 20px;
   color: orange;
 }
 #btnNav {

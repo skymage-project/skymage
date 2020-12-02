@@ -2,6 +2,7 @@
   <v-dialog v-model="dialog" persistent max-width="600px" min-width="360px">
     <div>
       <v-tabs
+        color="orange"
         v-model="tab"
         show-arrows
         background-color="#333333"
@@ -9,7 +10,7 @@
         dark
         grow
       >
-        <v-tabs-slider color="purple darken-4"></v-tabs-slider>
+        <v-tabs-slider color="orange"></v-tabs-slider>
         <v-tab v-for="(i, idx) in tabs" :key="idx">
           <v-icon large>{{ i.icon }}</v-icon>
           <div class="caption py-1">{{ i.name }}</div>
@@ -21,6 +22,7 @@
                 <v-row>
                   <v-col cols="12">
                     <v-text-field
+                      color="orange"
                       v-model="loginEmail"
                       :rules="loginEmailRules"
                       label="E-mail"
@@ -29,6 +31,7 @@
                   </v-col>
                   <v-col cols="12">
                     <v-text-field
+                      color="orange"
                       v-model="loginPassword"
                       :append-icon="show1 ? 'eye' : 'eye-off'"
                       :rules="[rules.required, rules.min]"
@@ -67,6 +70,7 @@
                 <v-row>
                   <v-col cols="12" sm="6" md="6">
                     <v-text-field
+                      color="orange"
                       v-model="firstName"
                       :rules="[rules.required]"
                       label="First Name"
@@ -76,6 +80,7 @@
                   </v-col>
                   <v-col cols="12" sm="6" md="6">
                     <v-text-field
+                      color="orange"
                       v-model="lastName"
                       :rules="[rules.required]"
                       label="Last Name"
@@ -85,6 +90,7 @@
                   </v-col>
                   <v-col cols="12" sm="6" md="6">
                     <v-text-field
+                      color="orange"
                       type="date"
                       v-model="dateOfBirth"
                       :rules="[rules.required]"
@@ -94,6 +100,7 @@
                   </v-col>
                   <v-col cols="12" sm="6" md="6">
                     <v-text-field
+                      color="orange"
                       v-model="phoneNumber"
                       :rules="[rules.required]"
                       label="Phone Number"
@@ -103,6 +110,7 @@
                   </v-col>
                   <v-col cols="12">
                     <v-text-field
+                      color="orange"
                       v-model="country"
                       :rules="[rules.required]"
                       label="Country"
@@ -112,6 +120,7 @@
                   </v-col>
                   <v-col cols="12">
                     <v-text-field
+                      color="orange"
                       v-model="email"
                       :rules="emailRules"
                       label="E-mail"
@@ -120,6 +129,7 @@
                   </v-col>
                   <v-col cols="12">
                     <v-text-field
+                      color="orange"
                       v-model="password"
                       :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
                       :rules="[rules.required, rules.min]"
@@ -134,6 +144,7 @@
                   </v-col>
                   <v-col cols="12">
                     <v-text-field
+                      color="orange"
                       block
                       v-model="verify"
                       :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
