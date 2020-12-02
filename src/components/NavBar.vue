@@ -71,9 +71,9 @@ export default {
     },
     logOut() {
       this.$store.dispatch("logout").then(() => {
-        if (this.route === "/") {
-          return;
-        }
+        // if (this.route === '/' ) {
+        // 	return;
+        // }
         this.$router.push("/");
       });
     },
@@ -105,8 +105,11 @@ export default {
       if (this.route === "/catalog") {
         this.$store.dispatch("filterBy", event);
       } else {
-        this.$router.push("/about");
-        this.route = "/about";
+        const me = this;
+        this.$router.push("/catalog").then(() => {
+          me.route = "/catalog";
+          me.$store.dispatch("filterBy", event);
+        });
       }
     },
   },

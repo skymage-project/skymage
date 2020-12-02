@@ -1,11 +1,14 @@
 const { Model, Sequelize } = require('sequelize');
-const sequelize = require('../index') 
+const sequelize = require('../index');
 class Feedback extends Model {}
-Feedback.init({
-    userName: Sequelize.STRING,
-    rating: Sequelize.INTEGER,
-    comment: Sequelize.STRING,
-    date: Sequelize.DATE
-}, { sequelize, modelName: 'feedback',timestamps: true})
+Feedback.init(
+	{
+		feedbackUserName: Sequelize.STRING,
+		feedbackRating: Sequelize.INTEGER,
+		feedbackComment: Sequelize.STRING,
+		feedbackDate: Sequelize.DATE,
+	},
+	{ sequelize, modelName: 'feedback', timestamps: true }
+);
 
 module.exports = Feedback;
