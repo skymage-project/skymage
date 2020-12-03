@@ -177,6 +177,7 @@ router.post('/fetchWishList', async (req, res) => {
 			where: {
 				UserId: req.body.UserId,
 			},
+			order: [['createdAt', 'DESC']],
 		});
 		res.json(wishListItems);
 	} catch (err) {
@@ -194,6 +195,7 @@ router.post('/fetchItemsWishList', async (req, res) => {
 				id: arrayOfIds,
 			},
 			include: { all: true },
+			order: [['createdAt', 'DESC']],
 		});
 		res.json(wishListItemsDetails);
 	} catch (err) {

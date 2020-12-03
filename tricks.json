@@ -1,142 +1,142 @@
 [
-  {
-    "category": "Cards",
-    "name": "D4M",
-    "quickDescription": "D4M est un effet de carte déchirée et restaurée incroyablement visuel et unique. Il est entièrement examinable et laisse à vos spectateurs un souvenir qu'ils voudront garder et montrer pour toujours.",
-    "urlVideos": "<iframe width=\"1143\" height=\"643\" src=\"https://www.youtube.com/embed/N05hau_70F4\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
-    "urlPictures": [
-      "https://www.bigmagie.com/6322-large_default/d4m-matthew-wright.jpg",
-      "https://www.bigmagie.com/6323-large_default/d4m-matthew-wright.jpg",
-      "https://www.bigmagie.com/6324-thickbox_default/d4m-matthew-wright.jpg"
-    ],
-    "price": "14.95",
-    "difficulty": "Beginner",
-    "author": "Beginner",
-    "quantity": "10",
-    "descriptionText": "Un spectateur sélectionne une carte, qui peut être entièrement inspectée. Elle est ensuite marquée pour identification. Le magicien la déchire en morceaux et, de façon inexplicable, les remet en place avec deux des morceaux inversés. Hyper visuel et examinable instantanément. Avec des instructions de téléchargement complètes et détaillées, aucun détail explicatif n'a été omis et de nombreuses idées de présentation et de routines sont explorées. Il s'agit véritablement d'un chef-d'œuvre de magie moderne que vous serez fier de pouvoir présenter dans le cadre de votre répertoire de travail. D4M est conçu pour être un worker. Avec un temps de préparation de quelques secondes seulement et des contraintes d'angles réduites au minimum, D4M est parfait pour le close-up, le salon et même sur scène. Cette routine est directement issue du numéro de Matthew à la FISM et a été plébiscitée par les magiciens du monde entier.",
-    "descriptionTitle": "DESCRIPTION",
-    "descriptionInstruction": "descriptionInstruction"
-  },
+	{
+		"category": "Cards",
+		"name": "D4M",
+		"quickDescription": "D4M est un effet de carte déchirée et restaurée incroyablement visuel et unique. Il est entièrement examinable et laisse à vos spectateurs un souvenir qu'ils voudront garder et montrer pour toujours.",
+		"urlVideos": "https://www.youtube.com/embed/N05hau_70F4",
+		"urlPictures": [
+			"https://www.bigmagie.com/6322-large_default/d4m-matthew-wright.jpg",
+			"https://www.bigmagie.com/6323-large_default/d4m-matthew-wright.jpg",
+			"https://www.bigmagie.com/6324-thickbox_default/d4m-matthew-wright.jpg"
+		],
+		"price": "14.95",
+		"difficulty": "Beginner",
+		"author": "Beginner",
+		"quantity": "10",
+		"descriptionText": "Un spectateur sélectionne une carte, qui peut être entièrement inspectée. Elle est ensuite marquée pour identification. Le magicien la déchire en morceaux et, de façon inexplicable, les remet en place avec deux des morceaux inversés. Hyper visuel et examinable instantanément. Avec des instructions de téléchargement complètes et détaillées, aucun détail explicatif n'a été omis et de nombreuses idées de présentation et de routines sont explorées. Il s'agit véritablement d'un chef-d'œuvre de magie moderne que vous serez fier de pouvoir présenter dans le cadre de votre répertoire de travail. D4M est conçu pour être un worker. Avec un temps de préparation de quelques secondes seulement et des contraintes d'angles réduites au minimum, D4M est parfait pour le close-up, le salon et même sur scène. Cette routine est directement issue du numéro de Matthew à la FISM et a été plébiscitée par les magiciens du monde entier.",
+		"descriptionTitle": "DESCRIPTION",
+		"descriptionInstruction": "descriptionInstruction"
+	},
 
-  {
-    "category": "DvD",
-    "name": "Black Art Project (2 DVD)",
-    "quickDescription": "Vous l'avez sûrement déjà vu mais peut-être encore jamais utilisé... Découvrez un projet DVD complet dédié au Black Art, un principe permettant de concevoir des effets dignes d'un trucage vidéo qui changera à coup sûr votre magie.",
-    "urlVideos": "https://youtu.be/_9rcdwvXYHs",
-    "urlPictures": [
-      "https://www.bigmagie.com/5718-large_default/black-art-project-2-dvd.jpg"
-    ],
-    "price": "99",
-    "difficulty": "Intermediate",
-    "author": "SansMinds",
-    "quantity": "10"
-  },
-  {
-    "category": "Coins",
-    "name": "Extreme Burn 2.0 (Locked and Loaded) by Richard Sanders (Magical Changing Money Prank)",
-    "quickDescription": "One of our all-time best sellers. The most visual bill-change EVER. Lightning fast, and completely examinable.",
-    "urlVideos": "https://s3.amazonaws.com/images.penguinmagic.com/images/products/original/5249b-55d61ad0e09ef.png",
-    "urlPictures": [
-      "https://www.bigmagie.com/4376-large_default/biobender-eric-jones.jpg"
-    ],
-    "price": "15",
-    "difficulty": "Beginner",
-    "author": "Adam Wilber",
-    "descriptionText": "You will learn 10 unique, hyper-visual changes; giving you an army of devastating bill changes to do in literally any situation imaginable. No stone is left unturned, from setting up the bills to performing the changes, and all the handling tips and subtleties in-between. You will be up and running in no time. AND as a special BONUS, you'll learn Richard's underground miracle, Slow Burn. They'll flip-out as they watch bills visually morph, while you slowly pass your hand over them! PLUS 75 MINUTES OF BRAND NEW MATERIAL that will allow you to change the bills and then hand them out for examination, spend them, etc. A total of almost 3 hours of killer magic on one remarkable DVD.",
-    "descriptionTitle": "Extreme Burn 2.0 (Locked and Loaded) by Richard Sanders (Magical Changing Money Prank)"
-  },
-  {
-    "category": "Accessories",
-    "name": "Invisible Writer (Pencil Lead) by Vernet",
-    "quickDescription": "ernet Magic has the most complete line of writers. But there was one missing, until now -- a writer undetectable under conditions of high scrutiny.",
-    "urlVideos": "https://s3.amazonaws.com/images.penguinmagic.com/images/products/original/17455a-5db86ff254717.png",
-    "urlPictures": [
-      "https://www.bigmagie.com/6014-large_default/3-in-1-set-de-des-leo-smetsers.jpg"
-    ],
-    "price": "18",
-    "difficulty": "Advanced",
-    "author": "Vernet",
-    "descriptionText": "Thumb Tip",
-    "descriptionTitle": "Invisible Writer (Pencil Lead) by Vernet"
-  },
-  {
-    "category": "Mental",
-    "name": "How to Read Minds Kit",
-    "quickDescription": "Yes you can. The kit includes over 20 techniques that you can use to improve every aspect of your life.",
-    " urlVideos": "https://ksr-ugc.imgix.net/assets/027/438/990/9f1eb3b10e2856b3a0bcb6f8af9e998e_original.jpg?ixlib=rb-2.1.0&crop=faces&w=1552&h=873&fit=crop&v=1575649462&auto=format&frame=1&q=92&s=f640ccdb1322fece0aae15176eada760",
-    "urlPictures": [
-      "https://www.bigmagie.com/4154-large_default/akkelian-envelopes.jpg"
-    ],
-    "price": "119",
-    "difficulty": "Beginner",
-    "author": "Peter Turner",
-    "descriptionText": "Mentalist For Beginner",
-    "descriptionTitle": "How to Read Minds Kit"
-  },
-  {
-    "category": "Mental",
-    "name": "Naked By Pablo Amira",
-    "quickDescription": "Their THOUGHT OF card appears within a completely BLANK deck.",
-    "urlVideos": "https://s3.amazonaws.com/images.penguinmagic.com/images/products/original/7736a-529f6035669cc.jpg",
-    "urlPictures": [
-      "https://www.bigmagie.com/4985-large_default/bias-pad-scott-alexander.jpg"
-    ],
-    "price": "29",
-    "difficulty": "Advanced",
-    "author": "Pablo Amira"
-  },
-  {
-    "category": "Beginners",
-    "name": "Optix",
-    "quickDescription": "Optix isn't restricted by the ability to use only one kind of phone, it's universal. Borrow a spectators phone, then hand them your phone to film the magic... In an instant, their phone vanishes into thin air. No sleeves. No pulls. GONE.",
-    "urlVideos": "https://ae01.alicdn.com/kf/Hfe4f1013379b40cf9dcdca5b661b2800K/Optix-by-Tobias-Dostal-Magic-tricks.jpg",
-    "urlPictures": [
-      "https://www.bigmagie.com/1460-large_default/boites-chinoises.jpg"
-    ],
-    "price": "69",
-    "difficulty": "Beginner",
-    "author": "Tobias Dostal",
-    "descriptionText": "Vanish bag",
-    "descriptionTitle": "Optix"
-  },
-  {
-    "category": "Close Up",
-    "name": "TSA by Adam Wilber",
-    "quickDescription": "Object through bill effects are incredible, but they all have one flaw.",
-    "urlVideos": "https://j.gifs.com/oVxynX.gif",
-    "urlPictures": [
-      "https://www.bigmagie.com/4955-large_default/amazing-acrobatic-knot-daryl.jpg"
-    ],
-    "price": "225.95",
-    "difficulty": "Advanced",
-    "author": "Adam Wilber",
-    "descriptionText": "Vanish bag",
-    "descriptionTitle": "TSA by Adam Wilber"
-  },
-  {
-    "category": "Playing Cards",
-    "name": "Bicycle playing Cards",
-    "quickDescription": "Our favorite cards.",
-    "urlVideos": "https://cdn.shopify.com/s/files/1/0956/5418/products/60380-alt5_grande.png?v=1591631579",
-    "urlPictures": ["https://www.bigmagie.com/3459-large_default/alcardmy.jpg"],
-    "price": "30",
-    "difficulty": "Advanced",
-    "author": "Adam Wilber",
-    "descriptionText": "Vanish bag",
-    "descriptionTitle": "Bicycle playing Cards"
-  },
-  {
-    "category": "Books",
-    "name": "DICTIONNAIRE RAISONNÉ ... XVIIIème Siècle",
-    "quickDescription": "Object through bill effects are incredible, but they all have one flaw.",
-    "urlVideos": "https://www.magicdream.fr/media/catalog/product/cache/b1dcc1b7ddcba4f7a1e2837af86f3b14/m/a/magie_livre_ancien_bresson_1870.jpg",
-    "urlPictures": [
-      "https://www.magicdream.fr/media/catalog/product/cache/b1dcc1b7ddcba4f7a1e2837af86f3b14/m/a/magie_livre_ancien_bresson_1870.jpg"
-    ],
-    "price": "3000",
-    "difficulty": "Intermediate",
-    "author": "Adam Wilber",
-    "descriptionText": "Vanish bag",
-    "descriptionTitle": "DICTIONNAIRE RAISONNÉ ... XVIIIème Siècle"
-  }
+	{
+		"category": "DvD",
+		"name": "Black Art Project (2 DVD)",
+		"quickDescription": "Vous l'avez sûrement déjà vu mais peut-être encore jamais utilisé... Découvrez un projet DVD complet dédié au Black Art, un principe permettant de concevoir des effets dignes d'un trucage vidéo qui changera à coup sûr votre magie.",
+		"urlVideos": "https://youtu.be/_9rcdwvXYHs",
+		"urlPictures": [
+			"https://www.bigmagie.com/5718-large_default/black-art-project-2-dvd.jpg"
+		],
+		"price": "99",
+		"difficulty": "Intermediate",
+		"author": "SansMinds",
+		"quantity": "10"
+	},
+	{
+		"category": "Coins",
+		"name": "Extreme Burn 2.0 (Locked and Loaded) by Richard Sanders (Magical Changing Money Prank)",
+		"quickDescription": "One of our all-time best sellers. The most visual bill-change EVER. Lightning fast, and completely examinable.",
+		"urlVideos": "https://s3.amazonaws.com/images.penguinmagic.com/images/products/original/5249b-55d61ad0e09ef.png",
+		"urlPictures": [
+			"https://www.bigmagie.com/4376-large_default/biobender-eric-jones.jpg"
+		],
+		"price": "15",
+		"difficulty": "Beginner",
+		"author": "Adam Wilber",
+		"descriptionText": "You will learn 10 unique, hyper-visual changes; giving you an army of devastating bill changes to do in literally any situation imaginable. No stone is left unturned, from setting up the bills to performing the changes, and all the handling tips and subtleties in-between. You will be up and running in no time. AND as a special BONUS, you'll learn Richard's underground miracle, Slow Burn. They'll flip-out as they watch bills visually morph, while you slowly pass your hand over them! PLUS 75 MINUTES OF BRAND NEW MATERIAL that will allow you to change the bills and then hand them out for examination, spend them, etc. A total of almost 3 hours of killer magic on one remarkable DVD.",
+		"descriptionTitle": "Extreme Burn 2.0 (Locked and Loaded) by Richard Sanders (Magical Changing Money Prank)"
+	},
+	{
+		"category": "Accessories",
+		"name": "Invisible Writer (Pencil Lead) by Vernet",
+		"quickDescription": "ernet Magic has the most complete line of writers. But there was one missing, until now -- a writer undetectable under conditions of high scrutiny.",
+		"urlVideos": "https://s3.amazonaws.com/images.penguinmagic.com/images/products/original/17455a-5db86ff254717.png",
+		"urlPictures": [
+			"https://www.bigmagie.com/6014-large_default/3-in-1-set-de-des-leo-smetsers.jpg"
+		],
+		"price": "18",
+		"difficulty": "Advanced",
+		"author": "Vernet",
+		"descriptionText": "Thumb Tip",
+		"descriptionTitle": "Invisible Writer (Pencil Lead) by Vernet"
+	},
+	{
+		"category": "Mental",
+		"name": "How to Read Minds Kit",
+		"quickDescription": "Yes you can. The kit includes over 20 techniques that you can use to improve every aspect of your life.",
+		" urlVideos": "https://ksr-ugc.imgix.net/assets/027/438/990/9f1eb3b10e2856b3a0bcb6f8af9e998e_original.jpg?ixlib=rb-2.1.0&crop=faces&w=1552&h=873&fit=crop&v=1575649462&auto=format&frame=1&q=92&s=f640ccdb1322fece0aae15176eada760",
+		"urlPictures": [
+			"https://www.bigmagie.com/4154-large_default/akkelian-envelopes.jpg"
+		],
+		"price": "119",
+		"difficulty": "Beginner",
+		"author": "Peter Turner",
+		"descriptionText": "Mentalist For Beginner",
+		"descriptionTitle": "How to Read Minds Kit"
+	},
+	{
+		"category": "Mental",
+		"name": "Naked By Pablo Amira",
+		"quickDescription": "Their THOUGHT OF card appears within a completely BLANK deck.",
+		"urlVideos": "https://s3.amazonaws.com/images.penguinmagic.com/images/products/original/7736a-529f6035669cc.jpg",
+		"urlPictures": [
+			"https://www.bigmagie.com/4985-large_default/bias-pad-scott-alexander.jpg"
+		],
+		"price": "29",
+		"difficulty": "Advanced",
+		"author": "Pablo Amira"
+	},
+	{
+		"category": "Beginners",
+		"name": "Optix",
+		"quickDescription": "Optix isn't restricted by the ability to use only one kind of phone, it's universal. Borrow a spectators phone, then hand them your phone to film the magic... In an instant, their phone vanishes into thin air. No sleeves. No pulls. GONE.",
+		"urlVideos": "https://ae01.alicdn.com/kf/Hfe4f1013379b40cf9dcdca5b661b2800K/Optix-by-Tobias-Dostal-Magic-tricks.jpg",
+		"urlPictures": [
+			"https://www.bigmagie.com/1460-large_default/boites-chinoises.jpg"
+		],
+		"price": "69",
+		"difficulty": "Beginner",
+		"author": "Tobias Dostal",
+		"descriptionText": "Vanish bag",
+		"descriptionTitle": "Optix"
+	},
+	{
+		"category": "Close Up",
+		"name": "TSA by Adam Wilber",
+		"quickDescription": "Object through bill effects are incredible, but they all have one flaw.",
+		"urlVideos": "https://j.gifs.com/oVxynX.gif",
+		"urlPictures": [
+			"https://www.bigmagie.com/4955-large_default/amazing-acrobatic-knot-daryl.jpg"
+		],
+		"price": "225.95",
+		"difficulty": "Advanced",
+		"author": "Adam Wilber",
+		"descriptionText": "Vanish bag",
+		"descriptionTitle": "TSA by Adam Wilber"
+	},
+	{
+		"category": "Playing Cards",
+		"name": "Bicycle playing Cards",
+		"quickDescription": "Our favorite cards.",
+		"urlVideos": "https://cdn.shopify.com/s/files/1/0956/5418/products/60380-alt5_grande.png?v=1591631579",
+		"urlPictures": ["https://www.bigmagie.com/3459-large_default/alcardmy.jpg"],
+		"price": "30",
+		"difficulty": "Advanced",
+		"author": "Adam Wilber",
+		"descriptionText": "Vanish bag",
+		"descriptionTitle": "Bicycle playing Cards"
+	},
+	{
+		"category": "Books",
+		"name": "DICTIONNAIRE RAISONNÉ ... XVIIIème Siècle",
+		"quickDescription": "Object through bill effects are incredible, but they all have one flaw.",
+		"urlVideos": "https://www.magicdream.fr/media/catalog/product/cache/b1dcc1b7ddcba4f7a1e2837af86f3b14/m/a/magie_livre_ancien_bresson_1870.jpg",
+		"urlPictures": [
+			"https://www.magicdream.fr/media/catalog/product/cache/b1dcc1b7ddcba4f7a1e2837af86f3b14/m/a/magie_livre_ancien_bresson_1870.jpg"
+		],
+		"price": "3000",
+		"difficulty": "Intermediate",
+		"author": "Adam Wilber",
+		"descriptionText": "Vanish bag",
+		"descriptionTitle": "DICTIONNAIRE RAISONNÉ ... XVIIIème Siècle"
+	}
 ]
