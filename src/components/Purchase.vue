@@ -11,51 +11,116 @@
             <v-form ref="loginForm" v-model="valid" lazy-validation>
               <v-row>
                 <v-col cols="12">
-                  <v-text-field v-model="loginEmail" :rules="loginEmailRules" label="E-mail" solo-inverted required></v-text-field>
+                  <v-text-field
+                    v-model="loginEmail"
+                    :rules="loginEmailRules"
+                    label="E-mail"
+                    solo-inverted
+                    required
+                  ></v-text-field>
                 </v-col>
                 <v-col cols="12">
-                  <v-text-field v-model="loginPassword" :append-icon="show1 ? 'eye' : 'eye-off'" :rules="[rules.required, rules.min]" :type="show1 ? 'text' : 'password'" name="input-10-1" label="Password" hint="At least 8 characters" counter @click:append="show1 = !show1" solo-inverted></v-text-field>
+                  <v-text-field
+                    v-model="loginPassword"
+                    :append-icon="show1 ? 'eye' : 'eye-off'"
+                    :rules="[rules.required, rules.min]"
+                    :type="show1 ? 'text' : 'password'"
+                    name="input-10-1"
+                    label="Password"
+                    hint="At least 8 characters"
+                    counter
+                    @click:append="show1 = !show1"
+                    solo-inverted
+                  ></v-text-field>
                 </v-col>
                 <v-col class="d-flex" cols="12" sm="6" xsm="12"> </v-col>
                 <v-spacer></v-spacer>
                 <v-col class="d-flex ml-auto" cols="12" sm="6" xsm="12">
-                  <v-btn x-large :disabled="!valid" color="#737373" @click="Login"> Login </v-btn>
+                  <v-btn
+                    x-large
+                    :disabled="!valid"
+                    color="#737373"
+                    @click="Login"
+                  >
+                    Login
+                  </v-btn>
                 </v-col>
               </v-row>
             </v-form>
           </div>
           <br />
           <div>
-            <h2>You need to complete your informations to finish your purchase</h2>
+            <h2>
+              You need to complete your informations to finish your purchase
+            </h2>
             <v-form ref="registerForm" v-model="valid" lazy-validation>
               <v-container>
                 <v-row>
                   <v-col cols="24" sm="12">
-                    <v-text-field :rules="emailRules" label="email" v-model="email" solo-inverted required></v-text-field>
+                    <v-text-field
+                      :rules="emailRules"
+                      label="email"
+                      v-model="email"
+                      solo-inverted
+                      required
+                    ></v-text-field>
                   </v-col>
 
                   <v-col cols="24" sm="12">
-                    <v-text-field v-model="company" label="company(optional)" solo-inverted></v-text-field>
+                    <v-text-field
+                      v-model="company"
+                      label="company(optional)"
+                      solo-inverted
+                    ></v-text-field>
                   </v-col>
 
                   <v-col cols="24" sm="12">
-                    <v-text-field v-model="address" label="address" :rules="[rules.required]" solo-inverted required></v-text-field>
+                    <v-text-field
+                      v-model="address"
+                      label="address"
+                      :rules="[rules.required]"
+                      solo-inverted
+                      required
+                    ></v-text-field>
                   </v-col>
 
                   <v-col cols="24" sm="12">
-                    <v-text-field v-model="addressOptional" label="Apartement,suite,etc.(optional)" solo-inverted required></v-text-field>
+                    <v-text-field
+                      v-model="addressOptional"
+                      label="Apartement,suite,etc.(optional)"
+                      solo-inverted
+                      required
+                    ></v-text-field>
                   </v-col>
 
                   <v-col cols="12" sm="6">
-                    <v-text-field v-model="postalCode" label="postal code" solo-inverted :rules="[rules.required]" required></v-text-field>
+                    <v-text-field
+                      v-model="postalCode"
+                      label="postal code"
+                      solo-inverted
+                      :rules="[rules.required]"
+                      required
+                    ></v-text-field>
                   </v-col>
 
                   <v-col cols="12" sm="6">
-                    <v-text-field v-model="city" label="city" solo-inverted :rules="[rules.required]" required></v-text-field>
+                    <v-text-field
+                      v-model="city"
+                      label="city"
+                      solo-inverted
+                      :rules="[rules.required]"
+                      required
+                    ></v-text-field>
                   </v-col>
                 </v-row>
 
-                <v-btn x-large :disabled="!valid" color="warning" @click="goToCompleteThePurchase">Continue The Shipping</v-btn>
+                <v-btn
+                  x-large
+                  :disabled="!valid"
+                  color="warning"
+                  @click="goToCompleteThePurchase"
+                  >Continue The Shipping</v-btn
+                >
               </v-container>
             </v-form>
           </div>
@@ -104,8 +169,14 @@ export default {
     email: "",
     loginPassword: "",
     loginEmail: "",
-    loginEmailRules: [(v) => !!v || "Required", (v) => /.+@.+\..+/.test(v) || "E-mail must be valid"],
-    emailRules: [(v) => !!v || "Required", (v) => /.+@.+\..+/.test(v) || "E-mail must be valid"],
+    loginEmailRules: [
+      (v) => !!v || "Required",
+      (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
+    ],
+    emailRules: [
+      (v) => !!v || "Required",
+      (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
+    ],
     rules: {
       required: (value) => !!value || "Required.",
       min: (v) => (v && v.length >= 8) || "Min 8 characters",
@@ -121,6 +192,10 @@ export default {
   },
   methods: {
     goToCompleteThePurchase() {
+      if (!this.loggedIn) {
+        alert("you need to create an account first");
+        return;
+      }
       if (this.$refs.registerForm.validate()) {
         this.$store
           .dispatch("updateRegister", {
@@ -141,8 +216,6 @@ export default {
         this.$store.dispatch("login", {
           email: this.loginEmail,
           password: this.loginPassword,
-          firstName: this.firstName,
-          lastName: this.lastName,
         });
         return (this.check = !this.check);
       }
