@@ -91,11 +91,14 @@ export default new Vuex.Store({
 			state.initialState.user = null;
 		},
 		REGISTER_UPDATED() {
+			
+		},
+		PURCHASE_UPDATED(){
 			Swal.fire({
 				icon: 'success',
-				text: 'Your profile has been updated successfully',
+				text: 'Your purchase is done successfully',
 			});
-		},
+		}
 	},
 	actions: {
 		filterBy({ commit }, event) {
@@ -183,6 +186,11 @@ export default new Vuex.Store({
 				commit('REGISTER_UPDATED');
 			});
 		},
+		updatePurchase({ commit },user){
+			return userAuth.updatePurchase(user).then(() => {
+				commit('PURCHASE_UPDATED');
+			})
+		}
 	},
 	getters: {
 		getTricks: (state) => {
