@@ -45,8 +45,11 @@
                     v-model="creditCardNumber"
                     :rules="[rules.required]"
                     maxlength="16"
-                    hide-details
+                    minlength="16"
+                    hide-
+                    hint="All transactions are secure and encrypted"
                   />
+                  <v-icon absolute>mdi-lock</v-icon>
                 </v-col>
 
                 <v-col col="4">
@@ -130,6 +133,11 @@ export default {
   }),
   methods: {
     Payment() {
+      this.$store.dispatch("fatoura", {
+        items: this.cart.itemsToCart,
+        shippingRate: this.shippingRate,
+        getTotalCartPrice: this.getTotalCartPrice,
+      });
       this.$store
         .dispatch("updatePurchase", {
           id: this.user.id,
