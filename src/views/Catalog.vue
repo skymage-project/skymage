@@ -2,7 +2,7 @@
 	<div>
 		<TricksFilter />
 		<v-container inline>
-			<v-row style="height: 150px; row-gap: 2em">
+			<v-row style="row-gap: 2em">
 				<Item v-for="trick in displayedTricks" :key="trick.id" :trick="trick" />
 			</v-row>
 		</v-container>
@@ -19,11 +19,24 @@ export default {
 		Item,
 		TricksFilter,
 	},
+	data: () => ({
+		loading: true,
+	}),
 	computed: {
 		...mapState(['displayedTricks']),
 	},
 	created() {
-		this.$store.dispatch('getItems');
+		const user = JSON.parse(localStorage.getItem('user'));
+		if (user) {
+			Promise.all([
+				this.$store.dispatch('getItems'),
+				this.$store.dispatch('fetchWishList', user.id),
+			]).finally(() => {
+				this.loading = false;
+			});
+		} else {
+			this.$store.dispatch('getItems');
+		}
 	},
 };
 </script>

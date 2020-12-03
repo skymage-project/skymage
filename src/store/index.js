@@ -48,8 +48,7 @@ export default new Vuex.Store({
 		SEND_MESSAGE: (state, payload) => {
 			Swal.fire({
 				icon: 'success',
-				text:
-					'Thank you! we will answer you as soon as we can',
+				text: 'Thank you! we will answer you as soon as we can',
 			});
 		},
 
@@ -92,11 +91,14 @@ export default new Vuex.Store({
 			state.initialState.user = null;
 		},
 		REGISTER_UPDATED() {
+			
+		},
+		PURCHASE_UPDATED(){
 			Swal.fire({
-			icon: 'success',
-			text:'Your profile has been updated successfully'
-		});
-	}
+				icon: 'success',
+				text: 'Your purchase is done successfully',
+			});
+		}
 	},
 	actions: {
 		filterBy({ commit }, event) {
@@ -159,20 +161,41 @@ export default new Vuex.Store({
 					localStorage.setItem('user', JSON.stringify(newUser));
 				});
 		},
-		sendMessage({commit},message) {
-			 userAuth.sendMessage(message).then(() => {
-				commit('SEND_MESSAGE')
-			 })
-			},
-			
+		sendMessage({ commit }, message) {
+			userAuth.sendMessage(message).then(() => {
+				commit('SEND_MESSAGE');
+			});
+		},
+
+		updateProfilePic({ commit }, img) {
+			return userAuth
+				.updateProfilePic(img, initialState.user.id)
+				.then((result) => {
+					const newUser = JSON.parse(localStorage.getItem('user'));
+					newUser.img = result.data.url;
+					commit('UPDATE_PROFILE_PIC', newUser);
+					localStorage.setItem('user', JSON.stringify(newUser));
+				});
+		},
+		sendMessage({ commit }, message) {
+			userAuth.sendMessage(message);
+			commit('SEND_MESSAGE');
+		},
 		updateRegister({ commit }, user) {
-			return userAuth.updateRegister(user).then(
-				() => {
-					commit('REGISTER_UPDATED');
-				},
-			);
+			return userAuth.updateRegister(user).then(() => {
+				commit('REGISTER_UPDATED');
+			});
+		},
+		updatePurchase({ commit },user){
+			return userAuth.updatePurchase(user).then(() => {
+				commit('PURCHASE_UPDATED');
+			})
+		}
+	},
+	getters: {
+		getTricks: (state) => {
+			return state.tricks;
 		},
 	},
-	
 	modules: { cart, purchase, wishlist },
 });
