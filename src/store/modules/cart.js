@@ -79,7 +79,7 @@ export const getters = {
     for (var i = 0; i < state.itemsToCart.length; i++) {
       price += state.itemsToCart[i].price * state.itemsToCart[i].quantity;
     }
-    return price;
+    return Math.floor(price);
   },
   getItemQuantity: (state) => (id) => {
     var quantity = 0;
