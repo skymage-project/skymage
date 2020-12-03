@@ -1,6 +1,5 @@
 <template>
 	<div>
-		<h2>product to buy</h2>
 		<v-container fluid>
 			<v-row align="center">
 				<v-col class="d-flex" cols="12" sm="6">

@@ -102,7 +102,7 @@
 							</template>
 							<template v-slot:opposite>
 								<span style="color: orange; font-size: 28px">{{
-									momentTime(wish.updatedAt)
+									momentTime(wish.id)
 								}}</span>
 							</template>
 							<Wishes :wish="wish" />
@@ -129,8 +129,7 @@
 import moment from 'moment';
 import Wishes from '../components/Wishes.vue';
 import Invoice from '../components/Invoice.vue';
-import axios from 'axios';
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 export default {
 	name: 'Profile',
 	components: {
@@ -142,6 +141,7 @@ export default {
 	}),
 	computed: {
 		...mapState(['wishlist']),
+		...mapGetters(['getWishListItems']),
 		user() {
 			return this.$store.state.initialState.user;
 		},
@@ -160,7 +160,13 @@ export default {
 				});
 			}
 		},
-		momentTime(date) {
+		momentTime(id) {
+			let date = Date.now();
+			for (var i = 0; i < this.getWishListItems.length; i++) {
+				if (this.getWishListItems[i].ItemId === id) {
+					date = this.getWishListItems[i].createdAt;
+				}
+			}
 			return moment.parseZone(date).fromNow();
 		},
 	},
