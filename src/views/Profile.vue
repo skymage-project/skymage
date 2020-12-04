@@ -118,7 +118,21 @@
               x-small
             >
               <template v-slot:opposite>
-                <span>{{ momentTime(new Date()) }} </span>
+                <span>{{
+                  new Date().getDate() +
+                  "/" +
+                  (new Date().getMonth() + 1) +
+                  "/" +
+                  new Date().getFullYear()
+                }}</span>
+                <br />
+                <span>{{
+                  new Date().getHours() +
+                  ":" +
+                  new Date().getMinutes() +
+                  ":" +
+                  new Date().getSeconds()
+                }}</span>
               </template>
               <Invoice :fatoura="fatoura" :i="i" />
             </v-timeline-item>
