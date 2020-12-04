@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h3>Thank you Mr/Mrs {{ user.firstName + " " + user.lastName }} for purshasing from us the products your total is {{ getTotalCartPrice + selected }} DT and it was your method of shipping is {{ shippingRate }}</h3>
+    <h3>
+      Thank you Mr/Mrs {{ user.firstName + " " + user.lastName }} for purshasing
+      from us the products your total is {{ getTotalCartPrice + selected }} DT
+      and it was your method of shipping is {{ shippingRate }}
+    </h3>
   </div>
 </template>
 

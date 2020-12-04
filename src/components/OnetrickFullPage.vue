@@ -1,18 +1,26 @@
 <template>
-  <v-parallax
-    dark
-    src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700416024.jpg"
-  >
-    <v-row align="center" justify="center">
-      <v-col class="text-center" cols="12">
-        <v-container fill-height> </v-container>
-      </v-col>
-      <!-- <v-col cols="6"> {{ displayedTricks.price }} </v-col> -->
-      <h1>This is {{ this.product.name }} Page</h1>
-
-      <!-- <h1>This is {{ this.$route.params.price }} Page</h1> -->
-    </v-row>
-  </v-parallax>
+  <div>
+    <v-parallax dark :src="this.product.urlPictures[0].urlPictures">
+      <v-row align="center" justify="center">
+        <v-col class="text-center" cols="12">
+          <v-container fill-height> </v-container>
+        </v-col>
+        <!-- <v-col cols="6"> {{ displayedTricks.price }} </v-col> -->
+        <!--<h1>{{ this.product.name }}</h1> -->
+        <!-- <iframe " /> -->
+        <iframe
+          width="640"
+          height="370"
+          :src="this.product.urlVideos[0].urlVideos"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <!-- <h1>This is {{ this.$route.params.price }} Page</h1> -->
+        <!-- "https://youtu.be/_9rcdwvXYHs" -->
+      </v-row>
+    </v-parallax>
+  </div>
 </template>
 
 <script>

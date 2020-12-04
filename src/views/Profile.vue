@@ -105,22 +105,40 @@
 									momentTime(wish.id)
 								}}</span>
 							</template>
-							<Wishes :wish="wish" />
+							<Wishes :wish="wish" :key="wish.id" />
 						</v-timeline-item>
 					</v-timeline>
 				</div>
 				<div v-if="value === 1">
 					<v-timeline>
-						<v-timeline-item v-for="n in 3" :key="n" color="orange" x-small>
+						<v-timeline-item
+							v-for="(fatoura, i) in purchase.invoiceList"
+							:key="i"
+							color="orange"
+							x-small
+						>
 							<template v-slot:opposite>
-								<span>22/09/2020</span>
+								<span>{{
+									new Date().getDate() +
+										'/' +
+										(new Date().getMonth() + 1) +
+										'/' +
+										new Date().getFullYear()
+								}}</span>
+								<br />
+								<span>{{
+									new Date().getHours() +
+										':' +
+										new Date().getMinutes() +
+										':' +
+										new Date().getSeconds()
+								}}</span>
 							</template>
-							<Invoice />
+							<Invoice :fatoura="fatoura" :i="i" />
 						</v-timeline-item>
 					</v-timeline>
 				</div>
 			</div>
-			<div style="margin-top: 2000px">hzhj</div>
 		</div>
 	</div>
 </template>
@@ -129,6 +147,7 @@
 import moment from 'moment';
 import Wishes from '../components/Wishes.vue';
 import Invoice from '../components/Invoice.vue';
+import axios from 'axios';
 import { mapState, mapGetters } from 'vuex';
 export default {
 	name: 'Profile',
@@ -140,8 +159,7 @@ export default {
 		value: 0,
 	}),
 	computed: {
-		...mapState(['wishlist']),
-		...mapGetters(['getWishListItems']),
+		...mapState(['wishlist', 'purchase']),
 		user() {
 			return this.$store.state.initialState.user;
 		},
@@ -160,11 +178,14 @@ export default {
 				});
 			}
 		},
+		invoiceDate(date) {
+			return moment.parseZone(date).fromNow();
+		},
 		momentTime(id) {
 			let date = Date.now();
-			for (var i = 0; i < this.getWishListItems.length; i++) {
-				if (this.getWishListItems[i].ItemId === id) {
-					date = this.getWishListItems[i].createdAt;
+			for (var i = 0; i < this.wishlist.wishListItems.length; i++) {
+				if (this.wishlist.wishListItems[i].ItemId === id) {
+					date = this.wishlist.wishListItems[i].createdAt;
 				}
 			}
 			return moment.parseZone(date).fromNow();
