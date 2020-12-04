@@ -4,7 +4,6 @@
 			<v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 			<v-toolbar-items>
 				<v-btn text @click="goHome"><span class="span">Home</span></v-btn>
-				<v-btn text @click="goAbout"> <span class="span">About</span></v-btn>
 				<v-btn text @click="goCatalog"> <span class="span">Tricks</span></v-btn>
 			</v-toolbar-items>
 			<v-spacer></v-spacer>
@@ -73,9 +72,6 @@ export default {
 	},
 	methods: {
 		profile() {
-			if (this.route === '/profile') {
-				return;
-			}
 			this.$router.push('/profile');
 			this.route = '/profile';
 		},
@@ -84,32 +80,16 @@ export default {
 		},
 		logOut() {
 			this.$store.dispatch('logout').then(() => {
-				// if (this.route === '/' ) {
-				// 	return;
-				// }
 				this.$router.push('/');
 			});
 		},
 		goHome() {
-			if (this.route === '/') {
-				return;
-			}
 			this.$router.push('/');
 			this.route = '/';
 		},
 		goCatalog() {
-			if (this.route === '/catalog') {
-				return;
-			}
 			this.$router.push('/catalog');
 			this.route = '/catalog';
-		},
-		goAbout() {
-			if (this.route === '/about') {
-				return;
-			}
-			this.$router.push('/about');
-			this.route = '/about';
 		},
 		goSignin() {
 			this.$router.push('/signin');
