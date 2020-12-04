@@ -1,31 +1,43 @@
 <template>
-  <div>
-    <v-parallax
-      dark
-      style="opacity: 0.3;"
-      :src="this.product.urlPictures[0].urlPictures"
-    >
-    </v-parallax>
-    <v-row align="center" justify="center">
-      <v-col class="text-center" cols="12">
-        <v-container fill-height> </v-container>
+  <v-container class="grey lighten-5">
+    <v-row no-gutters>
+      <v-col cols="12" sm="12" md="12">
+        <v-card class="pa-2" outlined tile>
+          <v-row no-gutters>
+            <v-col cols="12"
+              ><h2>
+                helloddddddddddddddddddddddddddddddddddssss
+              </h2></v-col
+            >
+          </v-row>
+        </v-card>
       </v-col>
-      <!-- <v-col cols="6"> {{ displayedTricks.price }} </v-col> -->
-      <h1>This is {{ this.product.name }} Page</h1>
-      <!-- <iframe " /> -->
-      <iframe
-        width="640"
-        height="370"
-        src="https://www.youtube.com/embed/_9rcdwvXYHs"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-
-      <!-- <h1>This is {{ this.$route.params.price }} Page</h1> -->
-      <!-- "https://youtu.be/_9rcdwvXYHs" -->
     </v-row>
-  </div>
+    <v-row no-gutters>
+      <v-col cols="6" sm="6" md="6">
+        <v-card class="pa-3" outlined tile>
+          <v-row no-gutters>
+            <v-col cols="12"
+              ><h2>
+                helloddddddddddddddddddddddddddddddddddssss
+              </h2></v-col
+            >
+          </v-row>
+        </v-card>
+      </v-col>
+      <v-col cols="6" sm="6" md="6">
+        <v-card class="pa-3" outlined tile>
+          <v-row no-gutters>
+            <v-col cols="12"
+              ><h2>
+                helloddddddddddddddddddddddddddddddddddssss
+              </h2></v-col
+            >
+          </v-row>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

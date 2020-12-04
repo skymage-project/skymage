@@ -9,20 +9,23 @@
           <v-container fill-height>
             <v-layout align-center>
               <v-flex>
-                <h3 class="display-3">Welcome to the site</h3>
+                <h3 class="display-3">Welcome to SKYMAGE</h3>
 
-                <span class="subheading"
-                  >Lorem ipsum dolor sit amet, pri veniam forensibus id. Vis
-                  maluisset molestiae id, ad semper lobortis cum. At impetus
-                  detraxit incorrupte usu, repudiare assueverit ex eum, ne nam
-                  essent vocent admodum.</span
-                >
+                <h2 class="subheading">
+                  The first virtual magic market place in AFRICA
+                </h2>
 
                 <v-divider class="my-3"></v-divider>
 
-                <div class="title mb-3">Check out our newest features!</div>
-
-                <v-btn class="mx-0" color="primary" large> See more </v-btn>
+                <div class="title mb-3">
+                  Check out our newest
+                  <span
+                    class="spann"
+                    style="font-weight: bold; font-style: italic"
+                    @click="goCatalog"
+                    >tricks!</span
+                  >
+                </div>
               </v-flex>
             </v-layout>
             <div>
@@ -49,5 +52,20 @@
 
 export default {
   name: "Home",
+
+  methods: {
+    goCatalog() {
+      if (this.route === "/catalog") {
+        return;
+      }
+      this.$router.push("/catalog");
+      this.route = "/catalog";
+    },
+  },
 };
 </script>
+<style scoped>
+.spann:hover {
+  color: orange;
+}
+</style>
