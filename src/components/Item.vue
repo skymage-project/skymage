@@ -1,57 +1,58 @@
 <template>
-  <v-card
-    class="mx-auto"
-    width="23%"
-    height="380px"
-    @mouseover="toggleHover"
-    @mouseout="toggleHover"
-  >
-    <v-img height="150px" :src="trick.urlPictures[0].urlPictures">
-      <v-btn icon @click="toggleWish">
-        <v-icon v-if="wished">mdi-heart</v-icon>
-        <v-icon v-else>mdi-heart-outline</v-icon>
-      </v-btn>
-    </v-img>
-    <v-card-text class="pt-4" style="position:relative;">
-      <v-btn
-        absolute
-        color="orange"
-        class="white--text"
-        fab
-        small
-        right
-        top
-        @click="addToCart"
-      >
-        <v-icon>mdi-cart</v-icon>
-      </v-btn>
-    </v-card-text>
-    <v-card-title>
-      <!-- NameTrick -->
-      {{
-        trick.name.length > 20 ? trick.name.slice(0, 18) + "..." : trick.name
-      }}
-    </v-card-title>
-    <v-card-subtitle>
-      <!-- category  -->
-      {{ trick.category }}
-    </v-card-subtitle>
-    <v-card-subtitle>
-      <!-- price  -->
-      {{ trick.price }} DT
-    </v-card-subtitle>
-
-    <v-btn class="buttonQuick" color="orange " v-show="hover" @click="showD"
-      >Quick View</v-btn
+  <v-col cols="10" sm="5" md="3" xs="6" lg="3">
+    <v-card
+      class="mx-auto"
+      height="25em"
+      width="25em"
+      @mouseover="toggleHover"
+      @mouseout="toggleHover"
     >
+      <v-img height="17em" :src="trick.urlPictures[0].urlPictures">
+        <v-btn icon @click="toggleWish">
+          <v-icon color="orange" v-if="wished">mdi-heart</v-icon>
+          <v-icon color="orange" v-else>mdi-heart-outline</v-icon>
+        </v-btn>
+      </v-img>
+      <v-card-text class="pt-0" style="position:relative;">
+        <v-btn
+          absolute
+          color="orange"
+          class="white--text"
+          fab
+          small
+          right
+          top
+          @click="addToCart"
+        >
+          <v-icon>mdi-cart</v-icon>
+        </v-btn>
+      </v-card-text>
+      <v-card-title>
+        <!-- NameTrick -->
+        {{
+          trick.name.length > 20 ? trick.name.slice(0, 15) + "..." : trick.name
+        }}
+      </v-card-title>
+      <v-card-subtitle>
+        <!-- category  -->
+        {{ trick.category }}
+      </v-card-subtitle>
+      <v-card-subtitle>
+        <!-- price  -->
+        {{ trick.price }} DT
+      </v-card-subtitle>
+      <v-btn class="buttonQuick" color="orange " v-show="hover" @click="showD"
+        >Quick View</v-btn
+      >
 
-    <TrickOverView
-      :trick="trick"
-      :showDiv="showDiv"
-      @toggle-over-view="showD"
-    />
-    <v-spacer></v-spacer>
-  </v-card>
+      <TrickOverView
+        :trick="trick"
+        :showDiv="showDiv"
+        @toggle-over-view="showD"
+      />
+      <v-spacer></v-spacer>
+    </v-card>
+  </v-col>
 </template>
 
 <script>
@@ -136,8 +137,19 @@ export default {
 
 <style scoped>
 .buttonQuick {
-  position: relative;
-  left: 8em;
-  top: -1em;
+  position: absolute;
+  bottom: 1.2em;
+  right: 1.5em;
+}
+.v-card__title {
+  padding: 0;
+  padding-left: 1em;
+  padding-bottom: 0.7em;
+}
+.v-card__subtitle {
+  padding-top: 0em;
+  padding-left: 2em;
+  padding-bottom: 0.2em;
+  font-weight: 600;
 }
 </style>

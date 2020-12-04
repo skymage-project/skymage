@@ -48,7 +48,7 @@ export default new Vuex.Store({
 		SEND_MESSAGE: (state, payload) => {
 			Swal.fire({
 				icon: 'success',
-				text: 'Thank you! we will answer you as soon as we can',
+				text: 'Thank you! We will answer you as soon as we can',
 			});
 		},
 
@@ -81,7 +81,7 @@ export default new Vuex.Store({
 		registerFailure(state) {
 			Swal.fire({
 				icon: 'error',
-				title: 'Failed! Email is already in use!',
+				title: 'Failed! This email is already in use!',
 			});
 			state.initialState.status.loggedIn = false;
 		},
@@ -90,21 +90,19 @@ export default new Vuex.Store({
 			state.initialState.status.loggedIn = false;
 			state.initialState.user = null;
 		},
-		REGISTER_UPDATED() {
-			
-		},
-		PURCHASE_UPDATED(){
+		REGISTER_UPDATED() {},
+		PURCHASE_UPDATED() {
 			Swal.fire({
 				icon: 'success',
 				text: 'Your purchase is done successfully',
 			});
-		}
+		},
 	},
 	actions: {
 		filterBy({ commit }, event) {
-			if (event === 'price: decreasing order') {
+			if (event === 'Price: decreasing order') {
 				commit('FILTER_DECREASE');
-			} else if (event === 'price: increasing order') {
+			} else if (event === 'Price: increasing order') {
 				commit('FILTER_INCREASE');
 			} else if (['Beginner', 'Intermediate', 'Advanced'].includes(event)) {
 				commit('FILTER_DIFFICULTY', event);
@@ -186,11 +184,11 @@ export default new Vuex.Store({
 				commit('REGISTER_UPDATED');
 			});
 		},
-		updatePurchase({ commit },user){
+		updatePurchase({ commit }, user) {
 			return userAuth.updatePurchase(user).then(() => {
 				commit('PURCHASE_UPDATED');
-			})
-		}
+			});
+		},
 	},
 	getters: {
 		getTricks: (state) => {

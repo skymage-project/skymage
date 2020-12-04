@@ -58,7 +58,7 @@
 
 									<v-col cols="6">
 										<v-btn
-											color="orange lighten-2"
+											color="orange"
 											class="buttonV"
 											@click="
 												toggleOverView();
@@ -74,7 +74,7 @@
 									<v-col cols="6"></v-col>
 									<v-col cols="6"
 										><v-btn
-											color="orange lighten-2"
+											color="orange"
 											class="buttonV"
 											@click="
 												addItemToCart();
