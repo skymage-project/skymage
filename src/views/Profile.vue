@@ -86,6 +86,7 @@
 					<v-btn>
 						<span>Invoice</span>
 
+<<<<<<< HEAD
 						<v-icon> mdi-currency-usd</v-icon>
 					</v-btn>
 				</v-bottom-navigation>
@@ -127,6 +128,63 @@
 			</div>
 		</div>
 	</div>
+=======
+            <v-icon> mdi-currency-usd</v-icon>
+          </v-btn>
+        </v-bottom-navigation>
+        <div v-if="value === 0">
+          <v-timeline>
+            <v-timeline-item
+              v-for="(wish, i) in wishlist.wishListTricksInfos"
+              :key="i"
+            >
+              <template v-slot:icon>
+                <v-avatar>
+                  <img :src="user.img || 'http://i.pravatar.cc/64'" />
+                </v-avatar>
+              </template>
+              <template v-slot:opposite>
+                <span style="color: orange; font-size: 28px">{{
+                  momentTime(wish.updatedAt)
+                }}</span>
+              </template>
+              <Wishes :wish="wish" />
+            </v-timeline-item>
+          </v-timeline>
+        </div>
+        <div v-if="value === 1">
+          <v-timeline>
+            <v-timeline-item
+              v-for="(fatoura, i) in purchase.invoiceList"
+              :key="i"
+              color="orange"
+              x-small
+            >
+              <template v-slot:opposite>
+                <span>{{
+                  new Date().getDate() +
+                  "/" +
+                  (new Date().getMonth() + 1) +
+                  "/" +
+                  new Date().getFullYear()
+                }}</span>
+                <br />
+                <span>{{
+                  new Date().getHours() +
+                  ":" +
+                  new Date().getMinutes() +
+                  ":" +
+                  new Date().getSeconds()
+                }}</span>
+              </template>
+              <Invoice :fatoura="fatoura" :i="i" />
+            </v-timeline-item>
+          </v-timeline>
+        </div>
+      </div>
+    </div>
+  </div>
+>>>>>>> 822510f74aebe17c4388e2ac6a65db6ccd2629b6
 </template>
 
 <script>
