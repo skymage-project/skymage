@@ -68,8 +68,6 @@ router.post('/add', async (req, res) => {
 });
 router.post('/addAll', async (req, res) => {
 	for (var i = 0; i < req.body.length; i++) {
-		console.log('ccccccccccccccccccc');
-		console.log(req.body[i]);
 		try {
 			const item = await Item.create({
 				name: req.body[i].name,
@@ -134,7 +132,6 @@ router.post('/purchase', async (req, res) => {
 					id: req.body.listOfItemsId,
 				},
 			}).then((items) => {
-				console.log('ttttttttttttt');
 				console.log(items);
 				items[0].addUser(items[0].dataValues.id, user[0].dataValues.id);
 				res.json('purchased');
@@ -158,6 +155,49 @@ router.post('/addItemToWishList', async (req, res) => {
 				req.body.UserId +
 				'items'
 		);
+	} catch (err) {
+		res.send(err);
+	}
+});
+
+router.delete('/removeItemFromWishList', async (req, res) => {
+	try {
+		const removeWish = await WishList.destroy({
+			where: { ItemId: req.body.ItemId, UserId: req.body.UserId },
+		});
+		res.json(removeWish);
+	} catch (err) {
+		res.send(err);
+	}
+});
+
+router.post('/fetchWishList', async (req, res) => {
+	try {
+		const wishListItems = await WishList.findAll({
+			where: {
+				UserId: req.body.UserId,
+			},
+			order: [['createdAt', 'DESC']],
+		});
+		res.json(wishListItems);
+	} catch (err) {
+		res.send(err);
+	}
+});
+router.post('/fetchItemsWishList', async (req, res) => {
+	try {
+		let arrayOfIds = [];
+		for (var i = 0; i < req.body.ArrayOfItems.length; i++) {
+			arrayOfIds.push(req.body.ArrayOfItems[i].ItemId);
+		}
+		const wishListItemsDetails = await Item.findAll({
+			where: {
+				id: arrayOfIds,
+			},
+			include: { all: true },
+			order: [['createdAt', 'DESC']],
+		});
+		res.json(wishListItemsDetails);
 	} catch (err) {
 		res.send(err);
 	}

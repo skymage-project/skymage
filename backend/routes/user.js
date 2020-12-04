@@ -254,4 +254,22 @@ router.put('/update',async (req, res) => {
 	res.json('updated') 
 })
 
+router.put('/updatePurshase/:id',async (req, res) => {
+	const salt = await bcrypt.genSalt(10);
+  const hashCard = await bcrypt.hash(req.body.creditCardNumber, salt)
+	const user = await User.update({
+			shippingRate: req.body.shippingRate,
+			creditCardNumber: hashCard,
+			expirationCardDate: req.body.expirationCardDate,
+			securityCode: req.body.securityCode
+		},
+		{
+			where: {
+				id: req.params.id
+			},
+		}
+	)
+	res.json('updated') 
+})
+
 module.exports = router;

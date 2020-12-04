@@ -8,6 +8,7 @@ var morgan = require('morgan');
 const user = require('./routes/user');
 const items = require('./routes/items');
 const app = express();
+const PORT = 3000 || process.env.PORT;
 
 app.use(cors());
 
@@ -28,6 +29,6 @@ app.use(express.static('../dist'));
 app.use('/user', user);
 app.use('/items', items);
 
-app.listen(3000, () => {
-	console.log(`Server is running on port http://localhost:3000`);
+app.listen(PORT, () => {
+	console.log(`Server is running on port http://localhost:${PORT}`);
 });

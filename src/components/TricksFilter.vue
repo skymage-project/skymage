@@ -1,16 +1,25 @@
 <template>
 	<div>
-		<h2>product to buy</h2>
 		<v-container fluid>
 			<v-row align="center">
 				<v-col class="d-flex" cols="12" sm="6">
-					<v-select :items="items" label="Order By" @change="search"></v-select>
 					<v-select
+						color="orange"
+						itemColor="orange"
+						:items="items"
+						label="Order By"
+						@change="search"
+					></v-select>
+					<v-select
+						color="orange"
+						itemColor="orange"
 						:items="itemDifficulty"
 						label="Difficulty"
 						@change="search"
 					></v-select>
 					<v-select
+						color="orange"
+						itemColor="orange"
 						:items="itemsByCategory"
 						label="Category"
 						@change="search"
@@ -25,9 +34,9 @@
 export default {
 	data: () => ({
 		items: [
-			'price: decreasing order',
-			'price: increasing order',
-			'bestsellers',
+			'Price: decreasing order',
+			'Price: increasing order',
+			'Bestsellers',
 		],
 		itemDifficulty: ['Beginner', 'Intermediate', 'Advanced'],
 		itemsByCategory: [

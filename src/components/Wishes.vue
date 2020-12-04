@@ -2,7 +2,7 @@
   <div>
     <v-hover v-slot="{ hover }">
       <v-card class="mx-auto" color="grey lighten-4" max-width="600">
-        <v-img :aspect-ratio="16 / 9" :src="wish.picture">
+        <v-img :aspect-ratio="16 / 9" :src="wish.urlPictures[0].urlPictures">
           <v-expand-transition>
             <div
               v-if="hover"
