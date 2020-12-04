@@ -168,6 +168,15 @@ export default {
     momentTime(date) {
       return moment.parseZone(date).fromNow();
     },
+    momentTime(id) {
+      let date = Date.now();
+      for (var i = 0; i < this.getWishListItems.length; i++) {
+        if (this.getWishListItems[i].ItemId === id) {
+          date = this.getWishListItems[i].createdAt;
+        }
+      }
+      return moment.parseZone(date).fromNow();
+    },
   },
 };
 </script>
