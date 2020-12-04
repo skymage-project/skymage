@@ -19,24 +19,9 @@ export default {
 		Item,
 		TricksFilter,
 	},
-	data: () => ({
-		loading: true,
-	}),
+
 	computed: {
 		...mapState(['displayedTricks']),
-	},
-	created() {
-		const user = JSON.parse(localStorage.getItem('user'));
-		if (user) {
-			Promise.all([
-				this.$store.dispatch('getItems'),
-				this.$store.dispatch('fetchWishList', user.id),
-			]).finally(() => {
-				this.loading = false;
-			});
-		} else {
-			this.$store.dispatch('getItems');
-		}
 	},
 };
 </script>

@@ -69,13 +69,18 @@ export default {
 		company: user.company,
 		addressOptional: user.addressOptional,
 		postalCode: user.postalCode,
-		city: user.city,
-		shippingRate: user.shippingRate,
-		creditCardNumber: user.creditCardNumber,
-		expirationCardDate: user.expirationCard,
-		securityCode: user.securityCode
+		city: user.city
 	})
 },
+
+updatePurchase(user){
+	return	axios.put(`http://localhost:3000/user/updatePurshase/${user.id}`,{
+		shippingRate: user.shippingRate,
+		creditCardNumber: user.creditCardNumber,
+		expirationCardDate: user.expirationCardDate,
+		securityCode: user.securityCode
+	})
+}
 }
 
     
