@@ -145,8 +145,8 @@
 
 <script>
 import moment from 'moment';
-import Wishes from '../components/Wishes.vue';
-import Invoice from '../components/Invoice.vue';
+import Wishes from '../components/Profile/Wishes.vue';
+import Invoice from '../components/Profile/Invoice.vue';
 import axios from 'axios';
 import { mapState, mapGetters } from 'vuex';
 export default {

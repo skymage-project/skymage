@@ -94,7 +94,7 @@
 </template>
 <script>
 import { mapState, mapGetters } from 'vuex';
-import OnetrickFullPage from './OnetrickFullPage.vue';
+import OnetrickFullPage from '../OnetrickFullPage.vue';
 export default {
 	components: { OnetrickFullPage },
 	props: ['showDiv', 'trick'],

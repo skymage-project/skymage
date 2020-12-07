@@ -8,8 +8,8 @@
 	</v-app>
 </template>
 <script>
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
+import NavBar from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
 export default {
 	name: 'App',
 	components: {

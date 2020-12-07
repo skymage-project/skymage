@@ -46,7 +46,7 @@
 
 <script>
 // @ is an alias to /src
-import About from './About.vue';
+import About from '../components/Hompage/About.vue';
 export default {
 	name: 'Home',
 	components: {
