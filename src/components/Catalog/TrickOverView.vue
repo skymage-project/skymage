@@ -1,7 +1,7 @@
 <template>
   <v-layout row justify-center>
     <v-dialog
-      v-model="showDiv"
+      v-model="showTrickOverView"
       persistent
       max-width="1000"
       @click:outside="toggleOverView"
@@ -62,7 +62,7 @@
                       class="buttonV"
                       @click="
                         toggleOverView();
-                        openFull();
+                        openOneTrickFullPage();
                       "
                       >View Full Page</v-btn
                     ></v-col
@@ -93,16 +93,11 @@
   </v-layout>
 </template>
 <script>
-<<<<<<< HEAD:src/components/TrickOverView.vue
 import { mapState, mapGetters } from "vuex";
-import OnetrickFullPage from "./OnetrickFullPage.vue";
-=======
-import { mapState, mapGetters } from 'vuex';
-import OnetrickFullPage from '../OnetrickFullPage.vue';
->>>>>>> 9f5d04f2a0ddc0530cf1bfc5430628982a22bcd6:src/components/Catalog/TrickOverView.vue
+import OnetrickFullPage from "../OnetrickFullPage.vue";
 export default {
   components: { OnetrickFullPage },
-  props: ["showDiv", "trick"],
+  props: ["showTrickOverView", "trick"],
   name: "TrickOverView",
   computed: {
     ...mapState(["displayedTricks", "cart"]),
@@ -117,9 +112,12 @@ export default {
     toggleOverView() {
       this.$emit("toggle-over-view");
     },
-    openFull() {
+    openOneTrickFullPage() {
       // this.full = true;
-      this.$router.push({ name: "Cards", params: { id: this.trick.id } });
+      this.$router.push({
+        name: "ItemDetailed",
+        params: { id: this.trick.id },
+      });
     },
     bindImg() {},
     addItemToCart() {

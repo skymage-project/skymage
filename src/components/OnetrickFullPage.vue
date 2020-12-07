@@ -91,7 +91,7 @@
 </template>
 
 <script>
-import About from "../views/About";
+import About from "../components/Hompage/About";
 export default {
   components: { About },
   props: ["id"],
