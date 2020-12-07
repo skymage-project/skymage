@@ -145,8 +145,8 @@
 
 <script>
 import moment from 'moment';
-import Wishes from '../components/Wishes.vue';
-import Invoice from '../components/Invoice.vue';
+import Wishes from '../components/profile/Wishes.vue';
+import Invoice from '../components/profile/Invoice.vue';
 import axios from 'axios';
 import { mapState, mapGetters } from 'vuex';
 export default {
@@ -159,9 +159,9 @@ export default {
 		value: 0,
 	}),
 	computed: {
-		...mapState(['wishlist', 'purchase']),
+		...mapState(['wishlist', 'purchase','users']),
 		user() {
-			return this.$store.state.initialState.user;
+			return this.users.initialState.user;
 		},
 		img() {
 			return this.user.img

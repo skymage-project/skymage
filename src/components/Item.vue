@@ -57,7 +57,7 @@
 
 <script>
 import TrickOverView from "./TrickOverView";
-import { mapGetters } from "vuex";
+import { mapState, mapGetters } from "vuex";
 export default {
   props: ["trick"],
   components: { TrickOverView },
@@ -70,8 +70,9 @@ export default {
     };
   },
   computed: {
+    ...mapState(['users']),
     userId() {
-      return this.$store.state.initialState.user.id;
+      return this.users.initialState.user.id;
     },
     ...mapGetters(["getWishListItems"]),
   },

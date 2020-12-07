@@ -7,10 +7,10 @@
 				<v-btn text @click="goCatalog"> <span class="span">Tricks</span></v-btn>
 			</v-toolbar-items>
 			<v-spacer></v-spacer>
-			<v-btn text @click="profile" v-if="loggedIn">
+			<v-btn text @click="profile" v-if="users.initialState.status.loggedIn">
 				<span class="span">Profile</span></v-btn
 			>
-			<v-btn text @click="logOut" v-if="loggedIn">
+			<v-btn text @click="logOut" v-if="users.initialState.status.loggedIn">
 				<span class="span">Logout</span></v-btn
 			>
 
@@ -64,9 +64,7 @@ export default {
 		};
 	},
 	computed: {
-		loggedIn() {
-			return this.$store.state.initialState.status.loggedIn;
-		},
+		...mapState(['users']),
 		...mapState(['cart']),
 		...mapGetters(['cartItemsLength']),
 	},
