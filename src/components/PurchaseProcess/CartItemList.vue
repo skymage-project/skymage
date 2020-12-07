@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import CartItem from '../components/CartItem';
+import CartItem from '../NavBar/CartItem.vue';
 import { mapState } from 'vuex';
 export default {
 	components: { CartItem },

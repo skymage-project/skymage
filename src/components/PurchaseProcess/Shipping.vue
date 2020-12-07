@@ -50,8 +50,8 @@
 </template>
 
 <script>
-import CartItemList from '../components/CartItemList';
-import Payment from '../components/Payment';
+import CartItemList from './CartItemList.vue';
+import Payment from './Payment.vue';
 import { mapState, mapGetters } from 'vuex';
 export default {
 	components: { CartItemList, Payment },

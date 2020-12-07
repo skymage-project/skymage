@@ -101,8 +101,8 @@
 </template>
 
 <script>
-import PurchaseDone from '../components/PurchaseDone';
-import CartItemList from '../components/CartItemList';
+import PurchaseDone from './PurchaseDone.vue';
+import CartItemList from './CartItemList.vue';
 import VueMonthlyPicker from 'vue-monthly-picker';
 import { mapState, mapGetters } from 'vuex';
 export default {

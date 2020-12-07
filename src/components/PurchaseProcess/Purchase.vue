@@ -140,8 +140,8 @@
 <script>
 import Swal from 'sweetalert2';
 import Password from 'vue-password-strength-meter';
-import Shipping from './Shipping';
-import CartItemList from './CartItemList';
+import Shipping from './Shipping.vue';
+import CartItemList from './CartItemList.vue';
 import { mapState, mapGetters } from 'vuex';
 export default {
 	components: { CartItemList, Password, Shipping },

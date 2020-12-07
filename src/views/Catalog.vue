@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import Item from '../components/Item.vue';
-import TricksFilter from '../components/TricksFilter.vue';
+import Item from '../components/Catalog/Item.vue';
+import TricksFilter from '../components/Catalog/TricksFilter.vue';
 import { mapState } from 'vuex';
 export default {
 	name: 'Catalog',
