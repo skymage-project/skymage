@@ -43,7 +43,7 @@
 
 <script>
 import { mapState, mapGetters } from 'vuex';
-import CartItem from './CartItem';
+import CartItem from './CartItem.vue';
 export default {
 	name: 'Cart',
 	components: { CartItem },
@@ -61,11 +61,11 @@ export default {
 			this.$emit('my-click-outside');
 		},
 		goPurchase() {
-			if (this.route === '/final') {
+			if (this.route === '/purchaseprocess') {
 				return;
 			}
-			this.$router.push('/final');
-			this.route = '/final';
+			this.$router.push('/purchaseprocess');
+			this.route = '/purchaseprocess';
 		},
 	},
 };
