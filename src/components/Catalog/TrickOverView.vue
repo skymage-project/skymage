@@ -93,8 +93,13 @@
   </v-layout>
 </template>
 <script>
+<<<<<<< HEAD:src/components/TrickOverView.vue
 import { mapState, mapGetters } from "vuex";
 import OnetrickFullPage from "./OnetrickFullPage.vue";
+=======
+import { mapState, mapGetters } from 'vuex';
+import OnetrickFullPage from '../OnetrickFullPage.vue';
+>>>>>>> 9f5d04f2a0ddc0530cf1bfc5430628982a22bcd6:src/components/Catalog/TrickOverView.vue
 export default {
   components: { OnetrickFullPage },
   props: ["showDiv", "trick"],
