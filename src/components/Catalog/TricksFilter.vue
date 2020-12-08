@@ -40,17 +40,17 @@ export default {
 		],
 		itemDifficulty: ['Beginner', 'Intermediate', 'Advanced'],
 		itemsByCategory: [
-			'Beginners',
-			'Close Up',
-			'Cards',
-			'Coins',
-			'Mental',
-			'BigShows',
-			'DvD',
-			'Books',
-			'Playing Cards',
-			'Accessories',
-			'Promotion',
+			'Beginners', //https://www.bigmagie.com/3-tres-facile
+			'Close Up', // https://www.bigmagie.com/7-close-up
+			'Cards', // https://www.bigmagie.com/4-cartes
+			'Coins', // https://www.bigmagie.com/2-argents
+			'Mental', // https://www.bigmagie.com/6-mentalisme
+			'BigShows', //https://www.bigmagie.com/9-salon-scene
+			'DvD', //https://www.bigmagie.com/11-dvd
+			'Books', // https://www.bigmagie.com/12-livres
+			'Playing Cards', // https://www.bigmagie.com/14-jeux-de-cartes
+			'Accessories', //https://www.bigmagie.com/10-access-consom
+			'Promotion', // https://www.bigmagie.com/48-blackfriday?orderby=reference&orderway=desc&n=216
 		],
 	}),
 	methods: {
