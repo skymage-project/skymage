@@ -1,6 +1,13 @@
 <template>
   <div>
-    <v-container class="dark">
+    <v-parallax
+      height="1200"
+      dark
+      style="opacity: 0.3;"
+      :src="this.product.urlPictures[0].urlPictures"
+    >
+    </v-parallax>
+    <v-container class="mainContainer">
       <v-row>
         <v-col cols="12" sm="12" md="12">
           <v-row no-gutters>
@@ -14,8 +21,6 @@
       </v-row>
       <v-row>
         <v-col cols="7" sm="3" md="7">
-          <v-col cols="12"> </v-col>
-          <v-col cols="12"> </v-col>
           <v-col cols="12"> </v-col>
           <v-col cols="12"> </v-col>
           <v-col cols="12"> </v-col>
@@ -36,7 +41,7 @@
           <v-row no-gutters>
             <v-col cols="5"
               ><h1>{{ this.product.name }}</h1>
-              <h3 style="color: orange">
+              <h3 style="color: orange;">
                 {{ this.product.author }}
               </h3>
             </v-col>
@@ -121,5 +126,9 @@ export default {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 17px;
+}
+.mainContainer {
+  position: relative;
+  top: -81em;
 }
 </style>
