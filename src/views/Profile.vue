@@ -159,9 +159,9 @@ export default {
 		value: 0,
 	}),
 	computed: {
-		...mapState(['wishlist', 'purchase']),
+		...mapState(['wishlist', 'purchase','users']),
 		user() {
-			return this.$store.state.initialState.user;
+			return this.users.initialState.user;
 		},
 		img() {
 			return this.user.img

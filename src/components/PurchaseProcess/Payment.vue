@@ -109,13 +109,13 @@ export default {
 	props: ['selected', 'shippingRate'],
 	components: { CartItemList, PurchaseDone, VueMonthlyPicker },
 	computed: {
-		...mapState(['cart']),
+		...mapState(['cart','users']),
 		...mapGetters(['getTotalCartPrice']),
 		loggedIn() {
-			return this.$store.state.initialState.status.loggedIn;
+			return this.users.initialState.status.loggedIn;
 		},
 		user() {
-			return this.$store.state.initialState.user;
+			return this.users.initialState.user;
 		},
 	},
 	data: () => ({
