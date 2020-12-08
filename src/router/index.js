@@ -5,7 +5,8 @@ import Catalog from '../views/Catalog.vue';
 import Signin from '../views/Signin.vue';
 import Profile from '../views/Profile.vue';
 import PurchaseProcess from '../views/PurchaseProcess.vue';
-import Cards from '../views/Cards.vue';
+import ItemDetailed from '../views/ItemDetailed.vue';
+import BeginnerSection from '../views/BeginnerSection.vue';
 Vue.use(VueRouter);
 
 const routes = [
@@ -36,10 +37,15 @@ const routes = [
 		component: PurchaseProcess,
 	},
 	{
-		path: '/cards/:id',
-		name: 'Cards',
-		component: Cards,
+		path: '/itemDetailed/:id',
+		name: 'ItemDetailed',
+		component: ItemDetailed,
 		props: true,
+	},
+	{
+		path: '/beginner',
+		name: 'BeginnerSection',
+		component: BeginnerSection,
 	},
 ];
 
