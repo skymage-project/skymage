@@ -5,12 +5,15 @@
 			<v-toolbar-items>
 				<v-btn text @click="goHome"><span class="span">Home</span></v-btn>
 				<v-btn text @click="goCatalog"> <span class="span">Tricks</span></v-btn>
+				<v-btn text @click="goBeginnerSection">
+					<span class="span">LEARN MAGIC</span></v-btn
+				>
 			</v-toolbar-items>
 			<v-spacer></v-spacer>
-			<v-btn text @click="profile" v-if="loggedIn">
+			<v-btn text @click="profile" v-if="users.initialState.status.loggedIn">
 				<span class="span">Profile</span></v-btn
 			>
-			<v-btn text @click="logOut" v-if="loggedIn">
+			<v-btn text @click="logOut" v-if="users.initialState.status.loggedIn">
 				<span class="span">Logout</span></v-btn
 			>
 
@@ -64,9 +67,7 @@ export default {
 		};
 	},
 	computed: {
-		loggedIn() {
-			return this.$store.state.initialState.status.loggedIn;
-		},
+		...mapState(['users']),
 		...mapState(['cart']),
 		...mapGetters(['cartItemsLength']),
 	},
@@ -93,6 +94,10 @@ export default {
 		},
 		goSignin() {
 			this.$router.push('/signin');
+		},
+		goBeginnerSection() {
+			this.$router.push('/beginner');
+			this.route = '/beginner';
 		},
 		search(event) {
 			if (this.route === '/catalog') {
