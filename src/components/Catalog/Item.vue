@@ -41,14 +41,18 @@
         <!-- price  -->
         {{ trick.price }} DT
       </v-card-subtitle>
-      <v-btn class="buttonQuick" color="orange " v-show="hover" @click="showD"
+      <v-btn
+        class="buttonQuick"
+        color="orange "
+        v-show="hover"
+        @click="showDivTrickOverView"
         >Quick View</v-btn
       >
 
       <TrickOverView
         :trick="trick"
-        :showDiv="showDiv"
-        @toggle-over-view="showD"
+        :showTrickOverView="showTrickOverView"
+        @toggle-over-view="showDivTrickOverView"
       />
       <v-spacer></v-spacer>
     </v-card>
@@ -66,7 +70,7 @@ export default {
       show: false,
       hover: false,
       wished: false,
-      showDiv: false,
+      showTrickOverView: false,
     };
   },
   computed: {
@@ -119,8 +123,8 @@ export default {
           });
       }
     },
-    showD() {
-      this.showDiv = !this.showDiv;
+    showDivTrickOverView() {
+      this.showTrickOverView = !this.showTrickOverView;
     },
   },
   created: function() {
