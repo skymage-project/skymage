@@ -91,7 +91,7 @@
 </template>
 
 <script>
-import About from "../views/About";
+import About from "../components/Hompage/About";
 export default {
   components: { About },
   props: ["id"],
@@ -105,18 +105,9 @@ export default {
   created() {
     let key = this.$store.state.tricks;
     let idTr = this.$route.params.id;
-    console.log(idTr, "hh");
-    console.log(key);
     this.product = key.filter((el) => el.id === idTr)[0];
-    console.log(this.product);
   },
 };
-// this.$store.dispatch("getItems", id);
-// this.product = this.tricks.id;
-// console.log(this.displayedTricks.id);
-// dispatch to get that specific item by id
-// from the db or from the array of items that you have in the store
-// this.product = the thing you got
 </script>
 
 <style scoped>
