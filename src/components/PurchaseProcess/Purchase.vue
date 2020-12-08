@@ -131,22 +131,21 @@
 </template>
 
 <script>
-<<<<<<< HEAD:src/components/Purchase.vue
 import Swal from "sweetalert2";
 import Password from "vue-password-strength-meter";
-import Shipping from "./Shipping";
-import CartItemList from "./CartItemList";
+import Shipping from "./Shipping.vue";
+import CartItemList from "./CartItemList.vue";
 import { mapState, mapGetters } from "vuex";
 export default {
   components: { CartItemList, Password, Shipping },
   computed: {
-    ...mapState(["cart"]),
+    ...mapState(["cart", "users"]),
     ...mapGetters(["getTotalCartPrice"]),
     loggedIn() {
-      return this.$store.state.initialState.status.loggedIn;
+      return this.users.initialState.status.loggedIn;
     },
     user() {
-      return this.$store.state.initialState.user;
+      return this.users.initialState.user;
     },
   },
   data: () => ({
@@ -216,92 +215,6 @@ export default {
       }
     },
   },
-=======
-import Swal from 'sweetalert2';
-import Password from 'vue-password-strength-meter';
-import Shipping from './Shipping.vue';
-import CartItemList from './CartItemList.vue';
-import { mapState, mapGetters } from 'vuex';
-export default {
-	components: { CartItemList, Password, Shipping },
-	computed: {
-		...mapState(['cart','users']),
-		...mapGetters(['getTotalCartPrice']),
-		loggedIn() {
-			return this.users.initialState.status.loggedIn;
-		},
-		user() {
-			return this.users.initialState.user;
-		},
-	},
-	data: () => ({
-		valid: true,
-		check: false,
-		company: '',
-		address: '',
-		postalCode: '',
-		city: '',
-		addressOptional: '',
-		show1: false,
-		email: '',
-		loginPassword: '',
-		loginEmail: '',
-		loginEmailRules: [
-			(v) => !!v || 'Required',
-			(v) => /.+@.+\..+/.test(v) || 'E-mail must be valid',
-		],
-		emailRules: [
-			(v) => !!v || 'Required',
-			(v) => /.+@.+\..+/.test(v) || 'E-mail must be valid',
-		],
-		rules: {
-			required: (value) => !!value || 'Required.',
-			min: (v) => (v && v.length >= 8) || 'Min 8 characters',
-		},
-	}),
-	created() {
-		this.email = this.user === null ? '' : this.user.email;
-		this.city = this.user === null ? '' : this.user.city;
-		this.company = this.user === null ? '' : this.user.company;
-		this.address = this.user === null ? '' : this.user.address;
-		this.addressOptional = this.user === null ? '' : this.user.addressOptional;
-		this.postalCode = this.user === null ? '' : this.user.postalCode;
-	},
-	methods: {
-		goToCompleteThePurchase() {
-			if (!this.loggedIn) {
-				Swal.fire({
-					icon: 'error',
-					title: 'You need to create an account first',
-				});
-				return;
-			}
-			if (this.$refs.registerForm.validate()) {
-				this.$store
-					.dispatch('updateRegister', {
-						email: this.email,
-						company: this.company,
-						address: this.address,
-						postalCode: this.postalCode,
-						city: this.city,
-						addressOptional: this.addressOptional,
-					})
-					.then(() => {
-						return (this.check = !this.check);
-					});
-			}
-		},
-		Login() {
-			if (this.$refs.loginForm.validate()) {
-				this.$store.dispatch('login', {
-					email: this.loginEmail,
-					password: this.loginPassword,
-				});
-				return (this.check = !this.check);
-			}
-		},
-	},
->>>>>>> 7a0b610a5e47f93b7e04119808c2345cc854ef02:src/components/PurchaseProcess/Purchase.vue
 };
 </script>
 
