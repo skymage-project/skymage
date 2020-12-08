@@ -9,7 +9,7 @@ export const mutations = {
     }
 };
 export const actions = {
-    fatoura({ commit},invoice){
+    invoice({ commit},invoice){
         state.invoiceList.push(invoice);
         commit('INVOICE')
     }

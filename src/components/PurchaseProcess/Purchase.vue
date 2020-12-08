@@ -2,64 +2,54 @@
   <div>
     <div v-if="!check">
       <v-row class="mb-6" no-gutters>
-        <v-col sm="5" md="6">
+        <v-col sm="5" md="6" style="padding-left: 25px">
           <div v-if="!loggedIn">
             <h2>Contact information</h2>
             <br />
-            <h3>Already have an account? You can login from here</h3>
+            <h3>
+              Already have an account? Login from here, or please create an
+              <a href="/signin" style="color: 'orange'">account</a>
+            </h3>
             <br />
             <v-form ref="loginForm" v-model="valid" lazy-validation>
-              <v-row>
-                <v-col cols="12">
-                  <v-text-field
-                    v-model="loginEmail"
-                    :rules="loginEmailRules"
-                    label="E-mail"
-                    solo-inverted
-                    required
-                  ></v-text-field>
-                </v-col>
-                <v-col cols="12">
-                  <v-text-field
-                    v-model="loginPassword"
-                    :append-icon="show1 ? 'eye' : 'eye-off'"
-                    :rules="[rules.required, rules.min]"
-                    :type="show1 ? 'text' : 'password'"
-                    name="input-10-1"
-                    label="Password"
-                    hint="At least 8 characters"
-                    counter
-                    @click:append="show1 = !show1"
-                    solo-inverted
-                  ></v-text-field>
-                </v-col>
-                <v-col class="d-flex" cols="12" sm="6" xsm="12"> </v-col>
-                <v-spacer></v-spacer>
-                <v-col class="d-flex ml-auto" cols="12" sm="6" xsm="12">
-                  <v-btn
-                    x-large
-                    :disabled="!valid"
-                    color="#737373"
-                    @click="Login"
-                  >
-                    Login
-                  </v-btn>
-                </v-col>
-              </v-row>
+              <v-col cols="6">
+                <v-text-field
+                  v-model="loginEmail"
+                  :rules="loginEmailRules"
+                  label="E-mail"
+                  solo-inverted
+                  required
+                ></v-text-field>
+              </v-col>
+              <v-col cols="6">
+                <v-text-field
+                  v-model="loginPassword"
+                  :append-icon="show1 ? 'eye' : 'eye-off'"
+                  :rules="[rules.required, rules.min]"
+                  :type="show1 ? 'text' : 'password'"
+                  name="input-10-1"
+                  label="Password"
+                  hint="At least 8 characters"
+                  counter
+                  @click:append="show1 = !show1"
+                  solo-inverted
+                ></v-text-field>
+                <v-btn x-large :disabled="!valid" color="warning" @click="Login">
+                  Login
+                </v-btn>
+              </v-col>
             </v-form>
           </div>
           <br />
           <div>
-            <h2>
-              You need to complete your informations to finish your purchase
-            </h2>
+            <h3>Please fill out the shipping form</h3>
             <v-form ref="registerForm" v-model="valid" lazy-validation>
               <v-container>
                 <v-row>
                   <v-col cols="24" sm="12">
                     <v-text-field
                       :rules="emailRules"
-                      label="email"
+                      label="Email"
                       v-model="email"
                       solo-inverted
                       required
@@ -69,7 +59,7 @@
                   <v-col cols="24" sm="12">
                     <v-text-field
                       v-model="company"
-                      label="company(optional)"
+                      label="Company (optional)"
                       solo-inverted
                     ></v-text-field>
                   </v-col>
@@ -77,7 +67,7 @@
                   <v-col cols="24" sm="12">
                     <v-text-field
                       v-model="address"
-                      label="address"
+                      label="Address"
                       :rules="[rules.required]"
                       solo-inverted
                       required
@@ -87,7 +77,7 @@
                   <v-col cols="24" sm="12">
                     <v-text-field
                       v-model="addressOptional"
-                      label="Apartement,suite,etc.(optional)"
+                      label="Apartment, suite, etc. (optional)"
                       solo-inverted
                       required
                     ></v-text-field>
@@ -96,7 +86,7 @@
                   <v-col cols="12" sm="6">
                     <v-text-field
                       v-model="postalCode"
-                      label="postal code"
+                      label="Postal code"
                       solo-inverted
                       :rules="[rules.required]"
                       required
@@ -106,7 +96,7 @@
                   <v-col cols="12" sm="6">
                     <v-text-field
                       v-model="city"
-                      label="city"
+                      label="City"
                       solo-inverted
                       :rules="[rules.required]"
                       required
@@ -125,7 +115,7 @@
             </v-form>
           </div>
         </v-col>
-        <v-col sm="5" offset-sm="2" md="6" offset-md="0">
+        <v-col sm="5" offset-sm="2" md="6" offset-md="0" width="30%">
           <CartItemList />
           <h3>Subtotal : {{ getTotalCartPrice }} DT</h3>
           <h3>Shipping : Calculated at next step</h3>
@@ -141,20 +131,21 @@
 </template>
 
 <script>
+import Swal from "sweetalert2";
 import Password from "vue-password-strength-meter";
-import Shipping from "./Shipping";
-import CartItemList from "./CartItemList";
+import Shipping from "./Shipping.vue";
+import CartItemList from "./CartItemList.vue";
 import { mapState, mapGetters } from "vuex";
 export default {
   components: { CartItemList, Password, Shipping },
   computed: {
-    ...mapState(["cart"]),
+    ...mapState(["cart", "users"]),
     ...mapGetters(["getTotalCartPrice"]),
     loggedIn() {
-      return this.$store.state.initialState.status.loggedIn;
+      return this.users.initialState.status.loggedIn;
     },
     user() {
-      return this.$store.state.initialState.user;
+      return this.users.initialState.user;
     },
   },
   data: () => ({
@@ -193,7 +184,10 @@ export default {
   methods: {
     goToCompleteThePurchase() {
       if (!this.loggedIn) {
-        alert("you need to create an account first");
+        Swal.fire({
+          icon: "error",
+          title: "You need to create an account first",
+        });
         return;
       }
       if (this.$refs.registerForm.validate()) {
@@ -224,4 +218,28 @@ export default {
 };
 </script>
 
-<style l Cartang="scss" scoped></style>
+<style l Cartang="scss" scoped>
+.v-form {
+  width: 75%;
+}
+a:link {
+  color: orange;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: orange;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: orange;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: orange;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>

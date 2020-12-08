@@ -3,13 +3,13 @@
     <v-card-title class="headline"> SUMMARY </v-card-title>
     <v-card-text>
       <h3>Order#:</h3>
-      <span>{{ i + 1 }}</span>
+      <span>{{ orderId + 1 }}</span>
       <h3>Order Totale:</h3>
-      <span>{{ fatoura.getTotalCartPrice }} DT</span>
+      <span>{{ invoice.getTotalCartPrice }} DT</span>
       <h3>Shipping Rate:</h3>
-      <span>{{ fatoura.shippingRate }}</span>
+      <span>{{ invoice.shippingRate }}</span>
       <h3>Items:</h3>
-      <div v-for="(itemsName, index) in fatoura.items" :key="index">
+      <div v-for="(itemsName, index) in invoice.items" :key="index">
         <span> {{ index + 1 + ": " + itemsName.name }}</span>
       </div>
     </v-card-text>
@@ -19,7 +19,7 @@
 <script>
 export default {
   name: "Invoice",
-  props: ["fatoura", "i"],
+  props: ["invoice", "orderId"],
 };
 </script>
 

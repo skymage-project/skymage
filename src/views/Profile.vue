@@ -91,10 +91,7 @@
         </v-bottom-navigation>
         <div v-if="value === 0">
           <v-timeline>
-            <v-timeline-item
-              v-for="(wish, i) in wishlist.wishListTricksInfos"
-              :key="i"
-            >
+            <v-timeline-item v-for="(wish, i) in wishlist.wishListTricksInfos" :key="i">
               <template v-slot:icon>
                 <v-avatar>
                   <img :src="user.img || 'http://i.pravatar.cc/64'" />
@@ -102,18 +99,18 @@
               </template>
               <template v-slot:opposite>
                 <span style="color: orange; font-size: 28px">{{
-                  momentTime(wish.updatedAt)
+                  momentTime(wish.id)
                 }}</span>
               </template>
-              <Wishes :wish="wish" />
+              <Wishes :wish="wish" :key="wish.id" />
             </v-timeline-item>
           </v-timeline>
         </div>
         <div v-if="value === 1">
           <v-timeline>
             <v-timeline-item
-              v-for="(fatoura, i) in purchase.invoiceList"
-              :key="i"
+              v-for="(invoice, orderId) in purchase.invoiceList"
+              :key="orderId"
               color="orange"
               x-small
             >
@@ -134,7 +131,7 @@
                   new Date().getSeconds()
                 }}</span>
               </template>
-              <Invoice :fatoura="fatoura" :i="i" />
+              <Invoice :invoice="invoice" :orderId="orderId" />
             </v-timeline-item>
           </v-timeline>
         </div>
@@ -145,10 +142,9 @@
 
 <script>
 import moment from "moment";
-import Wishes from "../components/Wishes.vue";
-import Invoice from "../components/Invoice.vue";
-import axios from "axios";
-import { mapState } from "vuex";
+import Wishes from "../components/Profile/Wishes.vue";
+import Invoice from "../components/Profile/Invoice.vue";
+import { mapState, mapGetters } from "vuex";
 export default {
   name: "Profile",
   components: {
@@ -159,10 +155,9 @@ export default {
     value: 0,
   }),
   computed: {
-    ...mapState(["wishlist"]),
-    ...mapState(["purchase"]),
+    ...mapState(["wishlist", "purchase", "users"]),
     user() {
-      return this.$store.state.initialState.user;
+      return this.users.initialState.user;
     },
     img() {
       return this.user.img
@@ -179,14 +174,14 @@ export default {
         });
       }
     },
-    momentTime(date) {
+    invoiceDate(date) {
       return moment.parseZone(date).fromNow();
     },
     momentTime(id) {
       let date = Date.now();
-      for (var i = 0; i < this.getWishListItems.length; i++) {
-        if (this.getWishListItems[i].ItemId === id) {
-          date = this.getWishListItems[i].createdAt;
+      for (var i = 0; i < this.wishlist.wishListItems.length; i++) {
+        if (this.wishlist.wishListItems[i].ItemId === id) {
+          date = this.wishlist.wishListItems[i].createdAt;
         }
       }
       return moment.parseZone(date).fromNow();
@@ -199,8 +194,8 @@ export default {
 #profile {
   margin: 0px 30px 90px 30px;
   border-radius: 6px;
-  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
-    0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12),
+    0 8px 10px -5px rgba(0, 0, 0, 0.2);
   position: relative;
 }
 h2 {

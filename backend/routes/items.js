@@ -129,7 +129,7 @@ router.post('/purchase', async (req, res) => {
 		}).then((user) => {
 			Item.findAll({
 				where: {
-					id: req.body.listOfItemsId,
+					id: req.body.listOfItemsId, // can only accept
 				},
 			}).then((items) => {
 				console.log(items);
