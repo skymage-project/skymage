@@ -4,7 +4,7 @@
 			<v-row style="row-gap: 2em">
 				<Item
 					v-for="trick in displayedTricks"
-					v-if="trick.difficulty === 'Beginner'"
+					v-if="trick.difficulty === 'Beginner' && trick.category === 'DvD'"
 					:key="trick.id"
 					:trick="trick"
 				/>
