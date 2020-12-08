@@ -181,16 +181,17 @@
 
 <script>
 import Password from 'vue-password-strength-meter';
-
+import { mapState} from 'vuex';
 export default {
 	name: 'Signin',
 
 	computed: {
+		...mapState(['users']),
 		passwordMatch() {
 			return () => this.password === this.verify || 'Password must match';
 		},
 		loggedIn() {
-			return this.$store.state.initialState.status.loggedIn;
+			return this.users.initialState.status.loggedIn;
 		},
 	},
 	components: { Password },

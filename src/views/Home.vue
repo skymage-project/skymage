@@ -27,6 +27,7 @@
 								<div class="title mb-3">
 									Check out our newest
 									<span
+										class="spanGoTricks"
 										style="font-weight: bold; font-style: italic"
 										@click="goCatalog"
 										>tricks!</span
@@ -46,16 +47,31 @@
 
 <script>
 // @ is an alias to /src
-import About from './About.vue';
+
+
+import About from '../components/Hompage/About.vue';
+
 export default {
 	name: 'Home',
 	components: {
 		About,
 	},
+	methods: {
+		goCatalog() {
+			if (this.route === '/catalog') {
+				return;
+			}
+			this.$router.push('/catalog');
+			this.route = '/catalog';
+		},
+	},
 };
 </script>
 
 <style scoped>
+.spanGoTricks:hover {
+	color: orange;
+}
 section {
 	height: 70vh;
 	background: #000;

@@ -99,6 +99,7 @@
 </template>
 
 <script>
+<<<<<<< HEAD:src/components/Payment.vue
 import PurchaseDone from "../components/PurchaseDone";
 import CartItemList from "../components/CartItemList";
 import VueMonthlyPicker from "vue-monthly-picker";
@@ -158,6 +159,56 @@ export default {
         : true;
     },
   },
+=======
+import PurchaseDone from './PurchaseDone.vue';
+import CartItemList from './CartItemList.vue';
+import VueMonthlyPicker from 'vue-monthly-picker';
+import { mapState, mapGetters } from 'vuex';
+export default {
+	props: ['selected', 'shippingRate'],
+	components: { CartItemList, PurchaseDone, VueMonthlyPicker },
+	computed: {
+		...mapState(['cart','users']),
+		...mapGetters(['getTotalCartPrice']),
+		loggedIn() {
+			return this.users.initialState.status.loggedIn;
+		},
+		user() {
+			return this.users.initialState.user;
+		},
+	},
+	data: () => ({
+		check: false,
+		URL_IMAGE: 'https://i.imgur.com/lY1wk82.png',
+		creditCardNumber: null,
+		expirationCardDate: null,
+		securityCode: null,
+		rules: {
+			required: (value) => !!value || 'Required.',
+			min: (v) => v && v.length >= 8,
+		},
+	}),
+	methods: {
+		Payment() {
+			this.$store.dispatch('fatoura', {
+				items: this.cart.itemsToCart,
+				shippingRate: this.shippingRate,
+				getTotalCartPrice: this.getTotalCartPrice,
+			});
+			this.$store
+				.dispatch('updatePurchase', {
+					id: this.user.id,
+					creditCardNumber: this.creditCardNumber,
+					expirationCardDate: this.expirationCardDate._i,
+					securityCode: this.securityCode,
+					shippingRate: this.shippingRate,
+				})
+				.then(() => {
+					this.check = !this.check;
+				});
+		},
+	},
+>>>>>>> 7a0b610a5e47f93b7e04119808c2345cc854ef02:src/components/PurchaseProcess/Payment.vue
 };
 </script>
 

@@ -50,19 +50,19 @@
 </template>
 
 <script>
-import CartItemList from '../components/CartItemList';
-import Payment from '../components/Payment';
+import CartItemList from './CartItemList.vue';
+import Payment from './Payment.vue';
 import { mapState, mapGetters } from 'vuex';
 export default {
 	components: { CartItemList, Payment },
 	computed: {
-		...mapState(['cart']),
+		...mapState(['cart','users']),
 		...mapGetters(['getTotalCartPrice']),
 		loggedIn() {
-			return this.$store.state.initialState.status.loggedIn;
+			return this.users.initialState.status.loggedIn;
 		},
 		user() {
-			return this.$store.state.initialState.user;
+			return this.users.initialState.user;
 		},
 	},
 	data: () => ({
