@@ -254,7 +254,7 @@
     "descriptionTitle": "UN GIMMICK DIGNE DES PLUS GRANDS SUPER HÉROS"
   },
   {
-    "category": "Mental",
+    "category": "CloseUp",
     "name": "Bandwidth",
     "quickDescription": "Imaginez, emprunter la bague d'une spectatrice, la déposer sur votre pouce et commencer à l'étirer complètement comme si pour vous cette dernière n'était faite qu'en caoutchouc...! Découvrez la plus folle des coïncidences...",
     "urlVideos": "https://www.youtube.com/embed/agPNMmHWi78",
@@ -268,5 +268,53 @@
     "descriptionText": "Imaginez, emprunter la bague d'une charmante spectatrice, la déposer sur votre pouce et commencer à l'étirer complètement comme si pour vous cette dernière n'était faite qu'en caoutchouc..Avoir des dons pour tordre le métal est une chose, faut il encore pouvoir restituer le bien précieux à son propriétaire. Après l'avoir étirée, vous jetez la bague en l'air la rattrapez tel un Ninja, elle est restaurée, intacte et peut être rendue sans la moindre égratignure !",
 
     "descriptionTitle": "UNE TORSION DE MÉTAL AVEC UNE BAGUE EMPRUNTÉE !"
+  },
+  {
+    "category": "CloseUp",
+    "name": "BioBender",
+    "quickDescription": "Vous souhaitez tordre des pièces signées à vue ? Biobender est la solution qu'il vous faut ! Habilement dissimulé dans deux accessoires que les magiciens utilisent tout le temps, Biobender est l'outil parfait pour la torsion de pièces en métal.",
+    "urlVideos": "https://www.youtube.com/embed/xgE_tQD_-1w",
+    "urlPictures": [
+      "https://www.bigmagie.com/4376-large_default/biobender-eric-jones.jpg",
+      "https://i2.wp.com/www.murphysmagicsupplies.com/images_Alt/56236-alt3.png?resize=740%2C416"
+    ],
+    "price": "45,00",
+    "difficulty": "Intermediate",
+    "author": "Eric Jones",
+    "descriptionText": "Vous souhaitez tordre des pièces signées à vue ? Biobender est la solution qu'il vous faut ! Habilement dissimulé dans deux accessoires que les magiciens utilisent tout le temps, Biobender est l'outil parfait pour la torsion de pièces en métal. Sans trop en dévoiler, le Biobender est caché dans 2 FP, accessoires très connus dans le monde magique pour leur polyvalence et leur invisibilité. Grâce à lui, vous allez pouvoir faire signer une pièce puis la tordre en temps réel devant les spectateurs Eric Jones vous donnera toutes les subtilités pour rendre cette torsion réaliste et magique.Fonctionne avec toutes les pièces faisant moins de 2 mm d'épaisseur.",
+
+    "descriptionTitle": "TORDRE DES PIÈCES FACILEMENT!"
+  },
+  {
+    "category": "CloseUp",
+    "name": "Citrus Nouvelle Génération",
+    "quickDescription": "Retrouvez le billet signé d'un spectateur dans un citron, une orange ou un kiwi. Un gimmick parfaitement fiable et utilisable quel que soit le niveau technique du magicien.",
+    "urlVideos": "https://www.youtube.com/embed/q8rIW036DOQ",
+    "urlPictures": [
+      "https://www.bigmagie.com/3348-large_default/citrus-nouvelle-generation.jpg",
+      "https://themagicwarehouse.com/tb6344.png"
+    ],
+    "price": "75,00",
+    "difficulty": "Advanced",
+    "author": "Nourdine",
+    "descriptionText": "L’histoire de la magie nous montre la multiplicité des méthodes employées pour introduire secrètement un billet de banque emprunté à l’intérieur d’un citron, d’un œuf, ou encore dans des fruits contenus les uns dans les autres à la façon de poupées gigognes : préparation du fruit, change du billet, coin déchiré pour « prouver » qu’il s’agit bien du même billet, et bien souvent impossibilité de faire signer le billet par le spectateur...NOUVELLE GÉNÉRATION - LE BILLET DANS LE CITRON, L'ORANGE OU LE KIWI  Mais tout cela, c’était avant que Nourdine ne créer CITRUS nouvelle génération : un gimmick parfaitement fiable et utilisable quel que soit le niveau technique du magicien. Le fake est réutilisable indéfiniment, et le spectateur ouvre lui-même le citron, l’orange ou le kiwi , dans lequel il retrouve son propre billet qui peut être signé. Nul besoin de duplicata ; le fruit peut même être posé en pleine vue sur la table avant la disparition du billet !",
+
+    "descriptionTitle": "LE CÉLÈBRE TOUR DU BILLET SIGNÉ DANS LE CITRON !"
+  },
+  {
+    "category": "CloseUp",
+    "name": "Cube 3",
+    "quickDescription": "Un Rubik's Cube semble se résoudre à vue par lui même, Steven Brundage partage d'incroyables techniques qui vous permettront de bluffer tout le monde avec un simple Rubik's ! Extrêmement visuel",
+    "urlVideos": "https://www.youtube.com/embed/lrXAHsnkgQk",
+    "urlPictures": [
+      "https://www.bigmagie.com/4002-large_default/cube-3-steven-brundage.jpg",
+      "https://i.ytimg.com/vi/lrXAHsnkgQk/maxresdefault.jpg"
+    ],
+    "price": "90,00",
+    "difficulty": "Advanced",
+    "author": "Steven Brundage",
+    "descriptionText": "Tout le monde sait que résoudre un Rubiks Cube est frustrant, long, dur à réaliser, certains s'y arrachent même les cheveux. Mais ça, c'était avant que Steven Brundage propose sa méthode pas à pas, simple à suivre et détaillée pour transformer ce casse tête presque impossible en véritable moment de plaisir. LE BUZZ SUR LES RÉSEAUX SOCIAUX Steven s'est fait connaitre pour avoir évité une contravention en réalisant sa routine avec un Rubiks Cube normal, la vidéo a fait le buzz sur les réseaux sociaux et à comptabilisé plusieurs millions de vues ! Toujours pas convaincu ? Il a bluffé Pen et Teller, Steve Harvey et est passé dans de nombreuses émissions télévisées qui voulait voir ce que Steven vous apprend aujourd'hui dans Cube 3. Il vous expliquera même sa routine de Rubiks Cube qu'il a gardé pour lui ces dernières années.",
+
+    "descriptionTitle": "UNE MÉTHODE RENVERSANTE"
   }
 ]
