@@ -33,7 +33,7 @@
           <v-btn
             absolute
             color="orange"
-            class="black--text"
+            class="white--text"
             fab
             medium
             right
