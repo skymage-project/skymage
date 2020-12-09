@@ -113,6 +113,12 @@ export const actions = {
             commit('SEND_MESSAGE');
         });
     },
+
+    updateRegister({ commit},user){
+        return userAuth.updateRegister(user).then(() => {
+            commit('REGISTER_UPDATED');
+        })
+    },
     updatePurchase({ commit }, user) {
         return userAuth.updatePurchase(user).then(() => {
             commit('PURCHASE_UPDATED');

@@ -1,142 +1,272 @@
 [
-	{
-		"category": "Cards",
-		"name": "D4M",
-		"quickDescription": "D4M est un effet de carte déchirée et restaurée incroyablement visuel et unique. Il est entièrement examinable et laisse à vos spectateurs un souvenir qu'ils voudront garder et montrer pour toujours.",
-		"urlVideos": "https://www.youtube.com/embed/N05hau_70F4",
-		"urlPictures": [
-			"https://www.bigmagie.com/6322-large_default/d4m-matthew-wright.jpg",
-			"https://www.bigmagie.com/6323-large_default/d4m-matthew-wright.jpg",
-			"https://www.bigmagie.com/6324-thickbox_default/d4m-matthew-wright.jpg"
-		],
-		"price": "14.95",
-		"difficulty": "Beginner",
-		"author": "Beginner",
-		"quantity": "10",
-		"descriptionText": "Un spectateur sélectionne une carte, qui peut être entièrement inspectée. Elle est ensuite marquée pour identification. Le magicien la déchire en morceaux et, de façon inexplicable, les remet en place avec deux des morceaux inversés. Hyper visuel et examinable instantanément. Avec des instructions de téléchargement complètes et détaillées, aucun détail explicatif n'a été omis et de nombreuses idées de présentation et de routines sont explorées. Il s'agit véritablement d'un chef-d'œuvre de magie moderne que vous serez fier de pouvoir présenter dans le cadre de votre répertoire de travail. D4M est conçu pour être un worker. Avec un temps de préparation de quelques secondes seulement et des contraintes d'angles réduites au minimum, D4M est parfait pour le close-up, le salon et même sur scène. Cette routine est directement issue du numéro de Matthew à la FISM et a été plébiscitée par les magiciens du monde entier.",
-		"descriptionTitle": "DESCRIPTION",
-		"descriptionInstruction": "descriptionInstruction"
-	},
+  {
+    "category": "Cards",
+    "name": "D4M",
+    "quickDescription": "D4M est un effet de carte déchirée et restaurée incroyablement visuel et unique. Il est entièrement examinable et laisse à vos spectateurs un souvenir qu'ils voudront garder et montrer pour toujours.",
+    "urlVideos": "https://www.youtube.com/embed/N05hau_70F4",
+    "urlPictures": [
+      "https://www.bigmagie.com/6322-large_default/d4m-matthew-wright.jpg",
+      "https://www.bigmagie.com/6323-large_default/d4m-matthew-wright.jpg",
+      "https://www.bigmagie.com/6324-thickbox_default/d4m-matthew-wright.jpg"
+    ],
+    "price": "14.95",
+    "difficulty": "Beginner",
+    "author": "Beginner",
+    "quantity": "10",
+    "descriptionText": "Un spectateur sélectionne une carte, qui peut être entièrement inspectée. Elle est ensuite marquée pour identification. Le magicien la déchire en morceaux et, de façon inexplicable, les remet en place avec deux des morceaux inversés. Hyper visuel et examinable instantanément. Avec des instructions de téléchargement complètes et détaillées, aucun détail explicatif n'a été omis et de nombreuses idées de présentation et de routines sont explorées. Il s'agit véritablement d'un chef-d'œuvre de magie moderne que vous serez fier de pouvoir présenter dans le cadre de votre répertoire de travail. D4M est conçu pour être un worker. Avec un temps de préparation de quelques secondes seulement et des contraintes d'angles réduites au minimum, D4M est parfait pour le close-up, le salon et même sur scène. Cette routine est directement issue du numéro de Matthew à la FISM et a été plébiscitée par les magiciens du monde entier.",
+    "descriptionTitle": "DESCRIPTION",
+    "descriptionInstruction": "descriptionInstruction"
+  },
 
-	{
-		"category": "DvD",
-		"name": "Black Art Project (2 DVD)",
-		"quickDescription": "Vous l'avez sûrement déjà vu mais peut-être encore jamais utilisé... Découvrez un projet DVD complet dédié au Black Art, un principe permettant de concevoir des effets dignes d'un trucage vidéo qui changera à coup sûr votre magie.",
-		"urlVideos": "https://youtu.be/_9rcdwvXYHs",
-		"urlPictures": [
-			"https://www.bigmagie.com/5718-large_default/black-art-project-2-dvd.jpg"
-		],
-		"price": "99",
-		"difficulty": "Intermediate",
-		"author": "SansMinds",
-		"quantity": "10"
-	},
-	{
-		"category": "Coins",
-		"name": "Extreme Burn 2.0 (Locked and Loaded) by Richard Sanders (Magical Changing Money Prank)",
-		"quickDescription": "One of our all-time best sellers. The most visual bill-change EVER. Lightning fast, and completely examinable.",
-		"urlVideos": "https://s3.amazonaws.com/images.penguinmagic.com/images/products/original/5249b-55d61ad0e09ef.png",
-		"urlPictures": [
-			"https://www.bigmagie.com/4376-large_default/biobender-eric-jones.jpg"
-		],
-		"price": "15",
-		"difficulty": "Beginner",
-		"author": "Adam Wilber",
-		"descriptionText": "You will learn 10 unique, hyper-visual changes; giving you an army of devastating bill changes to do in literally any situation imaginable. No stone is left unturned, from setting up the bills to performing the changes, and all the handling tips and subtleties in-between. You will be up and running in no time. AND as a special BONUS, you'll learn Richard's underground miracle, Slow Burn. They'll flip-out as they watch bills visually morph, while you slowly pass your hand over them! PLUS 75 MINUTES OF BRAND NEW MATERIAL that will allow you to change the bills and then hand them out for examination, spend them, etc. A total of almost 3 hours of killer magic on one remarkable DVD.",
-		"descriptionTitle": "Extreme Burn 2.0 (Locked and Loaded) by Richard Sanders (Magical Changing Money Prank)"
-	},
-	{
-		"category": "Accessories",
-		"name": "Invisible Writer (Pencil Lead) by Vernet",
-		"quickDescription": "ernet Magic has the most complete line of writers. But there was one missing, until now -- a writer undetectable under conditions of high scrutiny.",
-		"urlVideos": "https://s3.amazonaws.com/images.penguinmagic.com/images/products/original/17455a-5db86ff254717.png",
-		"urlPictures": [
-			"https://www.bigmagie.com/6014-large_default/3-in-1-set-de-des-leo-smetsers.jpg"
-		],
-		"price": "18",
-		"difficulty": "Advanced",
-		"author": "Vernet",
-		"descriptionText": "Thumb Tip",
-		"descriptionTitle": "Invisible Writer (Pencil Lead) by Vernet"
-	},
-	{
-		"category": "Mental",
-		"name": "How to Read Minds Kit",
-		"quickDescription": "Yes you can. The kit includes over 20 techniques that you can use to improve every aspect of your life.",
-		" urlVideos": "https://ksr-ugc.imgix.net/assets/027/438/990/9f1eb3b10e2856b3a0bcb6f8af9e998e_original.jpg?ixlib=rb-2.1.0&crop=faces&w=1552&h=873&fit=crop&v=1575649462&auto=format&frame=1&q=92&s=f640ccdb1322fece0aae15176eada760",
-		"urlPictures": [
-			"https://www.bigmagie.com/4154-large_default/akkelian-envelopes.jpg"
-		],
-		"price": "119",
-		"difficulty": "Beginner",
-		"author": "Peter Turner",
-		"descriptionText": "Mentalist For Beginner",
-		"descriptionTitle": "How to Read Minds Kit"
-	},
-	{
-		"category": "Mental",
-		"name": "Naked By Pablo Amira",
-		"quickDescription": "Their THOUGHT OF card appears within a completely BLANK deck.",
-		"urlVideos": "https://s3.amazonaws.com/images.penguinmagic.com/images/products/original/7736a-529f6035669cc.jpg",
-		"urlPictures": [
-			"https://www.bigmagie.com/4985-large_default/bias-pad-scott-alexander.jpg"
-		],
-		"price": "29",
-		"difficulty": "Advanced",
-		"author": "Pablo Amira"
-	},
-	{
-		"category": "Beginners",
-		"name": "Optix",
-		"quickDescription": "Optix isn't restricted by the ability to use only one kind of phone, it's universal. Borrow a spectators phone, then hand them your phone to film the magic... In an instant, their phone vanishes into thin air. No sleeves. No pulls. GONE.",
-		"urlVideos": "https://ae01.alicdn.com/kf/Hfe4f1013379b40cf9dcdca5b661b2800K/Optix-by-Tobias-Dostal-Magic-tricks.jpg",
-		"urlPictures": [
-			"https://www.bigmagie.com/1460-large_default/boites-chinoises.jpg"
-		],
-		"price": "69",
-		"difficulty": "Beginner",
-		"author": "Tobias Dostal",
-		"descriptionText": "Vanish bag",
-		"descriptionTitle": "Optix"
-	},
-	{
-		"category": "Close Up",
-		"name": "TSA by Adam Wilber",
-		"quickDescription": "Object through bill effects are incredible, but they all have one flaw.",
-		"urlVideos": "https://j.gifs.com/oVxynX.gif",
-		"urlPictures": [
-			"https://www.bigmagie.com/4955-large_default/amazing-acrobatic-knot-daryl.jpg"
-		],
-		"price": "225.95",
-		"difficulty": "Advanced",
-		"author": "Adam Wilber",
-		"descriptionText": "Vanish bag",
-		"descriptionTitle": "TSA by Adam Wilber"
-	},
-	{
-		"category": "Playing Cards",
-		"name": "Bicycle playing Cards",
-		"quickDescription": "Our favorite cards.",
-		"urlVideos": "https://cdn.shopify.com/s/files/1/0956/5418/products/60380-alt5_grande.png?v=1591631579",
-		"urlPictures": ["https://www.bigmagie.com/3459-large_default/alcardmy.jpg"],
-		"price": "30",
-		"difficulty": "Advanced",
-		"author": "Adam Wilber",
-		"descriptionText": "Vanish bag",
-		"descriptionTitle": "Bicycle playing Cards"
-	},
-	{
-		"category": "Books",
-		"name": "DICTIONNAIRE RAISONNÉ ... XVIIIème Siècle",
-		"quickDescription": "Object through bill effects are incredible, but they all have one flaw.",
-		"urlVideos": "https://www.magicdream.fr/media/catalog/product/cache/b1dcc1b7ddcba4f7a1e2837af86f3b14/m/a/magie_livre_ancien_bresson_1870.jpg",
-		"urlPictures": [
-			"https://www.magicdream.fr/media/catalog/product/cache/b1dcc1b7ddcba4f7a1e2837af86f3b14/m/a/magie_livre_ancien_bresson_1870.jpg"
-		],
-		"price": "3000",
-		"difficulty": "Intermediate",
-		"author": "Adam Wilber",
-		"descriptionText": "Vanish bag",
-		"descriptionTitle": "DICTIONNAIRE RAISONNÉ ... XVIIIème Siècle"
-	}
+  {
+    "category": "DvD",
+    "name": "Black Art Project (2 DVD)",
+    "quickDescription": "Vous l'avez sûrement déjà vu mais peut-être encore jamais utilisé... Découvrez un projet DVD complet dédié au Black Art, un principe permettant de concevoir des effets dignes d'un trucage vidéo qui changera à coup sûr votre magie.",
+    "urlVideos": "https://youtu.be/_9rcdwvXYHs",
+    "urlPictures": [
+      "https://www.bigmagie.com/5718-large_default/black-art-project-2-dvd.jpg"
+    ],
+    "price": "99",
+    "difficulty": "Intermediate",
+    "author": "SansMinds",
+    "quantity": "10"
+  },
+  {
+    "category": "Coins",
+    "name": "Extreme Burn 2.0 (Locked and Loaded) by Richard Sanders (Magical Changing Money Prank)",
+    "quickDescription": "One of our all-time best sellers. The most visual bill-change EVER. Lightning fast, and completely examinable.",
+    "urlVideos": "https://s3.amazonaws.com/images.penguinmagic.com/images/products/original/5249b-55d61ad0e09ef.png",
+    "urlPictures": [
+      "https://www.bigmagie.com/4376-large_default/biobender-eric-jones.jpg"
+    ],
+    "price": "15",
+    "difficulty": "Beginner",
+    "author": "Adam Wilber",
+    "descriptionText": "You will learn 10 unique, hyper-visual changes; giving you an army of devastating bill changes to do in literally any situation imaginable. No stone is left unturned, from setting up the bills to performing the changes, and all the handling tips and subtleties in-between. You will be up and running in no time. AND as a special BONUS, you'll learn Richard's underground miracle, Slow Burn. They'll flip-out as they watch bills visually morph, while you slowly pass your hand over them! PLUS 75 MINUTES OF BRAND NEW MATERIAL that will allow you to change the bills and then hand them out for examination, spend them, etc. A total of almost 3 hours of killer magic on one remarkable DVD.",
+    "descriptionTitle": "Extreme Burn 2.0 (Locked and Loaded) by Richard Sanders (Magical Changing Money Prank)"
+  },
+  {
+    "category": "Accessories",
+    "name": "Invisible Writer (Pencil Lead) by Vernet",
+    "quickDescription": "ernet Magic has the most complete line of writers. But there was one missing, until now -- a writer undetectable under conditions of high scrutiny.",
+    "urlVideos": "https://s3.amazonaws.com/images.penguinmagic.com/images/products/original/17455a-5db86ff254717.png",
+    "urlPictures": [
+      "https://www.bigmagie.com/6014-large_default/3-in-1-set-de-des-leo-smetsers.jpg"
+    ],
+    "price": "18",
+    "difficulty": "Advanced",
+    "author": "Vernet",
+    "descriptionText": "Thumb Tip",
+    "descriptionTitle": "Invisible Writer (Pencil Lead) by Vernet"
+  },
+  {
+    "category": "Mental",
+    "name": "How to Read Minds Kit",
+    "quickDescription": "Yes you can. The kit includes over 20 techniques that you can use to improve every aspect of your life.",
+    " urlVideos": "https://ksr-ugc.imgix.net/assets/027/438/990/9f1eb3b10e2856b3a0bcb6f8af9e998e_original.jpg?ixlib=rb-2.1.0&crop=faces&w=1552&h=873&fit=crop&v=1575649462&auto=format&frame=1&q=92&s=f640ccdb1322fece0aae15176eada760",
+    "urlPictures": [
+      "https://www.bigmagie.com/4154-large_default/akkelian-envelopes.jpg"
+    ],
+    "price": "119",
+    "difficulty": "Beginner",
+    "author": "Peter Turner",
+    "descriptionText": "Mentalist For Beginner",
+    "descriptionTitle": "How to Read Minds Kit"
+  },
+  {
+    "category": "Mental",
+    "name": "Naked By Pablo Amira",
+    "quickDescription": "Their THOUGHT OF card appears within a completely BLANK deck.",
+    "urlVideos": "https://s3.amazonaws.com/images.penguinmagic.com/images/products/original/7736a-529f6035669cc.jpg",
+    "urlPictures": [
+      "https://www.bigmagie.com/4985-large_default/bias-pad-scott-alexander.jpg"
+    ],
+    "price": "29",
+    "difficulty": "Advanced",
+    "author": "Pablo Amira"
+  },
+  {
+    "category": "Beginners",
+    "name": "Optix",
+    "quickDescription": "Optix isn't restricted by the ability to use only one kind of phone, it's universal. Borrow a spectators phone, then hand them your phone to film the magic... In an instant, their phone vanishes into thin air. No sleeves. No pulls. GONE.",
+    "urlVideos": "https://ae01.alicdn.com/kf/Hfe4f1013379b40cf9dcdca5b661b2800K/Optix-by-Tobias-Dostal-Magic-tricks.jpg",
+    "urlPictures": [
+      "https://www.bigmagie.com/1460-large_default/boites-chinoises.jpg"
+    ],
+    "price": "69",
+    "difficulty": "Beginner",
+    "author": "Tobias Dostal",
+    "descriptionText": "Vanish bag",
+    "descriptionTitle": "Optix"
+  },
+  {
+    "category": "Close Up",
+    "name": "TSA by Adam Wilber",
+    "quickDescription": "Object through bill effects are incredible, but they all have one flaw.",
+    "urlVideos": "https://j.gifs.com/oVxynX.gif",
+    "urlPictures": [
+      "https://www.bigmagie.com/4955-large_default/amazing-acrobatic-knot-daryl.jpg"
+    ],
+    "price": "225.95",
+    "difficulty": "Advanced",
+    "author": "Adam Wilber",
+    "descriptionText": "Vanish bag",
+    "descriptionTitle": "TSA by Adam Wilber"
+  },
+  {
+    "category": "Playing Cards",
+    "name": "Bicycle playing Cards",
+    "quickDescription": "Our favorite cards.",
+    "urlVideos": "https://cdn.shopify.com/s/files/1/0956/5418/products/60380-alt5_grande.png?v=1591631579",
+    "urlPictures": ["https://www.bigmagie.com/3459-large_default/alcardmy.jpg"],
+    "price": "30",
+    "difficulty": "Advanced",
+    "author": "Adam Wilber",
+    "descriptionText": "Vanish bag",
+    "descriptionTitle": "Bicycle playing Cards"
+  },
+  {
+    "category": "Books",
+    "name": "DICTIONNAIRE RAISONNÉ ... XVIIIème Siècle",
+    "quickDescription": "Object through bill effects are incredible, but they all have one flaw.",
+    "urlVideos": "https://www.magicdream.fr/media/catalog/product/cache/b1dcc1b7ddcba4f7a1e2837af86f3b14/m/a/magie_livre_ancien_bresson_1870.jpg",
+    "urlPictures": [
+      "https://www.magicdream.fr/media/catalog/product/cache/b1dcc1b7ddcba4f7a1e2837af86f3b14/m/a/magie_livre_ancien_bresson_1870.jpg"
+    ],
+    "price": "3000",
+    "difficulty": "Intermediate",
+    "author": "Adam Wilber",
+    "descriptionText": "Vanish bag",
+    "descriptionTitle": "DICTIONNAIRE RAISONNÉ ... XVIIIème Siècle"
+  },
+  {
+    "category": "DvD",
+    "name": "Classique Inattendu",
+    "quickDescription": "Des cartes choisies disparaissent et réapparaissent de façon inattendue. 5 effets visuels pour une routine impromptue et dynamique.",
+    "urlVideos": "https://www.youtube.com/embed/PdtBO3GMNgA",
+    "urlPictures": [
+      "https://www.bigmagie.com/5727-large_default/classique-inattendu-guillaume-botta.jpg"
+    ],
+    "price": "20",
+    "difficulty": "Beginner",
+    "author": "Guillaume Botta",
+    "descriptionText": "3 cartes disparaissent une par une de façon de plus en plus forte: la première disparaît d’entre les mains du spectateur,la seconde disparaît à vue,la troisième se transforme!Finalement les trois cartes réapparaissent d’un seul coup, avec une surprise supplémentaire !Une routine visuelle idéale pour les conditions de cocktail.",
+    "descriptionTitle": "UNE ROUTINE CONÇUE POUR BLUFFER"
+  },
+  {
+    "category": "Mental",
+    "name": "AmazeBox (Black)",
+    "quickDescription": "Une boîte à change révolutionnaire pour les magiciens mentalistes. Imaginez pouvoir forcer n'importe quel papier de la manière la plus innocente qui soit, sans jamais toucher le matériel ! Nouvelle version, plus grande, plus résistante !",
+    "urlVideos": "https://youtu.be/Kx26Ds4x5KA",
+    "urlPictures": [
+      "https://www.bigmagie.com/4219-large_default/amazebox-black.jpg"
+    ],
+    "price": "75",
+    "difficulty": "Beginner",
+    "author": "Vanishing Inc",
+    "descriptionText": "Voici la nouvelle version de l'Amazebox, elle est plus grande, elle permet de charger jusqu'à 200 bouts de papier contre 30 pour l'Amazebox v1, elle est noire, elle se fond donc dans n'importe quel environnement. Et finalement, des plaques de métal viennent renforcer les panneaux en carton, pour la rendre plus durable et plus solide. Changez des cartes à jouer, des bouts de papier, des photos, ce que vous souhaitez !",
+    "descriptionTitle": "UNE NOUVELLE VERSION, PLUS GRANDE, PLUS RÉSISTANTE"
+  },
+  {
+    "category": "Mental",
+    "name": "All Alone",
+    "quickDescription": "La première collaboration entre Card Shark et David Regal, un effet de jeu invisible avec un deuxième effet kicker en guise de final ! Découvrez All Alone...",
+    "urlVideos": "https://youtu.be/ezLKJdgc6W4",
+    "urlPictures": [
+      "https://www.bigmagie.com/5709-large_default/all-alone-david-regal.jpg"
+    ],
+    "price": "35",
+    "difficulty": "Intermediate",
+    "author": " Card-Shark",
+    "descriptionText": "Imaginez un peu, vous demandez à un spectateur de nommer une carte et étalez alors un jeu entre vos mains. Dans ce lui-ci, une carte une seule est retournée vers le haut... la carte du spectateur ! Mais ce n'est pas tout, vous retournez le reste du jeu et révélez alors que toutes les autres cartes sont blanches !",
+    "descriptionTitle": "UN JEU INVISIBLE SOUS STEROIDS"
+  },
+  {
+    "category": "Mental",
+    "name": "Cardiographic Lite (6 de pique)",
+    "quickDescription": "Un tour incroyable désormais à la portée et au budget de tous ! Grâce à Cardiographic Lite, vous allez pouvoir animer un dessin pour dévoiler la carte choisie du spectateur, puis le donner en souvenir ! Version 7 de coeur.",
+    "urlVideos": "https://youtu.be/ezLKJdgc6W4",
+    "urlPictures": [
+      "https://www.bigmagie.com/4334-large_default/cardiographic-lite-6-de-pique-martin-lewis.jpg"
+    ],
+    "price": "80",
+    "difficulty": "Intermediate",
+    "author": " Martin Lewis",
+    "descriptionText": "Un tour incroyable désormais à la portée et au budget de tous ! Grâce à Cardiographic Lite, vous allez pouvoir animer un dessin pour dévoiler la carte choisie du spectateur, puis le donner en souvenir ! Désormais abordable et faisable en close up.Faites choisir une carte à un spectateur puis dites que vous allez la retrouver en la dessinant sur un carnet. Vous dévoilez votre prédiction mais vous avez uniquement dessiné l'étui de carte. Après une passe magique, la carte choisie va sortir de ce dessin ! C'est comme une houlette mais sur un dessin ! Vous pouvez ensuite donner ce dessin à l'examen et le laisser en souvenir aux spectateurs, pour qu'ils se rappellent de cet incroyable moment.",
+    "descriptionTitle": "UNE ROUTINE CLASSIQUE DÉSORMAIS ADAPTÉE AU CLOSE UP"
+  },
+  {
+    "category": "Mental",
+    "name": "Cardiographic Lite (7 de coeur)",
+    "quickDescription": "Un tour incroyable désormais à la portée et au budget de tous ! Grâce à Cardiographic Lite, vous allez pouvoir animer un dessin pour dévoiler la carte choisie du spectateur, puis le donner en souvenir ! Version 7 de coeur.",
+    "urlVideos": "https://youtu.be/s-sNK1mFaTk",
+    "urlPictures": [
+      "https://www.bigmagie.com/4988-large_default/cardiographic-lite-7-de-coeur-martin-lewis.jpg"
+    ],
+    "price": "80",
+    "difficulty": "Intermediate",
+    "author": "Martin Lewis",
+    "descriptionText": "Un tour incroyable désormais à la portée et au budget de tous ! Grâce à Cardiographic Lite, vous allez pouvoir animer un dessin pour dévoiler la carte choisie du spectateur, puis le donner en souvenir ! Désormais abordable et faisable en close up.Faites choisir une carte à un spectateur puis dites que vous allez la retrouver en la dessinant sur un carnet. Vous dévoilez votre prédiction mais vous avez uniquement dessiné l'étui de carte. Après une passe magique, la carte choisie va sortir de ce dessin ! C'est comme une houlette mais sur un dessin ! Vous pouvez ensuite donner ce dessin à l'examen et le laisser en souvenir aux spectateurs, pour qu'ils se rappellent de cet incroyable moment.",
+    "descriptionTitle": "UNE ROUTINE CLASSIQUE DÉSORMAIS ADAPTÉE AU CLOSE UP"
+  },
+  {
+    "category": "Mental",
+    "name": "Coincidencia",
+    "quickDescription": "7 nouvelles routines, 12 nouvelles techniques professionnelles. Découvrez le nouveau projet monstrueux signé Billy DEBU. Il nous en a mis plein la vue il y a quelques temps et s'apprête à le faire avec vous également. Une oeuvre d'art ! En Français.",
+    "urlVideos": "https://youtu.be/J7s6H_50HRU",
+    "urlPictures": [
+      "https://www.bigmagie.com/4928-large_default/coincidencia-jim-krenz.jpg"
+    ],
+    "price": "19",
+    "difficulty": "Intermediate",
+    "author": "Vanishing Inc",
+    "descriptionText": "Vous êtes à la recherche d'une routine puissante en close-up ? D'une routine dont les effets s'enchaînent et deviennent de plus en plus fort ? D'une routine interactive dans laquelle vos spectateurs vont prendre part ? Alors ne cherchez plus, Coincidencia est fait pour vous !Un jeu de cartes littéralement coupé en deux est présenté à vos spectateurs. Malgré un mélange des plus honnête, vous arrivez à retrouver la moitié jumelle d'une carte choisie par votre audience. Le tout pour arriver à un final où TOUTES les moitiés retrouvent leur jumelle !L'effet est tellement puissant et bien structuré qu'il peut facilement clôturer votre performance de close-up ! Le meilleur ? C'est quasi-automatique...",
+    "descriptionTitle": "UNE ROUTINE SURPUISSANTE ET EN CASCADE"
+  },
+  {
+    "category": "DvD",
+    "name": "CrossRoads",
+    "quickDescription": "Si Jim Krenz n'avait qu'un tour à montrer à ses spectateurs ? Ce serait Coincidencia ! Découvrez la plus folle des coïncidences...",
+    "urlVideos": "https://www.youtube.com/embed/vb85NY2eseM",
+    "urlPictures": [
+      "https://www.bigmagie.com/5920-large_default/crossroads-billy-debu-streaming-vod.jpg"
+    ],
+    "price": "20",
+    "difficulty": "Beginner",
+    "author": "Billy DEBU",
+    "descriptionText": "Tous les effets proposés amènent instantanément vos spectateurs à l'effet. Quand modernité, rapidité, dynamisme et effets visuels se conjuguent vous obtenez Crossroads.\n Vos spectateurs n'en croiront pas leurs yeux ! Imaginez pouvoir faire disparaître des cartes en un clin d’œil, les faire changer et voyager à vue ... les possibilités sont infinies !",
+    "descriptionTitle": "DES EFFETS À FORT IMPACT, DIRECTS ET PUISSANTS"
+  },
+  {
+    "category": "Close Up",
+    "name": "Absolute Zero",
+    "quickDescription": "C’est la mode des supers héros, à vous désormais le pouvoir de geler n’importe quel objet qui vous passera entre les mains : pièces signées, feuilles, cartes de visite...",
+    "urlVideos": "https://www.youtube.com/embed/FdgcaIeCeJA",
+    "urlPictures": [
+      "https://www.virtualmagie.com/wp-content/uploads/2016/12/maxresdefault.jpg",
+      "https://www.vanishingincmagic.com/gallery/photos/absolute-zero-gimmick-by-sansminds.jpg",
+      "https://i.ytimg.com/vi/8GsGloHFCPI/maxresdefault.jpg"
+    ],
+    "price": "95,00 ",
+    "difficulty": "Intermediate",
+    "author": "Sansminds",
+    "descriptionText": "C’est la mode des supers héros, à vous désormais le pouvoir de geler n’importe quel objet qui vous passera entre les mains : pièces signées, feuilles, cartes de visite.. En 2009, Adam Grace a pu transformer une expérience scientifique en tour de magie. Basé sur son travail, voici le dernier né de la gamme Sansminds Pro Serie : Absolute Zero, un gimmick qui a demandé plus de 3 ans de conception et qui vous permettra de réaliser cette expérience avec plus de facilité et d’aisance. C’est comme si vous aviez le pouvoir d’un super héro dans votre poche à tout instant ! Imaginez geler une pièce dans la main d’un spectateur juste en soufflant dessus.",
+    "descriptionTitle": "UN GIMMICK DIGNE DES PLUS GRANDS SUPER HÉROS"
+  },
+  {
+    "category": "Mental",
+    "name": "Bandwidth",
+    "quickDescription": "Imaginez, emprunter la bague d'une spectatrice, la déposer sur votre pouce et commencer à l'étirer complètement comme si pour vous cette dernière n'était faite qu'en caoutchouc...! Découvrez la plus folle des coïncidences...",
+    "urlVideos": "https://www.youtube.com/embed/agPNMmHWi78",
+    "urlPictures": [
+      "https://www.bigmagie.com/4928-large_default/coincidencia-jim-krenz.jpg",
+      "https://www.murphysmagicsupplies.com/images_trailerStartup/55285-preview.png"
+    ],
+    "price": "45,00",
+    "difficulty": "Advanced",
+    "author": "Greg Wilson",
+    "descriptionText": "Imaginez, emprunter la bague d'une charmante spectatrice, la déposer sur votre pouce et commencer à l'étirer complètement comme si pour vous cette dernière n'était faite qu'en caoutchouc..Avoir des dons pour tordre le métal est une chose, faut il encore pouvoir restituer le bien précieux à son propriétaire. Après l'avoir étirée, vous jetez la bague en l'air la rattrapez tel un Ninja, elle est restaurée, intacte et peut être rendue sans la moindre égratignure !",
+
+    "descriptionTitle": "UNE TORSION DE MÉTAL AVEC UNE BAGUE EMPRUNTÉE !"
+  }
 ]
