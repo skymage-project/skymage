@@ -212,7 +212,7 @@
   {
     "category": "Mental",
     "name": "Coincidencia",
-    "quickDescription": "Si Jim Krenz n'avait qu'un tour à montrer à ses spectateurs ? Ce serait Coincidencia ! Découvrez la plus folle des coïncidences...",
+    "quickDescription": "7 nouvelles routines, 12 nouvelles techniques professionnelles. Découvrez le nouveau projet monstrueux signé Billy DEBU. Il nous en a mis plein la vue il y a quelques temps et s'apprête à le faire avec vous également. Une oeuvre d'art ! En Français.",
     "urlVideos": "https://youtu.be/J7s6H_50HRU",
     "urlPictures": [
       "https://www.bigmagie.com/4928-large_default/coincidencia-jim-krenz.jpg"
@@ -222,6 +222,20 @@
     "author": "Vanishing Inc",
     "descriptionText": "Vous êtes à la recherche d'une routine puissante en close-up ? D'une routine dont les effets s'enchaînent et deviennent de plus en plus fort ? D'une routine interactive dans laquelle vos spectateurs vont prendre part ? Alors ne cherchez plus, Coincidencia est fait pour vous !Un jeu de cartes littéralement coupé en deux est présenté à vos spectateurs. Malgré un mélange des plus honnête, vous arrivez à retrouver la moitié jumelle d'une carte choisie par votre audience. Le tout pour arriver à un final où TOUTES les moitiés retrouvent leur jumelle !L'effet est tellement puissant et bien structuré qu'il peut facilement clôturer votre performance de close-up ! Le meilleur ? C'est quasi-automatique...",
     "descriptionTitle": "UNE ROUTINE SURPUISSANTE ET EN CASCADE"
+  },
+  {
+    "category": "DvD",
+    "name": "CrossRoads",
+    "quickDescription": "Si Jim Krenz n'avait qu'un tour à montrer à ses spectateurs ? Ce serait Coincidencia ! Découvrez la plus folle des coïncidences...",
+    "urlVideos": "https://www.youtube.com/embed/vb85NY2eseM",
+    "urlPictures": [
+      "https://www.bigmagie.com/5920-large_default/crossroads-billy-debu-streaming-vod.jpg"
+    ],
+    "price": "20",
+    "difficulty": "Beginner",
+    "author": "Billy DEBU",
+    "descriptionText": "Tous les effets proposés amènent instantanément vos spectateurs à l'effet. Quand modernité, rapidité, dynamisme et effets visuels se conjuguent vous obtenez Crossroads.\n Vos spectateurs n'en croiront pas leurs yeux ! Imaginez pouvoir faire disparaître des cartes en un clin d’œil, les faire changer et voyager à vue ... les possibilités sont infinies !",
+    "descriptionTitle": "DES EFFETS À FORT IMPACT, DIRECTS ET PUISSANTS"
   },
   {
     "category": "Close Up",
