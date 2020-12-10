@@ -3,12 +3,13 @@
 		<v-dialog
 			v-model="showTrickOverView"
 			persistent
-			max-width="50%"
+			width="60em"
+			height="60em"
 			@click:outside="toggleOverView"
 		>
 			<v-container class="dark">
 				<v-row no-gutters>
-					<v-col cols="8" sm="8" md="8">
+					<v-col lg="8" sm="8" md="8">
 						<v-card class="pa-2">
 							<v-carousel hide-delimiters>
 								<v-carousel-item
@@ -36,7 +37,7 @@
 								></v-col> -->
 						</v-card>
 					</v-col>
-					<v-col cols="4" md="4">
+					<v-col lg="4" sm="4" md="4">
 						<v-card class="pa-2" height="100%">
 							<v-row>
 								<v-card-title class="trick-name">
@@ -54,9 +55,10 @@
 									"
 									>View Full Page</v-btn
 								>
-								<v-card-subtitle class="trick-price"
+								<v-card-subtitle block tile outlined class="trick-price"
 									>{{ trick.price }} DT</v-card-subtitle
 								>
+
 								<v-btn
 									color="orange"
 									class="add-item-to-cart-button"
@@ -152,6 +154,7 @@ export default {
 	font-weight: 600;
 	bottom: 0.3em;
 	left: 1em;
+	color: white;
 }
 .view-FP-button {
 	position: absolute;
