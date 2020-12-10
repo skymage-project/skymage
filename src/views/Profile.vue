@@ -91,7 +91,10 @@
         </v-bottom-navigation>
         <div v-if="value === 0">
           <v-timeline>
-            <v-timeline-item v-for="(wish, i) in wishlist.wishListTricksInfos" :key="i">
+            <v-timeline-item
+              v-for="(wish, i) in wishlist.wishListTricksInfos"
+              :key="i"
+            >
               <template v-slot:icon>
                 <v-avatar>
                   <img :src="user.img || 'http://i.pravatar.cc/64'" />
@@ -117,18 +120,18 @@
               <template v-slot:opposite>
                 <span>{{
                   new Date().getDate() +
-                  "/" +
-                  (new Date().getMonth() + 1) +
-                  "/" +
-                  new Date().getFullYear()
+                    "/" +
+                    (new Date().getMonth() + 1) +
+                    "/" +
+                    new Date().getFullYear()
                 }}</span>
                 <br />
                 <span>{{
                   new Date().getHours() +
-                  ":" +
-                  new Date().getMinutes() +
-                  ":" +
-                  new Date().getSeconds()
+                    ":" +
+                    new Date().getMinutes() +
+                    ":" +
+                    new Date().getSeconds()
                 }}</span>
               </template>
               <Invoice :invoice="invoice" :orderId="orderId" />
@@ -194,8 +197,8 @@ export default {
 #profile {
   margin: 0px 30px 90px 30px;
   border-radius: 6px;
-  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12),
-    0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
   position: relative;
 }
 h2 {

@@ -6,7 +6,7 @@
           <v-expand-transition>
             <div
               v-if="hover"
-              class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal display-3 white--text"
+              class="d-flex transition-fast-in-fast-out black darken-2 v-card--reveal display-3 orange--text"
               style="height: 100%"
             >
               {{ wish.price }}DT
@@ -26,7 +26,10 @@
             </div>
           </v-expand-transition>
         </v-img>
-        <v-card-text class="pt-6" style="position: relative">
+        <v-card-text
+          class="pt-6"
+          style="position: relative; background-color: darkorange;"
+        >
           <v-btn
             absolute
             color="orange"
@@ -39,7 +42,7 @@
           >
             <v-icon>mdi-cart</v-icon>
           </v-btn>
-          <h3 class="display-1 font-weight-light orange--text mb-2">
+          <h3 class="display-1 font-weight-light black--text mb-2 text-center">
             {{ wish.name }}
           </h3>
         </v-card-text>
